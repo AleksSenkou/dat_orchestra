@@ -18,7 +18,7 @@ development:
   encoding: unicode
   database: dat_orchestra_development
   pool:     5
-  username: deploy
+  username: aleks
   password: ok
   template: template0
 
@@ -46,7 +46,7 @@ test:
   encoding: unicode
   database: dat_orchestra_test
   pool:     5
-  username: deploy
+  username: aleks
   password: ok
   template: template0
 
@@ -56,6 +56,6 @@ production:
   encoding: unicode
   database: dat_orchestra_production
   pool:     5
-  username: deploy
+  username: aleks
   password: ok
   template: template0
