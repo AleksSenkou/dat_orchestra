@@ -1,0 +1,31 @@
+# This application was generated with Rails Composer
+
+development:
+  apps4: none
+  announcements: mailinglist
+  dev_webserver: webrick
+  prod_webserver: passenger
+  database: postgresql
+  templates: slim
+  tests: rspec
+  continuous_testing: guard
+  frontend: none
+  email: gmail
+  authentication: none
+  devise_modules: 
+  omniauth_provider: 
+  authorization: none
+  form_builder: simple_form
+  pages: none
+  layouts: 
+  locale: 
+  analytics: 
+  deployment: 
+  ban_spiders: 
+  github: 
+  local_env_file: 
+  quiet_assets: 
+  better_errors: 
+  pry: 
+  rvmrc: 
+  dashboard: 
