@@ -1,4 +1,4 @@
-lock '3.0.1'
+lock '3.4.0'
 
 set :application, 'dat_orchestra'
 set :repo_url, 'git@bitbucket.org:Aleks_Senkou/dat_orchestra.git'

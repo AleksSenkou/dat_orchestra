@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/capistrano/passenger.git
+  revision: 223bf12f06c79febabba61ef24eb3752ee8e8f5c
+  specs:
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,21 +53,21 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.2)
-    capistrano (3.0.1)
+    capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
-      sshkit (>= 0.0.23)
-    capistrano-bundler (1.1.2)
-      capistrano (~> 3.0)
+      sshkit (~> 1.3)
+    capistrano-bundler (1.1.4)
+      capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-rails (1.1.0)
-      capistrano (>= 3.0.0)
-      capistrano-bundler (>= 1.0.0)
-    capistrano-rails-console (0.5.2)
-      capistrano (>= 3.0.0, < 4.0.0)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
+    capistrano-rails (1.1.6)
+      capistrano (~> 3.1)
+      capistrano-bundler (~> 1.1)
+    capistrano-rails-console (1.0.2)
+      capistrano (>= 3.1.0, < 4.0.0)
+    capistrano-rbenv (2.0.4)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
@@ -284,11 +291,12 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   byebug
-  capistrano (~> 3.0.1)
-  capistrano-bundler
-  capistrano-rails (~> 1.1.0)
+  capistrano (~> 3.4)
+  capistrano-bundler (~> 1.1, >= 1.1.4)
+  capistrano-passenger!
+  capistrano-rails (~> 1.1, >= 1.1.6)
   capistrano-rails-console
-  capistrano-rvm (~> 0.1.1)
+  capistrano-rbenv (~> 2.0, >= 2.0.4)
   capybara
   coffee-rails (~> 4.1.0)
   database_cleaner

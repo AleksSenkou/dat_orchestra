@@ -24,11 +24,13 @@ gem 'html2slim', '~> 0.2.0'
 
 group :development do
   gem 'better_errors'
-  gem 'capistrano', '~> 3.0.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
+  gem 'capistrano', '~> 3.4'
+  gem 'capistrano-bundler', '~> 1.1', '>= 1.1.4'
+  gem 'capistrano-rails', '~> 1.1', '>= 1.1.6'
   gem 'capistrano-rails-console'
-  gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano-passenger', require: false, github: 'capistrano/passenger'
+  gem 'capistrano-rbenv', '~> 2.0', '>= 2.0.4'
+
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
