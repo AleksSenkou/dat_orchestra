@@ -1,17 +1,18 @@
 div
   .navbar[data-collapse="tiny" data-animation="over-right" data-duration="400" data-ix="navbar"]
-    a.logo[href="/"]
+    .nav-container
+      a.logo[href="/"]
       / .long-text
       /   | Escape.
-    nav[role="navigation"]
-      a.nav-link[href="/"]
-        | Home
-      a.nav-link[href="/categories"]
-        | Categories
-      a.nav-link[href="/about"]
-        | About
-      a.nav-link[href="/contact"]
-        | Contact
+      nav[role="navigation"]
+        a.nav-link[href="/"]
+          | Home
+        a.nav-link[href="/categories"]
+          | Categories
+        a.nav-link[href="/about"]
+          | About
+        a.nav-link[href="/contact"]
+          | Contact
       / .w-nav-button.w-clearfix.w-hidden-main.w-hidden-medium.w-hidden-small.menu-button
       /   .w-icon-nav-menu.menu-icon
       /   .menu-link
