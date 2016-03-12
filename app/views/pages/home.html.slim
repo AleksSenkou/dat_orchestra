@@ -1,18 +1,17 @@
 div
-  .w-nav.navbar[data-collapse="tiny" data-animation="over-right" data-duration="400" data-ix="navbar"]
-    .w-container
-      a.w-nav-brand.logo[href="/"]
-      .long-text
-        | Escape.
-      nav.w-nav-menu.nav-menu[role="navigation"]
-        a.w-nav-link.nav-link[href="/"]
-          | Home
-        a.w-nav-link.nav-link[href="/categories"]
-          | Categories
-        a.w-nav-link.nav-link[href="/about"]
-          | About
-        a.w-nav-link.nav-link[href="/contact"]
-          | Contact
+  .navbar[data-collapse="tiny" data-animation="over-right" data-duration="400" data-ix="navbar"]
+    a.logo[href="/"]
+      / .long-text
+      /   | Escape.
+    nav[role="navigation"]
+      a.nav-link[href="/"]
+        | Home
+      a.nav-link[href="/categories"]
+        | Categories
+      a.nav-link[href="/about"]
+        | About
+      a.nav-link[href="/contact"]
+        | Contact
       / .w-nav-button.w-clearfix.w-hidden-main.w-hidden-medium.w-hidden-small.menu-button
       /   .w-icon-nav-menu.menu-icon
       /   .menu-link

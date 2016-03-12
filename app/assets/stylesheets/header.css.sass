@@ -1,0 +1,90 @@
+.navbar
+  position: absolute
+  left: 0px
+  top: 0px
+  right: 0px
+  padding-top: 17px
+  padding-bottom: 17px
+  background-color: transparent
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.33), transparent 99%)
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.33), transparent 99%)
+
+.nav-link
+  display: inline-block
+  padding: 10px 20px
+  opacity: 0.7
+  -webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease
+  transition: opacity 200ms ease, -webkit-transform 200ms ease
+  transition: opacity 200ms ease, transform 200ms ease
+  transition: opacity 200ms ease, transform 200ms ease, -webkit-transform 200ms ease
+  font-family: Oxygen, sans-serif
+  color: #fff
+  font-size: 12px
+  font-weight: 300
+  letter-spacing: 0.6px
+  text-transform: uppercase
+  &:hover
+    opacity: 1
+    -webkit-transform: translate(0px, -2px)
+    -ms-transform: translate(0px, -2px)
+    transform: translate(0px, -2px)
+    color: #fff
+  &.w--current
+    opacity: 1
+    color: #fff
+
+.hero-section
+  position: relative
+  height: 500px
+  padding-top: 184px
+  background-image: -webkit-linear-gradient(315deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url('../images/photo-1439189741837-58720e8d82d5.jpg')
+  background-image: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url('../images/photo-1439189741837-58720e8d82d5.jpg')
+  background-position: 0px 0px, 50% 50%
+  background-size: auto, cover
+
+.hero-heading
+  margin-bottom: 14px
+  color: #fff
+  font-size: 50px
+  line-height: 51px
+  letter-spacing: 2px
+
+.hero-subheading
+  margin-bottom: 30px
+  font-family: Oxygen, sans-serif
+  color: hsla(0, 0%, 100%, 0.63)
+  font-size: 18px
+  font-weight: 300
+
+.hero-content
+  text-align: center
+
+// .menu-link
+//   display: inline-block
+//   margin-right: 1px
+//   padding-right: 5px
+//   padding-left: 5px
+//   float: left
+//   font-family: Oxygen, sans-serif
+//   font-size: 12px
+//   line-height: 14px
+
+// .menu-icon
+//   display: inline-block
+//   float: right
+//   line-height: 13px
+
+// .menu-button
+//   display: block
+//   margin-top: 0px
+//   padding: 10px 8px 9px
+//   float: right
+//   border-radius: 2px
+//   -webkit-transition: background-color 350ms ease, color 350ms ease
+//   transition: background-color 350ms ease, color 350ms ease
+//   color: hsla(0, 0%, 100%, 0.85)
+//   &:hover
+//     background-color: hsla(0, 0%, 100%, 0.1)
+//     color: #fff
+//   &.w--open
+//     background-color: hsla(0, 0%, 100%, 0.25)
