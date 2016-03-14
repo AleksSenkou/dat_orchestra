@@ -1,11 +1,14 @@
 #= require_self
-#= require_tree ./templates
-#= require_tree ./models
 #= require_tree ./views
 #= require_tree ./routers
 
 window.DatOrchestra =
   Models: {}
   Collections: {}
-  Routers: {}
   Views: {}
+  Routers: {}
+  initialize: ->
+    new DatOrchestra.Routers.Pages()
+    Backbone.history.start()
+
+$(document).ready -> DatOrchestra.initialize()
