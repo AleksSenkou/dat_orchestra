@@ -1,12 +1,12 @@
+@import 'mixins'
+
 .logo
   img
     height: 30px
     width: 30px
     opacity: 0.7
     &:hover
-      -webkit-transform: translate(0px, -2px)
-      -ms-transform: translate(0px, -2px)
-      transform: translate(0px, -2px)
+      @include transform-translate(0px, -2px)
       opacity: 1
 
 .navbar
@@ -17,8 +17,7 @@
   padding-top: 17px
   padding-bottom: 17px
   background-color: transparent
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.33), transparent 99%)
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.33), transparent 99%)
+  @include backimage-linear-gradient(270deg, rgba(0, 0, 0, 0.33) 10%, transparent 99%)
 
 .nav-container
   margin-left: auto
@@ -29,19 +28,16 @@
   display: inline-block
   padding: 10px 20px
   opacity: 0.7
-  -webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease
-  transition: opacity 200ms ease, transform 200ms ease
   font-family: oxygen
   color: #fff
   font-size: 12px
   font-weight: 300
   letter-spacing: 0.6px
   text-transform: uppercase
+  @include transition-opacity(200ms)
   &:hover
+    @include transform-translate(0px, -2px)
     opacity: 1
-    -webkit-transform: translate(0px, -2px)
-    -ms-transform: translate(0px, -2px)
-    transform: translate(0px, -2px)
     color: #fff
   &.current
     opacity: 1
@@ -52,8 +48,7 @@
   width: 100vw
   height: 100vh
   padding-top: 184px
-  background-image: -webkit-linear-gradient(315deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url('../images/photo-1439189741837-58720e8d82d5.jpg')
-  background-image: linear-gradient(135deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 98%), url('../images/photo-1439189741837-58720e8d82d5.jpg')
+  @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 35%, 'all1.jpg')
   background-position: 0px 0px, 50% 50%
   background-size: auto, cover
 
