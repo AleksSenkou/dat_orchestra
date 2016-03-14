@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
+gem 'underscore-string-rails'
 gem 'underscore-rails'
 gem "rails-backbone"
 gem 'uglifier', '>= 1.3.0'

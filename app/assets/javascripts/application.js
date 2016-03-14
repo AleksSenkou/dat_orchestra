@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
+//= require underscore.string
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink

@@ -47,9 +47,8 @@
   position: relative
   width: 100vw
   height: 100vh
-  padding-top: 184px
-  @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82) 1%, rgba(32, 32, 32, 0.14) 35%, 'all1.jpg')
-  background-position: 0px 0px, 50% 50%
+  @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), 'all1.jpg')
+  background-position: 0px 0px, 70% 70%
   background-size: auto, cover
 
 .hero-heading
@@ -60,13 +59,14 @@
   letter-spacing: 2px
 
 .hero-subheading
+  font-family: oxygen
   margin-bottom: 30px
-  font-family: Oxygen, sans-serif
   color: hsla(0, 0%, 100%, 0.63)
   font-size: 18px
   font-weight: 300
 
 .hero-content
+  padding-top: 21%
   text-align: center
 
 // .menu-link
