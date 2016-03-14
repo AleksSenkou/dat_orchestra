@@ -10,8 +10,8 @@
   transition:         opacity $time ease, transform         $time ease
 
 =backimage-linear-gradient($position, $start-color, $end-color, $url:'')
-  background-image: -webkit-linear-gradient($position, $start-color, $end-color), url($url)
-  background-image:    -moz-linear-gradient($position, $start-color, $end-color), url($url)
-  background-image:     -ms-linear-gradient($position, $start-color, $end-color), url($url)
-  background-image:      -o-linear-gradient($position, $start-color, $end-color), url($url)
-  background-image:    linear-gradient($position - 90, $start-color, $end-color), url($url)
+  background-image: -webkit-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:    -moz-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:     -ms-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:      -o-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:    linear-gradient($position - 90, $start-color, $end-color), image-url($url)
