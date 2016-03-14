@@ -1,4 +1,11 @@
-.navbar[data-collapse="tiny" data-animation="over-right" data-duration="400" data-ix="navbar"]
+.hero-section
+  .hero-content
+    .hero-heading
+      | DAT-arkestr
+    .hero-subheading
+      | We travel the world in search of stories. Come along for the ride.
+
+.navbar
   .nav-container
     a.logo[href="/"]
       = image_tag 'logo.png'
@@ -12,12 +19,32 @@
       /   .w-icon-nav-menu.menu-icon
       /   .menu-link
       /     | MENU
-/   .w-section.hero-section
-/     .w-container.hero-content
-/       .hero-heading[data-ix="hero-text"]
-/         | DAT-arkestr
-/       .hero-subheading[data-ix="hero-text-2"]
-/         | We travel the world in search of stories. Come along for the ride.
+
+
+/ <div>
+/   <div data-collapse="tiny" data-animation="over-right" data-duration="400" data-ix="navbar" class="w-nav navbar">
+/     <div class="w-container">
+/       <a href="/" class="w-nav-brand logo">
+/         <div class="long-text">Escape.</div>
+/       </a>
+/       <nav role="navigation" class="w-nav-menu nav-menu"><a href="/" class="w-nav-link nav-link">Home</a><a href="/categories" class="w-nav-link nav-link">Categories</a><a href="/about" class="w-nav-link nav-link">About</a><a href="/contact" class="w-nav-link nav-link">Contact</a><a href="#" class="w-hidden-main w-hidden-medium w-hidden-small close-x">×</a>
+/       </nav>
+/       <div class="w-nav-button w-clearfix w-hidden-main w-hidden-medium w-hidden-small menu-button">
+/         <div class="w-icon-nav-menu menu-icon"></div>
+/         <div class="menu-link">MENU</div>
+/       </div>
+/     </div>
+/   </div>
+/   <div class="w-section hero-section">
+/     <div class="w-container hero-content">
+/       <div data-ix="hero-text" class="hero-heading">DAT orchestra</div>
+/       <div data-ix="hero-text-2" class="hero-subheading">We travel the world in search of stories. Come along for the ride.</div>
+/     </div>
+/   </div>
+
+
+
+
 /   #posts.w-section.main-section.bottom-padding
 /     #Latest-post.w-container
 /       h2.section-title
