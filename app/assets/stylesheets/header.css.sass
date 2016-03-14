@@ -1,3 +1,14 @@
+.logo
+  img
+    height: 30px
+    width: 30px
+    opacity: 0.7
+    &:hover
+      -webkit-transform: translate(0px, -2px)
+      -ms-transform: translate(0px, -2px)
+      transform: translate(0px, -2px)
+      opacity: 1
+
 .navbar
   position: absolute
   left: 0px
@@ -11,12 +22,10 @@
 
 .nav-link
   display: inline-block
-  padding: 10px 20px 10px 20px
+  padding: 10px 20px
   opacity: 0.7
   -webkit-transition: opacity 200ms ease, -webkit-transform 200ms ease
-  transition: opacity 200ms ease, -webkit-transform 200ms ease
   transition: opacity 200ms ease, transform 200ms ease
-  transition: opacity 200ms ease, transform 200ms ease, -webkit-transform 200ms ease
   font-family: oxygen
   color: #fff
   font-size: 12px
