@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
+gem 'scrollbar-rails'
+gem "jquery-mousewheel-rails"
+gem 'mwheelintent-rails'
 gem 'underscore-string-rails'
 gem 'underscore-rails'
 gem "rails-backbone"
