@@ -3,7 +3,7 @@ class DatOrchestra.Views.Home extends Backbone.View
     $("body").mCustomScrollbar {
       theme: 'minimal'
       scrollbarPosition: "outside"
-      mouseWheelPixels: 100
+      mouseWheelPixels: 20
     }
 
   render: ->

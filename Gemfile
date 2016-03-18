@@ -2,17 +2,27 @@ source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'rails', '4.2.4'
 gem 'sass-rails', '~> 5.0'
+
 gem 'scrollbar-rails'
 gem "jquery-mousewheel-rails"
 gem 'mwheelintent-rails'
 gem 'underscore-string-rails'
 gem 'underscore-rails'
 gem "rails-backbone"
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+
+gem 'acts_as_list'
+
+gem 'paperclip', "~> 4.2"
+
+gem 'annotate'
 
 group :development, :test do
   gem 'byebug'
@@ -50,6 +60,7 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'populator'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
