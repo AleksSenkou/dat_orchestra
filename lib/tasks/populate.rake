@@ -61,9 +61,12 @@ def make_pictures_for_members
 end
 
 def add_members_for_compositions
-  Composition.all.each do |cm|
-    authors = Member.all.sample(rand(1..MEMBERS_COUNT / 2))
+  composition_ids = Composition.ids
+  member_ids = Member.ids
 
-    cm.authors << authors
+  composition_ids.each do |cm_id|
+    rand(1..MEMBERS_COUNT / 2).times do
+      CompositionsMembers.create composition_id: cm_id, member_id: member_ids.sample
+    end
   end
 end
