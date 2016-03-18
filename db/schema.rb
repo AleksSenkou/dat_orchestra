@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318000232) do
+ActiveRecord::Schema.define(version: 20160318004309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20160318000232) do
   end
 
   add_index "compositions", ["position"], name: "index_compositions_on_position", unique: true, using: :btree
+
+  create_table "compositions_members", id: false, force: :cascade do |t|
+    t.integer "composition_id"
+    t.integer "member_id"
+  end
+
+  add_index "compositions_members", ["composition_id"], name: "index_compositions_members_on_composition_id", using: :btree
+  add_index "compositions_members", ["member_id"], name: "index_compositions_members_on_member_id", using: :btree
+
+  create_table "members", force: :cascade do |t|
+    t.string  "name"
+    t.text    "description"
+    t.integer "position"
+  end
+
+  add_index "members", ["position"], name: "index_members_on_position", unique: true, using: :btree
 
   create_table "pictures", force: :cascade do |t|
     t.integer  "imageable_id"

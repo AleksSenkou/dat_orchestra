@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: compositions
+# Table name: members
 #
 #  id          :integer          not null, primary key
 #  name        :string
@@ -9,10 +9,10 @@
 #
 # Indexes
 #
-#  index_compositions_on_position  (position) UNIQUE
+#  index_members_on_position  (position) UNIQUE
 #
 
-class Composition < ActiveRecord::Base
+class Member < ActiveRecord::Base
   default_scope { order(position: :asc) }
 
   acts_as_list
@@ -20,7 +20,7 @@ class Composition < ActiveRecord::Base
   validates_presence_of :name, :description
 
   has_one :picture, as: :imageable
-  has_and_belongs_to_many :members
+  has_and_belongs_to_many :compositions
 
-  alias_attribute :authors, :members
+  alias_attribute :avatar, :picture
 end
