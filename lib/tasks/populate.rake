@@ -8,6 +8,7 @@ namespace :db do
   task populate: :environment do
     clean_database
     make_compositions
+    make_pictures_for_compositions
   end
 end
 
@@ -22,5 +23,15 @@ def make_compositions
     position    = index + 1
 
     Composition.create name: name, description: description, position: position
+  end
+end
+
+def make_pictures_for_compositions
+  Composition.all.each do |cm|
+    imageable_id   = cm.id
+    imageable_type = 'Composition'
+    image          = Faker::Avatar.image
+
+    Picture.create imageable_id: imageable_id, imageable_type: imageable_type, image: image
   end
 end
