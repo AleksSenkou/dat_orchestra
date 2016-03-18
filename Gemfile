@@ -23,6 +23,8 @@ gem 'acts_as_list'
 gem 'paperclip', "~> 4.2"
 
 gem 'annotate'
+gem 'faker'
+gem 'populator'
 
 group :development, :test do
   gem 'byebug'
@@ -59,8 +61,6 @@ end
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker'
-  gem 'populator'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
