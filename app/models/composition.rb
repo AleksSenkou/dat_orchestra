@@ -3,7 +3,7 @@
 # Table name: compositions
 #
 #  id          :integer          not null, primary key
-#  name        :string
+#  title       :string
 #  description :text
 #  position    :integer
 #
@@ -17,7 +17,7 @@ class Composition < ActiveRecord::Base
 
   acts_as_list
 
-  validates_presence_of :name, :description
+  validates_presence_of :title, :description
 
   has_one :picture, as: :imageable
   has_and_belongs_to_many :members

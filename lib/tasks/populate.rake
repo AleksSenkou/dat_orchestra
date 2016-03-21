@@ -22,11 +22,11 @@ end
 
 def make_compositions
   COMPOSITIONS_COUNT.times do |index|
-    name        = Faker::Lorem.word
+    title       = Faker::Lorem.word
     description = Faker::Lorem.sentence(3, true, 4)
     position    = index + 1
 
-    Composition.create name: name, description: description, position: position
+    Composition.create title: title, description: description, position: position
   end
 end
 
