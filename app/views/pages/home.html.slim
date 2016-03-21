@@ -7,12 +7,14 @@
         - compositions.each do |cm|
           .composition
             = image_tag cm.image.url(:medium), class: 'featured-image'
+            .play-icon-place
+            .play-icon
             .featured-text
               .featured-title= cm.title
               .featured-description= cm.description
               - cm.authors_avatars.each do |avatar|
                 = image_tag avatar.url(:medium), class: 'author-img'
-  / .med-divider
+  .med-divider
   / .w-container
   /   .section-heading
   /     .med-divider
