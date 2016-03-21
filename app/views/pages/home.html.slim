@@ -1,12 +1,11 @@
 .main-section
-  h2.section-title Our creativity
+  h2.section-title Viewer's choice
   .med-divider
   .featured-thumbnail
-    - @featured_compositions.each_slice(2) do |compositions|
+    - @featured_compositions.each_slice(3) do |compositions|
       .featured-container
         - compositions.each do |cm|
-          .composition
-            = image_tag cm.image.url(:medium), class: 'featured-image'
+          = image_tag cm.image.url(:medium), class: 'featured-image'
       / a.featured-wrapper
       / .featured-image
   /     .featured-text

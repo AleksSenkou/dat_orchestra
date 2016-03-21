@@ -69,32 +69,16 @@
   padding-top: 21%
   text-align: center
 
-// .menu-link
-//   display: inline-block
-//   margin-right: 1px
-//   padding-right: 5px
-//   padding-left: 5px
-//   float: left
-//   font-family: Oxygen, sans-serif
-//   font-size: 12px
-//   line-height: 14px
+#goto-main-section
+  text-align: center
+  padding-top: 15%
 
-// .menu-icon
-//   display: inline-block
-//   float: right
-//   line-height: 13px
-
-// .menu-button
-//   display: block
-//   margin-top: 0px
-//   padding: 10px 8px 9px
-//   float: right
-//   border-radius: 2px
-//   -webkit-transition: background-color 350ms ease, color 350ms ease
-//   transition: background-color 350ms ease, color 350ms ease
-//   color: hsla(0, 0%, 100%, 0.85)
-//   &:hover
-//     background-color: hsla(0, 0%, 100%, 0.1)
-//     color: #fff
-//   &.w--open
-//     background-color: hsla(0, 0%, 100%, 0.25)
+.arrow-down
+  cursor: pointer
+  width: 64px
+  height: 32px
+  opacity: 0.7
+  @include transition-opacity(200ms)
+  &:hover
+    opacity: 1
+    @include transform-translate(0px, 2px)
