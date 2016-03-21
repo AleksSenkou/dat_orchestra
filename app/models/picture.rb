@@ -19,8 +19,9 @@ class Picture < ActiveRecord::Base
   belongs_to :imageable, polymorphic: true
 
   has_attached_file :image,
-    path: ":rails_root/public/images/:id/:filename",
-    url: "/images/:id/:filename"
+    styles: { medium: "500x500>" },
+    path: ":rails_root/public/images/:id/:style_:filename",
+    url: "/images/:id/:style_:filename"
 
   do_not_validate_attachment_file_type :image
 end

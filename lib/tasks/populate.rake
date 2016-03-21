@@ -34,7 +34,7 @@ def make_pictures_for_compositions
   Composition.all.each do |cm|
     imageable_id   = cm.id
     imageable_type = 'Composition'
-    image          = Faker::Avatar.image
+    image          = sample_image
 
     Picture.create imageable_id: imageable_id, imageable_type: imageable_type, image: image
   end
@@ -69,4 +69,12 @@ def add_members_for_compositions
       CompositionsMembers.create composition_id: cm_id, member_id: member_ids.sample
     end
   end
+end
+
+def sample_image
+  image_name = ['first.jpg', 'second.jpg', 'third.jpg', 'fourth.jpg'].sample
+
+  path = Rails.root.join('app', 'assets', 'images', image_name)
+
+  File.new(path)
 end

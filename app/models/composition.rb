@@ -23,4 +23,8 @@ class Composition < ActiveRecord::Base
   has_and_belongs_to_many :members
 
   alias_attribute :authors, :members
+
+  def image
+    picture.image
+  end
 end

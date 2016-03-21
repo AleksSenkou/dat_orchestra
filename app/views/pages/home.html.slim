@@ -2,15 +2,19 @@
   h2.section-title Our creativity
   .med-divider
   .featured-thumbnail
-    - @featured_compositions.each do |composition|
-      a.featured-wrapper
-      .featured-image
-      .featured-text
-        .featured-title
-        .featured-description
-        .featured-details
-          img.author-img
-  .med-divider
+    - @featured_compositions.each_slice(2) do |compositions|
+      .featured-container
+        - compositions.each do |cm|
+          .composition
+            = image_tag cm.image.url(:medium), class: 'featured-image'
+      / a.featured-wrapper
+      / .featured-image
+  /     .featured-text
+  /       .featured-title
+  /       .featured-description
+  /       .featured-details
+  /         img.author-img
+  / .med-divider
   / .w-container
   /   .section-heading
   /     .med-divider
