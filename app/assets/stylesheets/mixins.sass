@@ -16,6 +16,13 @@
   background-image:      -o-linear-gradient($position, $start-color, $end-color), image-url($url)
   background-image:    linear-gradient($position - 90, $start-color, $end-color), image-url($url)
 
+=back-linear-gradient($position, $start-color, $end-color, $color)
+  background-image: -webkit-linear-gradient($position, $start-color, $end-color, $color)
+  background-image:    -moz-linear-gradient($position, $start-color, $end-color, $color)
+  background-image:     -ms-linear-gradient($position, $start-color, $end-color, $color)
+  background-image:      -o-linear-gradient($position, $start-color, $end-color, $color)
+  background-image:    linear-gradient($position - 90, $start-color, $end-color, $color)
+
 =filter-brightness($value)
   filter: brightness($value)
   -webkit-filter: brightness($value)

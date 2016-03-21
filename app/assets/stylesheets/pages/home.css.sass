@@ -47,41 +47,58 @@
   margin-left: auto
   margin-right: auto
 
-.featured-image
+.composition
   display: inline
-  position: static
-  width: 380px
-  height: 310px
+  position: relative
   margin-top: 0px
   margin-bottom: 0px
+
+.featured-image
+  width: 380px
+  height: 310px
   border-radius: 3px
-  @include filter-brightness(65%)
+  background: rgba(0,0,0,0.6)
+  @include filter-brightness(85%)
 
-// .featured-text
-//   position: absolute
-//   left: 0px
-//   right: 0px
-//   bottom: 0px
-//   padding: 60px 20px 62px
-//   background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.6) 46%, rgba(0, 0, 0, 0.76))
-//   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.6) 46%, rgba(0, 0, 0, 0.76))
+.featured-text
+  position: absolute
+  z-index: 2
+  left: 0px
+  right: 0px
+  bottom: 0px
+  margin-right: 1%
+  margin-bottom: 0.5%
+  padding: 0% 0% 1% 2%
+  @include back-linear-gradient(270deg, rgba(0,0,0,0.00), rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.76))
 
-// .featured-title
-//   display: block
-//   margin-bottom: 4px
-//   padding-right: 20px
-//   color: #fff
-//   font-size: 26px
-//   line-height: 26px
-//   text-align: left
+.featured-title
+  margin-top: 13%
+  display: block
+  margin-bottom: 6px
+  font-family: oxygen
+  text-transform: capitalize
+  color: #fff
+  font-size: 30px
+  line-height: 26px
+  text-align: left
 
-// .featured-description
-//   padding-right: 44px
-//   font-family: Oxygen, sans-serif
-//   color: hsla(0, 0%, 100%, 0.7)
-//   font-size: 14px
-//   line-height: 25px
-//   text-align: left
+.featured-description
+  font-family: oxygen
+  color: hsla(0, 0%, 100%, 0.7)
+  padding-bottom: 3%
+  font-size: 16px
+  line-height: 25px
+  text-align: left
+
+.author-img
+  position: static
+  display: inline
+  width: 50px
+  margin-top: 5px
+  margin-right: 10px
+  float: left
+  border-radius: 60px
+  background-color: #A39696
 
 // .featured-details
 //   position: absolute
@@ -90,13 +107,3 @@
 //   bottom: 0px
 //   padding: 10px 20px 15px
 
-// .author-img
-//   position: static
-//   right: 10px
-//   bottom: 10px
-//   width: 26px
-//   margin-top: 5px
-//   margin-right: 10px
-//   margin-bottom: 0px
-//   float: left
-//   border-radius: 60px

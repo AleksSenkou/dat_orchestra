@@ -22,5 +22,7 @@ class Member < ActiveRecord::Base
   has_one :picture, as: :imageable
   has_and_belongs_to_many :compositions
 
-  alias_attribute :avatar, :picture
+  def avatar
+    picture.image
+  end
 end

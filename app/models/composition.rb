@@ -27,4 +27,8 @@ class Composition < ActiveRecord::Base
   def image
     picture.image
   end
+
+  def authors_avatars
+    authors.map(&:avatar)
+  end
 end
