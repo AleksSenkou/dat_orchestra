@@ -46,6 +46,7 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'bullet'
   gem 'capistrano', '~> 3.4'
   gem 'capistrano-bundler', '~> 1.1', '>= 1.1.4'
   gem 'capistrano-rails', '~> 1.1', '>= 1.1.6'
