@@ -21,5 +21,5 @@
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
-//= require backbone/dat_orchestra
+//= require dat_orchestra
 //= require_tree .
