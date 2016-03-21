@@ -6,13 +6,11 @@
       .featured-container
         - compositions.each do |cm|
           = image_tag cm.image.url(:medium), class: 'featured-image'
-      / a.featured-wrapper
-      / .featured-image
-  /     .featured-text
-  /       .featured-title
-  /       .featured-description
-  /       .featured-details
-  /         img.author-img
+          / .featured-text
+            / .featured-title= cm.title
+            / .featured-description
+            / .featured-details
+            /   img.author-img
   / .med-divider
   / .w-container
   /   .section-heading
