@@ -53,6 +53,38 @@
   position: relative
   margin-top: 0px
   margin-bottom: 0px
+  opacity: 1
+  @include transition-opacity(200ms)
+  &:nth-child(3n)
+    > .featured-text
+      margin-right: 0px
+  &:hover
+    > .featured-text, .featured-image
+      opacity: 0.2
+    > .play-icon
+      @extend .play-icon-hover
+      background-size: cover
+
+.play-icon
+  z-index: 2
+  display: none
+  background-image: image-url('play-music.png')
+
+.play-icon-place
+  @extend .play-icon-hover
+  z-index: 3
+  cursor: pointer
+  border-radius: 80px
+
+.play-icon-hover
+  position: absolute
+  display: block
+  left: 50%
+  top: -880%
+  width: 80px
+  height: 80px
+  margin-left: -40px
+  margin-top: -40px
 
 .featured-image
   width: 380px
@@ -67,10 +99,11 @@
   left: 0px
   right: 0px
   bottom: 0px
+  cursor: default
   margin-right: 1%
   margin-bottom: 0.5%
-  padding: 0% 0% 1% 2%
   @include back-linear-gradient(270deg, rgba(0,0,0,0.00), rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.76))
+  padding: 0% 0% 1% 2%
 
 .featured-title
   margin-top: 13%
