@@ -1,27 +1,36 @@
 source 'https://rubygems.org'
 ruby '2.2.4'
 gem 'rails', '4.2.4'
-gem 'sass-rails', '~> 5.0'
 
-gem 'scrollbar-rails'
-gem "jquery-mousewheel-rails"
-gem 'mwheelintent-rails'
+### JS ###
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jbuilder', '~> 2.0'
+gem 'turbolinks'
+gem 'rails-backbone'
 gem 'underscore-string-rails'
 gem 'underscore-rails'
-gem "rails-backbone"
+gem 'scrollbar-rails'
+gem 'jquery-mousewheel-rails'
+gem 'mwheelintent-rails'
+
+### Styles ###
+gem 'sass-rails', '~> 5.0'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
-gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
+### HTML ###
+gem 'simple_form'
+gem 'slim-rails'
+gem 'html2slim', '~> 0.2.0'
 
+### Model ###
+gem 'paperclip', '~> 4.2'
 gem 'acts_as_list'
 
-gem 'paperclip', "~> 4.2"
-
+### DB ###
+gem 'pg'
 gem 'annotate'
 gem 'faker'
 gem 'populator'
@@ -34,11 +43,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-
-gem 'pg'
-gem 'simple_form'
-gem 'slim-rails'
-gem 'html2slim', '~> 0.2.0'
 
 group :development do
   gem 'better_errors'
