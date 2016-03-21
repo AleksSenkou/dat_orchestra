@@ -3,11 +3,16 @@
   -ms-transform:     translate($x, $y)
   transform:         translate($x, $y)
 
+=transform-scale($value)
+  -webkit-transform: scale($value)
+  -ms-transform:     scale($value)
+  transform:         scale($value)
+
 =transition-opacity($time)
-  -webkit-transition: opacity $time ease, -webkit-transform $time ease
-  -moz-transition:    opacity $time ease, transform         $time ease
-  -o-transition:      opacity $time ease, -webkit-transform $time ease
-  transition:         opacity $time ease, transform         $time ease
+  -webkit-transition: opacity $time ease, -webkit-transform $time ease-in-out
+  -moz-transition:    opacity $time ease, transform         $time ease-in-out
+  -o-transition:      opacity $time ease, -webkit-transform $time ease-in-out
+  transition:         opacity $time ease, transform         $time ease-in-out
 
 =backimage-linear-gradient($position, $start-color, $end-color, $url:'')
   background-image: -webkit-linear-gradient($position, $start-color, $end-color), image-url($url)

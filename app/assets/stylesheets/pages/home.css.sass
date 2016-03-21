@@ -75,6 +75,15 @@
   z-index: 3
   cursor: pointer
   border-radius: 80px
+  &:hover + .play-icon
+    background-image: image-url('play-music-big.png')
+    width: 80px !important
+    height: 80px !important
+    margin-left: -40px !important
+    margin-top: -40px !important
+    @include transition-opacity(400ms)
+    @include transform-scale(1.5)
+    background-color: none
 
 .play-icon-hover
   position: absolute
