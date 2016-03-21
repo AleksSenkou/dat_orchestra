@@ -349,6 +349,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   guard-bundler
+  guard-livereload (~> 2.5)
   guard-rails
   guard-rspec
   html2slim (~> 0.2.0)
