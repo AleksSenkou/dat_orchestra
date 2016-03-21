@@ -34,22 +34,36 @@
   list-style-type: lower-alpha
 
 .featured-thumbnail
+  max-width: 1050px
+  margin-left: auto
+  margin-right: auto
   padding-top: 7px
   padding-bottom: 7px
 
-.featured-wrapper
-  position: relative
-  display: block
-  overflow: hidden
+.featured-container
+  margin-top: 2%
+
+.composition
+  // margin-left: auto
+  // margin-right: auto
+  width: 50%
+  padding-left: 1.1%
+  padding-right: 1.1%
+  // padding-left: auto
+  // padding-right: auto
+  display: inline
+
+.featured-image
+  position: static
+  left: 0px
+  top: 0px
+  right: 0px
+  bottom: 0px
+  width: 500px
+  height: 400px
+  margin-top: 0px
+  margin-bottom: 0px
   border-radius: 3px
-  -webkit-transition: -webkit-transform 200ms ease
-  transition: -webkit-transform 200ms ease
-  transition: transform 200ms ease
-  transition: transform 200ms ease, -webkit-transform 200ms ease
-  &:hover
-    -webkit-transform: translate(0px, -5px)
-    -ms-transform: translate(0px, -5px)
-    transform: translate(0px, -5px)
 
 .featured-text
   position: absolute
@@ -84,20 +98,6 @@
   bottom: 0px
   padding: 10px 20px 15px
 
-.featured-image
-  position: static
-  left: 0px
-  top: 0px
-  right: 0px
-  bottom: 0px
-  width: auto
-  height: 350px
-  margin-top: 0px
-  margin-bottom: 0px
-  border-radius: 3px
-  // background-image: url('../images/3f4eb74a.jpg')
-  background-position: 50% 50%
-  background-size: cover
 
 .author-img
   position: static
