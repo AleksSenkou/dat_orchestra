@@ -10,13 +10,14 @@ class DatOrchestra.Views.Home extends Backbone.View
 
     $(window).bind 'scroll', () => @changeHeaderTextOpacity()
 
-  render: ->
+  render: -> @addComposirionsGallery()
+
+  addComposirionsGallery: ->
     $('a[data-rel^=lightcase]').lightcase
       forceWidth: true
       forceHeight: true
       overlayOpacity: 0.95
       transitionIn: 'elastic'
-      # transitionOut: 'scrollHorizontal'
       transition: 'scrollHorizontal'
       onClose: finish: () => @stopPlay()
 
@@ -24,12 +25,6 @@ class DatOrchestra.Views.Home extends Backbone.View
     $.each $('audio'), () ->
       @pause()
       @currentTime = 0
-
-    # $("body").mCustomScrollbar {
-    #   theme: 'minimal'
-    #   scrollbarPosition: "outside"
-    #   mouseWheelPixels: 50
-    # }
 
   goToMainSection: ->
     $('html, body').animate {

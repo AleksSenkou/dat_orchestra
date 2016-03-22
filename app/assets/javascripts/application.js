@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.mCustomScrollbar.concat.min
 //= require jquery.mwheelintent
 //= require jquery.mousewheel
 //= require turbolinks
