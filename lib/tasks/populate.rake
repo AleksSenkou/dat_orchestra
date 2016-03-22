@@ -13,6 +13,7 @@ namespace :db do
     make_members
     make_pictures_for_members
     add_members_for_compositions
+    add_songs_to_compositions
   end
 end
 
@@ -71,10 +72,26 @@ def add_members_for_compositions
   end
 end
 
+def add_songs_to_compositions
+  Composition.all.each do |cm|
+    cm.song = sample_song
+
+    cm.save!
+  end
+end
+
 def sample_image
   image_name = ['first.jpg', 'second.jpg', 'third.jpg', 'fourth.jpg'].sample
 
   path = Rails.root.join('app', 'assets', 'images', image_name)
+
+  File.new(path)
+end
+
+def sample_song
+  song_name = ['joe_pug.mp3', 'little_boxes.mp3', 'love_is_all_i_am.mp3', 'neil_young_heart_of_gold.mp3'].sample
+
+  path = Rails.root.join('app', 'assets', 'music', song_name)
 
   File.new(path)
 end

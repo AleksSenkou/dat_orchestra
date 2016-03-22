@@ -2,10 +2,14 @@
 #
 # Table name: compositions
 #
-#  id          :integer          not null, primary key
-#  title       :string
-#  description :text
-#  position    :integer
+#  id                :integer          not null, primary key
+#  title             :string
+#  description       :text
+#  position          :integer
+#  song_file_name    :string
+#  song_content_type :string
+#  song_file_size    :integer
+#  song_updated_at   :datetime
 #
 # Indexes
 #
@@ -18,6 +22,12 @@ class Composition < ActiveRecord::Base
   acts_as_list
 
   validates_presence_of :title, :description
+
+  has_attached_file :song,
+    path: ":rails_root/public/music/:id/:filename",
+    url: "/music/:id/:filename"
+
+  do_not_validate_attachment_file_type :song
 
   has_one :picture, as: :imageable
   has_and_belongs_to_many :members
