@@ -50,6 +50,8 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
     arel (6.0.3)
+    audiojs-rails (1.0.1)
+      railties (>= 3.1)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -338,6 +340,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   annotate
+  audiojs-rails
   better_errors
   bootstrap-will_paginate
   bullet

@@ -14,6 +14,7 @@ gem 'underscore-rails'
 gem 'scrollbar-rails'
 gem 'jquery-mousewheel-rails'
 gem 'mwheelintent-rails'
+gem 'audiojs-rails'
 
 ### Styles ###
 gem 'sass-rails', '~> 5.0'

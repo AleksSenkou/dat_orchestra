@@ -7,8 +7,7 @@
         - compositions.each do |cm|
           .composition
             = image_tag cm.image.url(:medium), class: 'featured-image'
-            a.play-icon-place href=image_path(cm.image.url(:big)) title=cm.title.capitalize data-rel="lightcase:myCollection"
-            / .play-icon-place
+            a.play-icon-place href=image_path(cm.image.url(:big)) title=cm.title.capitalize data-rel="lightcase:myCollection" audio-src=cm.song.url
             .play-icon
             .featured-text
               .featured-title= cm.title
@@ -16,7 +15,6 @@
               - cm.authors_avatars.each do |avatar|
                 = image_tag avatar.url(:medium), class: 'author-img'
   .med-divider
-  a href="assets/images/first.jpg" data-rel="lightcase" Your link description or thumb
 / .w-container
   /   .section-heading
   /     .med-divider

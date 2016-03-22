@@ -147,7 +147,8 @@
 					);
 					_self.objects.case.append(
 						_self.objects.info = $('<div id="' + _self.settings.idPrefix + 'info"></div>'),
-						_self.objects.content = $('<div id="' + _self.settings.idPrefix + 'content"></div>')
+						_self.objects.content = $('<div id="' + _self.settings.idPrefix + 'content"></div>'),
+						_self.objects.audio = $('<audio src="" controls autoplay loop/>') //autoplay="autoplay"
 					);
 					_self.objects.content.append(
 						_self.objects.contentInner = $('<div class="' + _self.settings.classPrefix + 'contentInner"></div>')
@@ -208,6 +209,7 @@
 		 	var $object = $(object),
 				objectData = {
 				title: _self.settings.title || $object.attr(_self._prefixAttributeName('title')) || $object.attr('title'),
+				audioSrc: $object.attr('audio-src'),
 				caption: _self.settings.caption || $object.attr(_self._prefixAttributeName('caption')) || $object.children('img').attr('alt'),
 				url: _self._determineUrl(),
 				requestType: _self.settings.ajax.type,
@@ -403,6 +405,7 @@
 						'src': _self.objectData.url,
 						'alt': _self.objectData.title
 					});
+					_self.objects.audio.attr('src', _self.objectData.audioSrc)
 					break;
 				case 'inline':
 					$object = $('<div class="' + _self.settings.classPrefix + 'inlineWrap"></div>');
@@ -673,6 +676,10 @@
 				'max-height': dimensions.maxHeight
 			});
 
+			_self.objects.audio.css({
+				'width': $object.outerWidth()
+			})
+
 			_self.objects.contentInner.css({
 				'width': $object.outerWidth(),
 				'height': $object.outerHeight(),
@@ -685,7 +692,7 @@
 
 			// Adjust margin
 			_self.objects.case.css({
-				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2) - 35),
+				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2) - 12),
 				'margin-left': parseInt(-(_self.objects.case.outerWidth() / 2))
 			});
 		},
