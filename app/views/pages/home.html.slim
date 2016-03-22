@@ -7,7 +7,8 @@
         - compositions.each do |cm|
           .composition
             = image_tag cm.image.url(:medium), class: 'featured-image'
-            .play-icon-place
+            a.play-icon-place href=image_path(cm.image.url(:big)) title=cm.title.capitalize data-rel="lightcase:myCollection"
+            / .play-icon-place
             .play-icon
             .featured-text
               .featured-title= cm.title

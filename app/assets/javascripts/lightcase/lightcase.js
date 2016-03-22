@@ -146,8 +146,8 @@
 						_self.objects.pause = $('<a href="#" class="' + _self.settings.classPrefix + 'icon-pause"><span>' + _self.settings.labels['navigator.pause'] + '</span></a>').hide()
 					);
 					_self.objects.case.append(
-						_self.objects.content = $('<div id="' + _self.settings.idPrefix + 'content"></div>'),
-						_self.objects.info = $('<div id="' + _self.settings.idPrefix + 'info"></div>')
+						_self.objects.info = $('<div id="' + _self.settings.idPrefix + 'info"></div>'),
+						_self.objects.content = $('<div id="' + _self.settings.idPrefix + 'content"></div>')
 					);
 					_self.objects.content.append(
 						_self.objects.contentInner = $('<div class="' + _self.settings.classPrefix + 'contentInner"></div>')
@@ -685,7 +685,7 @@
 
 			// Adjust margin
 			_self.objects.case.css({
-				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2)),
+				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2) - 35),
 				'margin-left': parseInt(-(_self.objects.case.outerWidth() / 2))
 			});
 		},

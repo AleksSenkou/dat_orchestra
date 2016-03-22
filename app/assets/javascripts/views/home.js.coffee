@@ -11,7 +11,15 @@ class DatOrchestra.Views.Home extends Backbone.View
     $(window).bind 'scroll', () => @changeHeaderTextOpacity()
 
   render: ->
-    $('a[data-rel^=lightcase]').lightcase()
+    $('a[data-rel^=lightcase]').lightcase(
+      forceWidth: true
+      forceHeight: true
+      overlayOpacity: 0.95
+      onStart: {
+        start: () =>
+      }
+    )
+
     # $("body").mCustomScrollbar {
     #   theme: 'minimal'
     #   scrollbarPosition: "outside"
