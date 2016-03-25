@@ -4,6 +4,7 @@ class DatOrchestra.Views.Home extends Backbone.View
 
   events:
     'click #goto-main-section' : 'goToMainSection'
+    'click .play-icon-block' : 'openLightcase'
 
   initialize: ->
     @fadeUntil = $('.hero-heading').position().top
@@ -29,6 +30,9 @@ class DatOrchestra.Views.Home extends Backbone.View
       href = this.href
       $(this).removeAttr('href').click () ->
         window.location = href
+
+  openLightcase: (e) ->
+    $(e.target).parent('.composition').children('.play').click()
 
   stopPlay: ->
     $.each $('audio'), () ->

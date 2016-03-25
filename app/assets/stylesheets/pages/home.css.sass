@@ -1,4 +1,4 @@
-@import 'mixins'
+@import mixins
 
 .main-section
   padding-top: 10px
@@ -36,6 +36,10 @@
   margin-left: auto
   margin-right: auto
 
+$featured-image-width: 380px
+$featured-image-height: 310px
+$play-border-width: 3px
+
 .composition
   display: inline
   position: relative
@@ -49,13 +53,35 @@
     > .play-icon
       @extend .play-icon-hover
       background-size: cover
+    > .play
+      width: $featured-image-width - $play-border-width - 3px
+      height: $featured-image-height - $play-border-width - 2px
+      border: $play-border-width solid black
+      border-radius: 3px
+
+.featured-image
+  width: $featured-image-width
+  height: $featured-image-height
+  border-radius: 3px
+  background: rgba(0,0,0,0.6)
+  @include transition-opacity(200ms)
+  @include filter-brightness(85%)
+
+.play
+  position: absolute
+  z-index: 3
+  left: 0%
+  bottom: 10%
+  cursor: pointer
+  width: $featured-image-width
+  height: $featured-image-height
 
 .play-icon
   z-index: 2
   display: none
   background-image: image-url('play-music.png')
 
-.play-icon-place
+.play-icon-block
   @extend .play-icon-hover
   z-index: 3
   cursor: pointer
@@ -74,14 +100,6 @@
   height: 80px
   margin-left: -40px
   margin-top: -40px
-
-.featured-image
-  width: 380px
-  height: 310px
-  border-radius: 3px
-  background: rgba(0,0,0,0.6)
-  @include transition-opacity(200ms)
-  @include filter-brightness(85%)
 
 .featured-text
   position: absolute

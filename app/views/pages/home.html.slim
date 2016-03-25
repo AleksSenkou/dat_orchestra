@@ -5,9 +5,10 @@
     - @featured_compositions.each_slice(3) do |compositions|
       .featured-container
         - compositions.each do |cm|
-          .composition
+          div class='composition' id=cm.id
             = image_tag cm.image.url(:medium), class: 'featured-image'
-            a.play-icon-place href=image_path(cm.image.url(:big)) title=cm.title.capitalize data-rel="lightcase:myCollection" audio-src=cm.song.url
+            a.play href=image_path(cm.image.url(:big)) data-title=cm.title.capitalize data-rel="lightcase:myCollection" audio-src=cm.song.url
+            .play-icon-block
             .play-icon
             .featured-text
               .featured-title= cm.title

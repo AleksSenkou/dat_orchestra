@@ -208,7 +208,7 @@
 		_setObjectData: function (object) {
 		 	var $object = $(object),
 				objectData = {
-				title: _self.settings.title || $object.attr(_self._prefixAttributeName('title')) || $object.attr('title'),
+				title: _self.settings.title || $object.attr(_self._prefixAttributeName('data-title')) || $object.attr('data-title'),
 				audioSrc: $object.attr('audio-src'),
 				caption: _self.settings.caption || $object.attr(_self._prefixAttributeName('caption')) || $object.children('img').attr('alt'),
 				url: _self._determineUrl(),
