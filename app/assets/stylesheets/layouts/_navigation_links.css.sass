@@ -1,5 +1,9 @@
 @import ../mixins
 
+nav
+  float: right
+  position: relative
+
 .nav-link
   display: inline-block
   padding: 10px 20px
@@ -18,3 +22,17 @@
   &.current
     opacity: 1
     color: #fff
+
+.footer-links
+  position: absolute
+  margin-top: 75px
+  width: 45%
+  max-width: 49.8%
+  text-align: right
+
+.footer-link
+  @extend .nav-link
+  padding: 0px 0px 0px 20px
+  font-size: 12px
+  line-height: 26px
+  letter-spacing: 1px
