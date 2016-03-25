@@ -9,21 +9,31 @@ class DatOrchestra.Views.Home extends Backbone.View
     @fadeUntil = $('.hero-heading').position().top
     $(window).bind 'scroll', () => @changeHeaderTextOpacity()
 
-  render: -> @addComposirionsGallery()
+  render: ->
+    @addComposirionsGallery()
+    @removeHref()
 
   addComposirionsGallery: ->
     $('a[data-rel^=lightcase]').lightcase
       forceWidth: true
       forceHeight: true
       overlayOpacity: 0.95
+      showSequenceInfo: false
       transitionIn: 'elastic'
       transition: 'scrollHorizontal'
+      onStart: start: () => @removeHref()
       onClose: finish: () => @stopPlay()
+
+  removeHref: ->
+    $('a[href]:not([data-rel])').each () ->
+      href = this.href
+      $(this).removeAttr('href').click () ->
+        window.location = href
 
   stopPlay: ->
     $.each $('audio'), () ->
-      @pause()
-      @currentTime = 0
+      this.pause()
+      this.currentTime = 0
 
   goToMainSection: ->
     $('html, body').animate {
