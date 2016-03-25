@@ -7,7 +7,6 @@ class DatOrchestra.Views.Home extends Backbone.View
 
   initialize: ->
     @fadeUntil = $('.hero-heading').position().top
-
     $(window).bind 'scroll', () => @changeHeaderTextOpacity()
 
   render: -> @addComposirionsGallery()

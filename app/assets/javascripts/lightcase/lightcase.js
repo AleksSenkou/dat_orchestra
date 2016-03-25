@@ -692,7 +692,7 @@
 
 			// Adjust margin
 			_self.objects.case.css({
-				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2) - 12),
+				'margin-top': parseInt(-(_self.objects.case.outerHeight() / 2) - 8),
 				'margin-left': parseInt(-(_self.objects.case.outerWidth() / 2))
 			});
 		},
