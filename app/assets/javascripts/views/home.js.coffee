@@ -20,6 +20,7 @@ class DatOrchestra.Views.Home extends Backbone.View
       forceHeight: true
       overlayOpacity: 0.95
       showSequenceInfo: false
+      closeOnOverlayClick: false
       transitionIn: 'elastic'
       transition: 'scrollHorizontal'
       onStart: start: () => @removeHref()
