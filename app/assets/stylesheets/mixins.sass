@@ -8,6 +8,12 @@
   -ms-transform:     scale($value)
   transform:         scale($value)
 
+=transition-color($time)
+  -webkit-transition: color $time ease
+  -moz-transition:    color $time ease
+  -o-transition:      color $time ease
+  transition:         color $time ease
+
 =transition-opacity($time)
   -webkit-transition: opacity $time ease, -webkit-transform $time ease-in-out
   -moz-transition:    opacity $time ease, transform         $time ease-in-out
