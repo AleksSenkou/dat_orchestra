@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322095219) do
+ActiveRecord::Schema.define(version: 20160326104702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "base_pages", force: :cascade do |t|
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+    t.string   "favicon_file_name"
+    t.string   "favicon_content_type"
+    t.integer  "favicon_file_size"
+    t.datetime "favicon_updated_at"
+    t.string   "hero_image_file_name"
+    t.string   "hero_image_content_type"
+    t.integer  "hero_image_file_size"
+    t.datetime "hero_image_updated_at"
+    t.string   "heading"
+    t.text     "subheading"
+    t.string   "dance_logo_file_name"
+    t.string   "dance_logo_content_type"
+    t.integer  "dance_logo_file_size"
+    t.datetime "dance_logo_updated_at"
+  end
 
   create_table "compositions", force: :cascade do |t|
     t.string   "title"

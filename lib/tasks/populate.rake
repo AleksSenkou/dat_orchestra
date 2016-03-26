@@ -8,6 +8,7 @@ namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
     clean_database
+    make_base_page
     make_compositions
     make_pictures_for_compositions
     make_members
@@ -18,7 +19,18 @@ namespace :db do
 end
 
 def clean_database
-  [Composition, Picture, Member, CompositionsMembers].each(&:delete_all)
+  [Composition, Picture, Member, CompositionsMembers, BasePage].each(&:delete_all)
+end
+
+def make_base_page
+  BasePage.create!(
+    logo: get_image('logo.png'),
+    dance_logo: get_image('dance-logo.png'),
+    favicon: get_image('favicon.png'),
+    hero_image: get_image('hero.jpg'),
+    heading: 'DAT-arkestr',
+    subheading: 'We will make your concert savemem'
+  )
 end
 
 def make_compositions
@@ -81,8 +93,10 @@ def add_songs_to_compositions
 end
 
 def sample_image
-  image_name = ['first.jpg', 'second.jpg', 'third.jpg', 'fourth.jpg'].sample
+  get_image(['first.jpg', 'second.jpg', 'third.jpg', 'fourth.jpg'].sample)
+end
 
+def get_image(image_name)
   path = Rails.root.join('app', 'assets', 'images', image_name)
 
   File.new(path)

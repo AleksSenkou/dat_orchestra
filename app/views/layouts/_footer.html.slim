@@ -2,8 +2,8 @@
   ul.footer-section
     li.logos
       = link_to 'http://beladance.org/', target: "_blank" do
-        = image_tag 'dance-logo.png', title: "The state dance ensemble of Belarus"
-      = link_to image_tag('logo.png'), root_path
+        = image_tag dance_logo_url, title: "The state dance ensemble of Belarus"
+      = link_to image_tag(logo_big_url), root_path
     li.footer-links
       = render 'layouts/navigation_links', class_name: 'footer-link'
-  .copyright &#9400 #{Date.today.year}
+  .copyright &#9400 #{current_year}
