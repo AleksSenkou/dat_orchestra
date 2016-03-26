@@ -69,6 +69,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'pry-remote'
   gem 'rspec-rails'
 end
 
