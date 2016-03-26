@@ -26,4 +26,10 @@ module ApplicationHelper
   def current_year
     Date.today.year
   end
+
+  def nav_link(text, path, link_class)
+    link_class += current_page?(path) ? ' current' : ''
+
+    link_to text, path, class: link_class
+  end
 end
