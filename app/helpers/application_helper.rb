@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def home_page?
+    current_page? root_path
+  end
+
   def heading
     @base_page.heading
   end

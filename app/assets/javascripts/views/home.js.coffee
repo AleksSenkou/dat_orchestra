@@ -7,7 +7,7 @@ class DatOrchestra.Views.Home extends Backbone.View
     'click .play-icon-block' : 'openLightcase'
 
   initialize: ->
-    @fadeUntil = $('.hero-heading').position().top
+    @fadeUntil = $('.heading').position().top
     $(window).bind 'scroll', () => @changeHeaderTextOpacity()
 
   render: ->
@@ -48,4 +48,4 @@ class DatOrchestra.Views.Home extends Backbone.View
   changeHeaderTextOpacity: ->
     offset = $(document).scrollTop()
     opacity = (@fadeUntil - offset) / @fadeHeight
-    $('.hero-heading, .hero-subheading, #goto-main-section').css 'opacity', opacity
+    $('.heading, .subheading, #goto-main-section').css 'opacity', opacity
