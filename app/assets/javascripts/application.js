@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery.mwheelintent
 //= require jquery.mousewheel
-//= require bootstrap-sprockets
 //= require turbolinks
 //= require underscore
 //= require underscore.string
@@ -23,3 +22,5 @@
 //= require backbone_datalink
 //= require dat_orchestra
 //= require_tree .
+
+/*require bootstrap-sprockets*/
