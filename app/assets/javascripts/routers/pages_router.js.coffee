@@ -1,7 +1,11 @@
 class DatOrchestra.Routers.Pages extends Backbone.Router
   routes:
+    'repertoire' : 'repertoirePage'
     '' : 'homePage'
 
   homePage: ->
-    view = DatOrchestra.Views.Home
-    new view().render()
+    new DatOrchestra.Views.Home().render()
+
+  repertoirePage: ->
+    new DatOrchestra.Views.Repertoire().render()
+

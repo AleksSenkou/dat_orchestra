@@ -34,6 +34,6 @@ module ApplicationHelper
   def nav_link(text, path, link_class)
     link_class += current_page?(path) ? ' current' : ''
 
-    link_to text, path, class: link_class
+    link_to text, path, class: link_class, data: { no_turbolink: true }
   end
 end
