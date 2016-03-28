@@ -1,5 +1,7 @@
 class RepertoireController < ApplicationController
   def index
-    @compositions = Composition.includes(:picture, members: :picture).paginate(page: params[:page], per_page: 18)
+    preloaded_compositions = Composition.includes(:picture, members: :picture)
+
+    @compositions = preloaded_compositions.paginate(page: params[:page], per_page: 15)
   end
 end
