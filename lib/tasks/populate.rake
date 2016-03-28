@@ -1,7 +1,7 @@
 require "faker"
 require "populator"
 
-COMPOSITIONS_COUNT = 10
+COMPOSITIONS_COUNT = 20
 MEMBERS_COUNT = 10
 
 namespace :db do
