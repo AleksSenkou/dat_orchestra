@@ -4,41 +4,19 @@ class DatOrchestra.Views.Home extends Backbone.View
 
   events:
     'click #goto-main-section' : 'goToMainSection'
-    'click .play-icon-block' : 'openLightcase'
 
   initialize: ->
+    @lightcase = new DatOrchestra.ViewsHelpers.LightCase()
+    @base = new DatOrchestra.ViewsHelpers.Base()
     @fadeUntil = $('.heading').position().top
-    $(window).bind 'scroll', () => @changeHeaderTextOpacity()
+    @changeHeaderTextOpacityEvent()
 
   render: ->
-    @addComposirionsGallery()
-    @removeHref()
+    @lightcase.render()
+    @base.removeHrefs()
 
-  addComposirionsGallery: ->
-    $('a[data-rel^=lightcase]').lightcase
-      forceWidth: true
-      forceHeight: true
-      overlayOpacity: 0.95
-      showSequenceInfo: false
-      closeOnOverlayClick: false
-      transitionIn: 'elastic'
-      transition: 'scrollHorizontal'
-      onStart: start: () => @removeHref()
-      onClose: finish: () => @stopPlay()
-
-  removeHref: ->
-    $('a[href]:not([data-rel])').each () ->
-      href = this.href
-      $(this).removeAttr('href').click () ->
-        window.location = href
-
-  openLightcase: (e) ->
-    $(e.target).parent('.composition').children('.play').click()
-
-  stopPlay: ->
-    $.each $('audio'), () ->
-      this.pause()
-      this.currentTime = 0
+  changeHeaderTextOpacityEvent: ->
+    $(window).bind 'scroll', () => @changeHeaderTextOpacity()
 
   goToMainSection: ->
     $('html, body').animate {
