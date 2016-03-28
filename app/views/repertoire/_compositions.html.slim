@@ -1,0 +1,14 @@
+.featured-thumbnail
+  - @compositions.each_slice(3) do |compositions_block|
+    .featured-container
+      - compositions_block.each do |cm|
+        .composition id=cm.id
+          = image_tag cm.image.url(:medium), class: 'featured-image'
+          a.play href=image_path(cm.image.url(:big)) data-title=cm.title.capitalize data-rel="lightcase:myCollection" audio-src=cm.song.url
+          .play-icon-block
+          .play-icon
+          .featured-text
+            .featured-title= cm.title
+            .featured-description= cm.description
+            - cm.authors_avatars.each do |avatar|
+              = image_tag avatar.url(:medium), class: 'author-img'
