@@ -4,7 +4,7 @@
   position: relative
   width: 100vw
   height: 100vh
-  @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "hero.jpg")
+  @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:big) %>")
   background-position: 0px 0px, 70% 70%
   background-size: auto, cover
 
@@ -31,6 +31,13 @@
 .default-header
   > .hero-section
     height: 400px
+    @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")
+    > .hero-content
+      padding-top: 15%
+      > .heading
+        font-size: 45px
+      > .subheading
+        font-size: 25px
 
 #goto-main-section
   text-align: center
