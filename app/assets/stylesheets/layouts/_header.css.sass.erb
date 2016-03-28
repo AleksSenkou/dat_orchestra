@@ -4,7 +4,7 @@
   position: relative
   width: 100vw
   height: 100vh
-  @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:big) %>")
+  +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:big) %>")
   background-position: 0px 0px, 70% 70%
   background-size: auto, cover
 
@@ -31,7 +31,7 @@
 .default-header
   > .hero-section
     height: 400px
-    @include backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")
+    +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")
     > .hero-content
       padding-top: 15%
       > .heading
@@ -48,7 +48,7 @@
   width: 64px
   height: 32px
   opacity: 0.7
-  @include transition-opacity(200ms)
+  +transition-opacity(200ms)
   &:hover
     opacity: 1
-    @include transform-translate(0px, 2px)
+    +transform-translate(0px, 2px)
