@@ -16,9 +16,10 @@ gem 'mwheelintent-rails'
 gem 'audiojs-rails'
 
 ### Styles ###
-gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '~> 5.0', '>= 5.0.4'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap'
 
 ### HTML ###
 gem 'simple_form'
