@@ -35,7 +35,7 @@ gem 'acts_as_list'
 gem 'pg'
 gem 'annotate'
 gem 'faker'
-gem 'populator'
+gem 'populator', git: "https://github.com/ryanb/populator.git"
 
 group :development, :test do
   gem 'byebug'
