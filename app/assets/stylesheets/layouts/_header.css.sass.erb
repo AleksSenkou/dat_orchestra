@@ -7,6 +7,15 @@
   +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:big) %>")
   background-position: 0px 0px, 70% 70%
   background-size: auto, cover
+  &.default-header
+    height: 400px
+    +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")
+    > .hero-content
+      padding-top: 15%
+      > .heading
+        font-size: 45px
+      > .subheading
+        font-size: 25px
 
 .heading
   margin-bottom: 14px
@@ -28,17 +37,6 @@
   padding-top: 21%
   text-align: center
 
-.default-header
-  > .hero-section
-    height: 400px
-    +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")
-    > .hero-content
-      padding-top: 15%
-      > .heading
-        font-size: 45px
-      > .subheading
-        font-size: 25px
-
 #goto-main-section
   text-align: center
   padding-top: 15%
@@ -52,3 +50,27 @@
   &:hover
     opacity: 1
     +transform-translate(0px, 2px)
+
+.navbar
+  position: absolute
+  left: 0px
+  top: 0px
+  right: 0px
+  padding-top: 17px
+  padding-bottom: 17px
+  background-color: transparent
+  +backimage-linear-gradient(270deg, rgba(0, 0, 0, 0.33) 10%, transparent 99%)
+
+.nav-container
+  margin-left: auto
+  margin-right: auto
+  max-width: 940px
+
+.logo
+  img
+    height: 30px
+    width: 30px
+    opacity: 0.7
+    &:hover
+      +transform-translate(0px, -2px)
+      opacity: 1

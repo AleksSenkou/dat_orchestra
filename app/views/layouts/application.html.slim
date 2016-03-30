@@ -9,13 +9,7 @@ html
     /[if lt IE 9]
       script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
   body
-    - if home_page?
-      = render 'layouts/home_header'
-    - else
-      = render 'layouts/default_header'
-    = render 'layouts/navigation'
-
+    = render 'layouts/header'
     .main-section
       = yield
-
     = render 'layouts/footer'
