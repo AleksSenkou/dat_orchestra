@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326104702) do
+ActiveRecord::Schema.define(version: 20160330152041) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 20160326104702) do
 
   add_index "compositions_members", ["composition_id"], name: "index_compositions_members_on_composition_id", using: :btree
   add_index "compositions_members", ["member_id"], name: "index_compositions_members_on_member_id", using: :btree
+
+  create_table "gallery_items", force: :cascade do |t|
+    t.string   "name"
+    t.string   "source_file_name"
+    t.string   "source_content_type"
+    t.integer  "source_file_size"
+    t.datetime "source_updated_at"
+    t.integer  "position"
+  end
 
   create_table "members", force: :cascade do |t|
     t.string  "name"
