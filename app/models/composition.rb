@@ -29,7 +29,7 @@ class Composition < ActiveRecord::Base
 
   do_not_validate_attachment_file_type :song
 
-  has_one :picture, as: :imageable
+  has_one :picture, as: :imageable, dependent: :destroy
   has_and_belongs_to_many :members
 
   alias_attribute :authors, :members

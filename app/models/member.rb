@@ -19,7 +19,7 @@ class Member < ActiveRecord::Base
 
   validates_presence_of :name, :description
 
-  has_one :picture, as: :imageable
+  has_one :picture, as: :imageable, dependent: :destroy
   has_and_belongs_to_many :compositions
 
   def avatar
