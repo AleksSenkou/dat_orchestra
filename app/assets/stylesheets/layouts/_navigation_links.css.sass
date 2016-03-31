@@ -1,4 +1,4 @@
-@import ../mixins
+@import mixins
 
 nav
   float: right
@@ -15,7 +15,7 @@ nav
   letter-spacing: 0.6px
   text-transform: uppercase
   +transition-opacity(200ms)
-  &:hover
+  &:hover:not(.current)
     +transform-translate(0px, -2px)
     opacity: 1
     color: #fff
