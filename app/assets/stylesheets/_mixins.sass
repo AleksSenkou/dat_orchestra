@@ -14,6 +14,12 @@
   -o-transition:      color $time ease
   transition:         color $time ease
 
+=transition-bgcolor($time)
+  -webkit-transition: background-color $time ease-in-out
+  -moz-transition:    background-color $time ease-in-out
+  -o-transition:      background-color $time ease-in-out
+  transition:         background-color $time ease-in-out
+
 =transition-opacity($time)
   -webkit-transition: opacity $time ease, -webkit-transform $time ease-in-out
   -moz-transition:    opacity $time ease, transform         $time ease-in-out
@@ -40,3 +46,9 @@
   -moz-filter: brightness($value)
   -ms-filter: brightness($value)
   -o-filter: brightness($value)
+
+=transition-width($time)
+  -webkit-transition: width 1s ease-in-out
+  -moz-transition: width 1s ease-in-out
+  -o-transition: width 1s ease-in-out
+  transition: width 1s ease-in-out

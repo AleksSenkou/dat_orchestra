@@ -1,0 +1,86 @@
+@import mixins
+
+.gallery-container
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+
+.filter-bar
+  display: inline-flex
+  div
+    width: 270px
+
+.filter
+  width: 660px !important
+  margin: 0 auto
+  padding: 0
+  display: table
+  text-align: center
+  font-family: oxygen
+  letter-spacing: 1px
+  li
+    width: 100px
+    color: white
+    cursor: pointer
+    display: inline-block
+    text-transform: uppercase
+    padding: 15px 33px
+    background-color: #585858
+    +transition-bgcolor(200ms)
+    &:nth-child(2)
+      width: 200px
+      border-left: 1px solid #212121
+      border-right: 1px solid #212121
+    &.active
+      background-color: #212121
+    &:hover:not(.active)
+      background-color: rgb(64, 64, 64)
+
+.search-box
+  display: flex
+  height: 50px
+
+.search-icon
+  width: 24px
+  height: 24px
+  padding: 12px
+  margin: auto 0
+  cursor: pointer
+  border: 1px solid rgb(64, 64, 64)
+  border-right: none
+  +transition-bgcolor(200ms)
+  &:hover
+    background-color: rgb(228, 228, 228)
+  &.active
+    background-color: rgb(228, 228, 228)
+
+.filtr-search
+  width: 0
+  padding: 0
+  font-family: oxygen
+  font-size: 14px
+  text-transform: uppercase
+  outline: none
+  border: 1px solid rgb(64, 64, 64)
+  border-left: none
+  +transition-width(1s)
+  &.active
+    width: 220px
+
+.filtr-container
+  margin-top: 30px
+
+.filtr-item
+  // padding: 1rem
+
+.item-desc
+  background-color: rgba(0, 0, 0, 0.5)
+  color: white
+  position: absolute
+  text-transform: uppercase
+  text-align: center
+  padding: 1rem
+  z-index: 1
+  bottom: 1rem
+  left: 1rem
+  right: 1rem

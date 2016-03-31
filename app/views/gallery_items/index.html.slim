@@ -1,0 +1,19 @@
+.med-divider
+
+.gallery-container
+  .filter-bar
+    .empty
+    .filter
+      li data-filter="1" Video
+      li.active data-filter="all" All
+      li data-filter="2" Photo
+    .search-box
+      = image_tag image_path('search-icon.png'), class: 'search-icon'
+      input.filtr-search data-search="" name="filtr-search"
+  .filtr-container
+    - @gallery_items.each do |item|
+      .filtr-item data-category="#{ item.is_video? ? '1' : '2' }"
+        img src=item.source.url(:medium)
+        span.item-desc= item.name
+
+.med-divider
