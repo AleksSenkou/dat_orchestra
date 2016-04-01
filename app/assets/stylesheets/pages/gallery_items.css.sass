@@ -1,9 +1,11 @@
 @import mixins
 
 .gallery-container
-  max-width: 1200px
+  max-width: 1200px !important
   margin-left: auto
   margin-right: auto
+  padding-top: 7px
+  padding-bottom: 7px
 
 .filter-bar
   display: inline-flex
@@ -63,24 +65,83 @@
   outline: none
   border: 1px solid rgb(64, 64, 64)
   border-left: none
-  +transition-width(1s)
+  +transition-width(600ms)
   &.active
     width: 220px
 
 .filtr-container
-  margin-top: 30px
+  margin-top: 40px
+
+$item-image-width: 290px
+$item-image-height: 230px
+$play-border-width: 3px
 
 .filtr-item
-  // padding: 1rem
+  width: 300px
+  height: 240px
+  &:hover
+    > .item-image, .item-name
+      opacity: 0.8
+    > .gallery-play-icon
+      background-image: image-url('play-music-big.png')
+      +transition-opacity(400ms)
+      +transform-scale(1.5)
+    > .gallery-play
+      width: $item-image-width - $play-border-width - 3px
+      height: $item-image-height - $play-border-width - 3px
+      border: $play-border-width solid black
+      border-radius: 3px
 
-.item-desc
-  background-color: rgba(0, 0, 0, 0.5)
-  color: white
+.gallery-play
   position: absolute
+  z-index: 3
+  left: 5px
+  bottom: 10px
+  width: $item-image-width
+  height: $item-image-height
+  cursor: pointer
+
+.gallery-play-icon
+  @extend .gallery-play-icon-position
+  z-index: 2
+  background-size: cover
+  background-image: image-url('play-music.png')
+
+.gallery-play-icon-block
+  @extend .gallery-play-icon-position
+  z-index: 3
+  cursor: pointer
+  border-radius: 80px
+
+.gallery-play-icon-position
+  position: absolute
+  display: block
+  left: 50%
+  top: 50%
+  width: 80px
+  height: 80px
+  margin-left: -40px
+  margin-top: -40px
+
+.item-image
+  display: block
+  width: $item-image-width
+  height: $item-image-height
+  margin-left: auto
+  margin-right: auto
+  border-radius: 3px
+  +transition-opacity(200ms)
+
+.item-name
+  position: absolute
+  width: 281px
+  bottom: 10px
+  left: 5px
+  color: white
   text-transform: uppercase
   text-align: center
-  padding: 1rem
-  z-index: 1
-  bottom: 1rem
-  left: 1rem
-  right: 1rem
+  padding: 10% 1% 4% 2%
+  border-bottom-left-radius: 3px
+  border-bottom-right-radius: 3px
+  +transition-opacity(200ms)
+  +back-linear-gradient(270deg, rgba(0,0,0,0.00), rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.76))
