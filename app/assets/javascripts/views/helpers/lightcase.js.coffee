@@ -7,13 +7,14 @@ class DatOrchestra.ViewsHelpers.LightCase extends Backbone.View
   initialize: ->
     @base = new DatOrchestra.ViewsHelpers.Base()
 
-  render: ->
+  render: (audioPlayer) ->
     $('a[data-rel^=lightcase]').lightcase
       forceWidth: true
       forceHeight: true
       overlayOpacity: 0.95
       showSequenceInfo: false
       closeOnOverlayClick: false
+      audioPlayer: audioPlayer
       transitionIn: 'elastic'
       transition: 'scrollHorizontal'
       onStart: start: () => @base.removeHrefs()

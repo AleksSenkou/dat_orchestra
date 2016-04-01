@@ -10,7 +10,7 @@ class DatOrchestra.Views.GalleryItems extends Backbone.View
     @searchInput = new DatOrchestra.ViewsHelpers.SearchInput()
 
   render: ->
-    @lightcase.render()
+    @lightcase.render(audioPlayer: false)
     @base.removeHrefs()
     @filterizr()
 

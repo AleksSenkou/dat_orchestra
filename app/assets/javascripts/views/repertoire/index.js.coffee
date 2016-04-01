@@ -6,5 +6,5 @@ class DatOrchestra.Views.Repertoire extends Backbone.View
     @base = new DatOrchestra.ViewsHelpers.Base()
 
   render: ->
-    @lightcase.render()
+    @lightcase.render(audioPlayer: true)
     @base.removeHrefs()

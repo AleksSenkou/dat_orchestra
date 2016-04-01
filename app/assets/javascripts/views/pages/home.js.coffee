@@ -12,7 +12,7 @@ class DatOrchestra.Views.Home extends Backbone.View
     @changeHeaderTextOpacityEvent()
 
   render: ->
-    @lightcase.render()
+    @lightcase.render(audioPlayer: true)
     @base.removeHrefs()
 
   changeHeaderTextOpacityEvent: ->
