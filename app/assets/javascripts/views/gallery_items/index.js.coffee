@@ -8,16 +8,22 @@ class DatOrchestra.Views.GalleryItems extends Backbone.View
     @lightcase = new DatOrchestra.ViewsHelpers.LightCase()
     @base = new DatOrchestra.ViewsHelpers.Base()
     @searchInput = new DatOrchestra.ViewsHelpers.SearchInput()
+    @searchInput.on 'close', () => @restartFilterizr()
 
   render: ->
     @lightcase.render(audioPlayer: false)
     @base.removeHrefs()
-    @filterizr()
+    @filterizr 'all'
 
-  filterizr: ->
-    $('.filtr-container').filterizr()
+  restartFilterizr: ->
+    filterMode = $('.filter li.active').data('filter')
+    @filterizr filterMode
+
+  filterizr: (filterMode) ->
+    $('.filtr-container').filterizr(
+      filter: filterMode
+    )
 
   toggleActiveFilter: (e) ->
     $('.filter li').removeClass 'active'
     $(e.target).addClass 'active'
-

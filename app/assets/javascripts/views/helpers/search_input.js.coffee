@@ -12,7 +12,9 @@ class DatOrchestra.ViewsHelpers.SearchInput extends Backbone.View
 
   closeSearchInput: ->
     _.each [ @icon, @searchInput ], (tag) => tag.removeClass @active
+    @searchInput.val ''
     @searchInput.css('padding-left', '0px')
+    @trigger 'close'
 
   openSearchInput: ->
     _.each [ @icon, @searchInput ], (tag) => tag.addClass @active
