@@ -13,11 +13,11 @@
   .filtr-container
     - @gallery_items.each do |item|
       .filtr-item data-category="#{ item.is_video? ? '1' : '2' }"
-        = image_tag item.source.url(:medium), class: "item-image #{ item.is_video? ? '1' : '2' }"
-        a.gallery-play href=image_path(item.source.url(:large)) data-title=item.name.capitalize data-rel="lightcase:myCollection"
+        = image_tag item.thumbnail, class: "item-image #{ item.is_video? ? '1' : '2' }"
+        a.gallery-play href=item.url data-title=item.title.capitalize data-rel="lightcase:myCollection"
         - if item.is_video?
           .gallery-play-icon-block
           .gallery-play-icon
-        span.item-name= item.name
+        span.item-title= item.title
 
 .med-divider

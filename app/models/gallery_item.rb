@@ -2,13 +2,14 @@
 #
 # Table name: gallery_items
 #
-#  id                  :integer          not null, primary key
-#  name                :string
-#  source_file_name    :string
-#  source_content_type :string
-#  source_file_size    :integer
-#  source_updated_at   :datetime
-#  position            :integer
+#  id                 :integer          not null, primary key
+#  title              :string
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  position           :integer
+#  video_link         :string
 #
 
 class GalleryItem < ActiveRecord::Base
@@ -16,33 +17,40 @@ class GalleryItem < ActiveRecord::Base
 
   acts_as_list
 
-  has_attached_file :source,
-    styles: lambda { |a| a.instance.is_image? ?
-      { medium: "x300>", large: "1000x550>" }
-      :
-      { medium: { geometry: "300x300>", format: 'jpg' },
-        large: { geometry: "1000x550>", format: 'jpg' },
-        large_video: { geometry: "1000x550>", format: 'flv' }
-      }
-    },
-    processors: lambda { |a| a.is_video? ? [:transcoder] : [:thumbnail] },
-    path: ":rails_root/public/gallery_items/:id/:style_:filename",
-    url: "/gallery_items/:id/:style_:filename"
+  has_attached_file :image,
+    styles: { medium: "x300>", large: "1000x550>" },
+    path: ":rails_root/public/gallery/:id/:style_:filename",
+    url: "/gallery/:id/:style_:filename"
 
-  validates_attachment_presence :source
-
-  validates_attachment_content_type :source,
-    content_type: /\Avideo\/.*\Z/,
-    if: :is_video?
-  validates_attachment_content_type :source,
-    content_type: /\Aimage\/.*\Z/,
-    if: :is_image?
+  do_not_validate_attachment_file_type :image
 
   def is_video?
-    source.content_type =~ %r(video)
+    not video_link.blank?
   end
 
   def is_image?
-    source.content_type =~ %r(image)
+    image.exists?
+  end
+
+  def url
+    is_image? ? image.url(:large) : video_api_url
+  end
+
+  def thumbnail
+    is_image? ? image.url(:medium) : video_thumbnail
+  end
+
+  def video_api_url
+    "//www.youtube.com/v/" + video_id
+  end
+
+  def video_thumbnail
+    "http://img.youtube.com/vi/#{ video_id }/0.jpg"
+  end
+
+  private
+
+  def video_id
+    YoutubeID.from video_link
   end
 end

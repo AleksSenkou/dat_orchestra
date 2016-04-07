@@ -1,7 +1,9 @@
 class DatOrchestra.Routers.Pages extends Backbone.Router
   routes:
     'repertoire' : 'repertoirePage'
-    'gallery_items': 'galleryItems'
+    'repertoire/' : 'repertoirePage'
+    'gallery': 'galleryItems'
+    'gallery/': 'galleryItems'
     '' : 'homePage'
 
   homePage: ->

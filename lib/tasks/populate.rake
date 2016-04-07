@@ -39,7 +39,7 @@ def clean_database
 end
 
 def clean_public_data
-  [ 'images', 'music', 'gallery_items' ].each do |folder|
+  [ 'images', 'music', 'gallery' ].each do |folder|
     FileUtils.rm_rf 'public/' + folder
   end
 end
@@ -92,17 +92,20 @@ def add_members_to_compositions
   composition_ids.each do |cm_id|
     rand(1..MEMBERS_COUNT / 2).times do
       CompositionsMembers.create composition_id: cm_id, member_id: member_ids.sample
-   end
- end
+    end
+  end
 end
 
 def make_gallery_items
   GALLERY_ITEMS_COUNT.times do |index|
-    name  = Faker::Lorem.word
-    source = [ method(:sample_image), method(:sample_video) ].sample.call
+    title = Faker::Lorem.word
     position = index + 1
 
-    GalleryItem.create name: name, source: source, position: position
+    if rand(0..1) == 0
+      GalleryItem.create title: title, position: position, image: sample_image
+    else
+      GalleryItem.create title: title, position: position, video_link: sample_video_link
+    end
   end
 end
 
@@ -126,8 +129,8 @@ def sample_song
   open_file Dir[Rails.root.join('test', 'music', '*')].sample
 end
 
-def sample_video
-  open_file Dir[Rails.root.join('test', 'video', '*')].sample
+def sample_video_link
+  ['https://www.youtube.com/watch?v=3tZSY6RRGlw', 'https://www.youtube.com/watch?v=TiCxqhu9cio', 'https://www.youtube.com/watch?v=IxuThNgl3YA&list=RDTiCxqhu9cio&index=4&nohtml5=False'].sample
 end
 
 def open_file(file_name); File.new(file_name); end

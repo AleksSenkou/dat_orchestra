@@ -6,8 +6,6 @@ module HeaderHelper
   def subheading
     if home_page?
       @base_page.subheading
-    elsif controller_name.include? 'gallery'
-      'gallery'
     else
       controller_name
     end.capitalize

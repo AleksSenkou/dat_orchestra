@@ -42,7 +42,7 @@ db/*.sqlite3
 /public/cache
 /public/images
 /public/music
-/public/gallery_items
+/public/gallery
 /public/stylesheets/compiled
 /public/system/*
 /spec/tmp/*
