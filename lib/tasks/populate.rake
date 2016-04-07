@@ -2,44 +2,49 @@ require "faker"
 require "populator"
 require 'fileutils'
 
-COMPOSITIONS_COUNT = 16
-MEMBERS_COUNT = 10
-GALLERY_ITEMS_COUNT = 20
+COMPOSITIONS_COUNT = 10
+MEMBERS_COUNT = 12
+GALLERY_ITEMS_COUNT = 10
 
 namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
-    puts 'clean_database'
-    clean_database
-    puts 'clean_public_data'
-    clean_public_data
+    # puts 'clean_database'
+    # clean_database
+    # puts 'clean_public_data'
+    # clean_public_data
 
-    puts 'make_base_page'
-    make_base_page
+    # puts 'make_base_page'
+    # make_base_page
 
-    puts 'make_members'
-    make_members
-    puts 'make_pictures_for_members'
-    make_pictures_for_members
+    # puts 'make_instruments'
+    # make_instruments
 
-    puts 'make_compositions'
-    make_compositions
-    puts 'make_pictures_for_compositions'
-    make_pictures_for_compositions
-    puts 'add_members_to_compositions'
-    add_members_to_compositions
+    # puts 'make_members'
+    # make_members
+    # puts 'make_pictures_for_members'
+    # make_pictures_for_members
+    puts 'add_instruments_to_members'
+    add_instruments_to_members
 
-    puts 'make_gallery_items'
-    make_gallery_items
+    # puts 'make_compositions'
+    # make_compositions
+    # puts 'make_pictures_for_compositions'
+    # make_pictures_for_compositions
+    # puts 'add_members_to_compositions'
+    # add_members_to_compositions
+
+    # puts 'make_gallery_items'
+    # make_gallery_items
   end
 end
 
 def clean_database
-  [ Composition, Picture, Member, BasePage, GalleryItem ].each(&:delete_all)
+  [ Composition, Picture, Member, BasePage, GalleryItem, Instrument ].each(&:delete_all)
 end
 
 def clean_public_data
-  [ 'images', 'music', 'gallery' ].each do |folder|
+  [ 'images', 'music', 'gallery', 'instruments' ].each do |folder|
     FileUtils.rm_rf 'public/' + folder
   end
 end
@@ -53,6 +58,12 @@ def make_base_page
     heading: 'DAT-arkestr',
     subheading: 'We will make your concert savemem'
   )
+end
+
+def make_instruments
+  Dir[Rails.root.join('test', 'images', 'instruments', '*')].each do |image_path|
+    Instrument.create image: open_file(image_path)
+  end
 end
 
 def make_compositions
@@ -73,15 +84,30 @@ end
 
 def make_members
   Member.populate MEMBERS_COUNT do |member, index|
-    member.name        = Faker::Name.name
-    member.description = Faker::Lorem.sentence(4, true, 20)
+    member.first_name  = Faker::Name.first_name
+    member.surname     = Faker::Name.last_name
+    member.description = Faker::Lorem.sentence(4, true, 20).first(150)
     member.position    = index + 1
   end
 end
 
 def make_pictures_for_members
   Member.ids.each do |member_id|
-    create_picture member_id, 'Member', Faker::Avatar.image
+    gender = [ 'men', 'women' ].sample
+    number = rand(1..60).to_s
+    image = "https://randomuser.me/api/portraits/#{ gender }/#{ number }.jpg"
+    create_picture member_id, 'Member', image
+  end
+end
+
+def add_instruments_to_members
+  member_ids = Member.ids
+  instrument_ids = Instrument.ids
+
+  member_ids.each do |m_id|
+    rand(1..6).times do
+      MemberInstrument.create member_id: m_id, instrument_id: instrument_ids.sample
+    end
   end
 end
 

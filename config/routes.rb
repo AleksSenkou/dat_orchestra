@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :repertoire, only: :index
   resources :gallery_items, path: 'gallery', only: :index
+  resources :members, only: :index
 end

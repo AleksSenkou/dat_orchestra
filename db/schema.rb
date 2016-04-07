@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407101433) do
+ActiveRecord::Schema.define(version: 20160407173412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,10 +67,27 @@ ActiveRecord::Schema.define(version: 20160407101433) do
     t.string   "video_link"
   end
 
+  create_table "instruments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "member_instruments", force: :cascade do |t|
+    t.integer "member_id"
+    t.integer "instrument_id"
+  end
+
+  add_index "member_instruments", ["instrument_id"], name: "index_member_instruments_on_instrument_id", using: :btree
+  add_index "member_instruments", ["member_id"], name: "index_member_instruments_on_member_id", using: :btree
+
   create_table "members", force: :cascade do |t|
-    t.string  "name"
+    t.string  "first_name"
     t.text    "description"
     t.integer "position"
+    t.string  "surname"
   end
 
   add_index "members", ["position"], name: "index_members_on_position", unique: true, using: :btree

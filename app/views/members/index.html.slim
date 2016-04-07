@@ -1,0 +1,21 @@
+.med-divider
+
+.members-container
+  - @members.each_slice(3) do |members_block|
+    ul.members-block
+      - members_block.each do |member|
+        li.member
+          .member-avatar-block
+            = image_tag member.avatar.url(:medium), class: 'member-avatar'
+          .member-name
+            = member.first_name.capitalize
+            | &nbsp
+            = member.surname.capitalize
+          .member-description
+            = member.description
+          ul.member-instruments
+            - member.instruments.first(7).each do |instrument|
+              li.instrument
+                = image_tag instrument.image.url(:little)
+
+.med-divider

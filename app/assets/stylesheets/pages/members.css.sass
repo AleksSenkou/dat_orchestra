@@ -1,0 +1,60 @@
+@import 'mixins'
+
+.members-container
+  max-width: 1200px !important
+  margin-left: auto
+  margin-right: auto
+  padding-top: 7px
+  padding-bottom: 7px
+
+.members-block
+  margin: 0 auto
+  padding: 0
+  text-align: center
+
+.member
+  width: 350px
+  height: 420px
+  border-radius: 10px
+  font-family: oxygen
+  display: inline-table
+  margin: 40px 20px 0px 20px
+  box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.5)
+  background-color: rgba(175, 175, 175, 0.18)
+  &:hover
+    .member-avatar
+      +transform-scale(1.1)
+
+.member-avatar-block
+  padding-top: 30px
+  height: 210px
+
+.member-avatar
+  width: 180px
+  height: 180px
+  border-radius: 50%
+  +transition-opacity(200ms)
+
+.member-name
+  color: #4a545a
+  font-size: 22px
+  letter-spacing: 1px
+
+.member-description
+  height: 91px
+  font-size: 18px
+  color: rgb(130, 135, 138)
+  cursor: default
+  padding: 15px 10px 0 10px
+
+.member-instruments
+  margin: 0 auto
+  padding: 0px 0 0 0
+  text-align: center
+
+.instrument
+  margin: 0px 2px
+  display: inline
+  img
+    height: 40px
+    width: 40px
