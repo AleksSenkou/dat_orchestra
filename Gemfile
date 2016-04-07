@@ -28,7 +28,6 @@ gem 'html2slim', '~> 0.2.0'
 
 ### Model ###
 gem 'paperclip', '~> 4.2'
-gem 'paperclip-av-transcoder'
 gem 'acts_as_list'
 gem 'youtube_id'
 
