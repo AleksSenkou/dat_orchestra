@@ -647,6 +647,10 @@
         * @private
         */
         _handleFiltering: function(target) {
+            // activate those which we need
+            for (var i = 0; i < target.length; i++) {
+                target[i].css('display', '')
+            }
             var self = this,
                 toFilterOut = self._getArrayOfUniqueItems(self._activeArray, target);
             //Minimize all .filtr-item elements that are not the same between categories
