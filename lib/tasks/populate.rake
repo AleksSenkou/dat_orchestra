@@ -4,7 +4,7 @@ require 'fileutils'
 
 COMPOSITIONS_COUNT = 16
 MEMBERS_COUNT = 10
-GALLERY_ITEMS_COUNT = 10
+GALLERY_ITEMS_COUNT = 20
 
 namespace :db do
   desc 'Fill database with sample data'
