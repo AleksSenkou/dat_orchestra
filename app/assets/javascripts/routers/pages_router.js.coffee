@@ -6,8 +6,10 @@ class DatOrchestra.Routers.Pages extends Backbone.Router
     'gallery/': 'galleryItems'
     'members': 'membersIndex'
     'members/': 'membersIndex'
-    'contacts': 'contactsPage'
-    'contacts/': 'contactsPage'
+    'contacts': 'contactsIndex'
+    'contacts/': 'contactsIndex'
+    'rider': 'riderPage'
+    'rider/': 'riderPage'
     '' : 'homePage'
 
   homePage: ->
@@ -22,5 +24,8 @@ class DatOrchestra.Routers.Pages extends Backbone.Router
   membersIndex: ->
     new DatOrchestra.Views.Members().render()
 
-  contactsPage: ->
+  contactsIndex: ->
     new DatOrchestra.Views.Contacts().render()
+
+  riderPage: ->
+    new DatOrchestra.Views.Rider().render()
