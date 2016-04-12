@@ -27,8 +27,9 @@ $play-border-width: 3px
     > .featured-text, .featured-image
       opacity: 0.8
     > .play-icon
-      @extend .play-icon-hover
-      background-size: cover
+      background-image: image-url('play-music-big.png')
+      +transition-opacity(400ms)
+      +transform-scale(1.5)
     > .play
       width: $featured-image-width - $play-border-width - 3px
       height: $featured-image-height - $play-border-width - 2px
@@ -53,8 +54,9 @@ $play-border-width: 3px
   height: $featured-image-height
 
 .play-icon
+  @extend .play-icon-hover
   z-index: 2
-  display: none
+  background-size: cover
   background-image: image-url('play-music.png')
 
 .play-icon-block
@@ -62,10 +64,6 @@ $play-border-width: 3px
   z-index: 3
   cursor: pointer
   border-radius: 80px
-  &:hover + .play-icon
-    background-image: image-url('play-music-big.png')
-    +transition-opacity(400ms)
-    +transform-scale(1.5)
 
 .play-icon-hover
   position: absolute
