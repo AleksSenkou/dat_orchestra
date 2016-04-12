@@ -39,15 +39,18 @@ namespace :db do
 
     puts 'make_gallery_items'
     make_gallery_items
+
+    puts 'make_riders'
+    make_riders
   end
 end
 
 def clean_database
-  [ Composition, Picture, Member, BasePage, GalleryItem, Instrument ].each(&:delete_all)
+  [ Composition, Picture, Member, BasePage, GalleryItem, Instrument, Contact, Rider ].each(&:delete_all)
 end
 
 def clean_public_data
-  [ 'images', 'music', 'gallery', 'instruments' ].each do |folder|
+  [ 'images', 'music', 'gallery', 'instruments', 'riders' ].each do |folder|
     FileUtils.rm_rf 'public/' + folder
   end
 end
@@ -66,6 +69,16 @@ end
 def make_instruments
   Dir[Rails.root.join('test', 'images', 'instruments', '*')].each do |image_path|
     Instrument.create image: open_file(image_path)
+  end
+end
+
+def make_riders
+  [
+    [ 'sound_rus.pdf', 'Звуковой райдер' ],
+    [ 'sound_eng.pdf', 'Sound rider' ]
+  ].each do |rider_info|
+    doc_path = Rails.root.join('test', 'documents', rider_info[0])
+    Rider.create title: rider_info[1], document: open_file(doc_path)
   end
 end
 

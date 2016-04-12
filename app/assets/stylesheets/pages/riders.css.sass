@@ -1,1 +1,45 @@
 @import mixins
+
+.riders-container
+  max-width: 800px !important
+  margin-left: auto
+  margin-right: auto
+  padding-top: 7px
+  padding-bottom: 7px
+
+.riders-block
+  margin: 10px auto
+  padding: 0
+  text-align: center
+
+.rider
+  width: 340px
+  height: 360px
+  display: inline-table
+
+.rider-title-bar
+  padding: 10px 0px 10px 30.5px
+
+.rider-title
+  display: inline
+  text-transform: uppercase
+  font-family: oxygen
+  letter-spacing: 1px
+  font-size: 16px
+
+.download-icon
+  height: 20px
+  position: relative
+  top: 5px
+  margin-left: 10px
+
+.rider-preview
+  padding-top: 10px
+  img
+    cursor: pointer
+    border: 1px solid rgba(88, 88, 88, 0.5)
+    +transition-border-color(200ms)
+    +transition-bgcolor(200ms)
+    &:hover
+      border-color: rgb(88, 88, 88)
+      background-color: rgba(88, 88, 88, 0.1)

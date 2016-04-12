@@ -1,5 +1,14 @@
 .med-divider
 
-
+.riders-container
+  - @riders.each_slice(2) do |riders_block|
+    ul.riders-block
+      - riders_block.each do |rider|
+        li.rider
+          .rider-title-bar
+            .rider-title= rider.title
+            = link_to image_tag('download.png'), download_rider_path(rider), class: 'download-icon'
+          .rider-preview
+            = link_to image_tag(rider.document.url(:thumb)), rider.document.url(:original)
 
 .med-divider
