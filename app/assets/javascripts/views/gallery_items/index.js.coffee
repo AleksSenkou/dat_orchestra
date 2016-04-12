@@ -33,7 +33,7 @@ class DatOrchestra.Views.GalleryItems extends Backbone.View
     switch $(e.target).data('filter')
       when 1 then view.deactivate(2) and view.activate(1)
       when 2 then view.deactivate(1) and view.activate(2)
-      when 'all' then view.activate('all')
+      when 'all' then view.activate(1) and view.activate(2)
     view.lightcase.render(audioPlayer: false)
 
   activate: (filter) ->
