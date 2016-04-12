@@ -2,17 +2,16 @@
 #
 # Table name: contacts
 #
-#  id              :integer          not null, primary key
-#  email           :string
-#  phone_number    :string
-#  name            :string
-#  address_country :string
-#  address_city    :string
-#  address_street  :string
+#  id           :integer          not null, primary key
+#  email        :string
+#  phone_number :string
+#  name         :string
+#  lat          :float
+#  lng          :float
 #
 
 class Contact < ActiveRecord::Base
-  validates_presence_of :name, :email, :phone_number, :address_city, :address_country, :address_street
+  validates_presence_of :name, :email, :phone_number, :lat, :lng
 
   has_one :picture, as: :imageable, dependent: :destroy
 

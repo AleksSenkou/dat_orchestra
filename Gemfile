@@ -14,6 +14,8 @@ gem 'underscore-rails'
 gem 'jquery-mousewheel-rails'
 gem 'mwheelintent-rails'
 gem 'audiojs-rails'
+gem 'gmaps4rails'
+gem 'gon'
 
 ### Styles ###
 gem 'bootstrap-sass', '~> 3.3.6'

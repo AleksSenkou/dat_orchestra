@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408115841) do
+ActiveRecord::Schema.define(version: 20160412111416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,9 +61,8 @@ ActiveRecord::Schema.define(version: 20160408115841) do
     t.string "email"
     t.string "phone_number"
     t.string "name"
-    t.string "address_country"
-    t.string "address_city"
-    t.string "address_street"
+    t.float  "lat"
+    t.float  "lng"
   end
 
   create_table "gallery_items", force: :cascade do |t|

@@ -74,9 +74,8 @@ def make_contacts
     email: Faker::Internet.email,
     name: Faker::Name.first_name,
     phone_number: Faker::PhoneNumber.phone_number.first(12),
-    address_country: Faker::Address.country,
-    address_city: Faker::Address.city,
-    address_street: Faker::Address.street_address
+    lat: 53.9145418,
+    lng: 27.5845092
   )
 
   create_picture contact.id, 'Contact', sample_avatar

@@ -1,8 +1,10 @@
 class MessagesController < ApplicationController
+  skip_before_action :load_base_page
+
   def create
     @message = Message.new message_params
 
-    sleep(0.15)
+    sleep(0.08)
 
     if @message.save
       @message = Message.new
