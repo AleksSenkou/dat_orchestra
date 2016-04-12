@@ -1,0 +1,19 @@
+.med-divider
+
+.contacts-container
+  ul.contacts-box
+    li#message-form
+      = render 'messages/form'
+    li.contacts
+      .contacts-avatar
+        = image_tag @contacts.avatar.url(:little)
+      .contacts-name
+        = @contacts.name.capitalize
+      .contacts-email
+        = @contacts.email
+        = image_tag image_path('mail.png'), class: 'mail-icon'
+      .contacts-phone
+        = @contacts.phone_number
+        = image_tag image_path('phone.png'), class: 'phone-icon'
+
+.med-divider

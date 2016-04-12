@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407173412) do
+ActiveRecord::Schema.define(version: 20160408115841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 20160407173412) do
   add_index "compositions_members", ["composition_id"], name: "index_compositions_members_on_composition_id", using: :btree
   add_index "compositions_members", ["member_id"], name: "index_compositions_members_on_member_id", using: :btree
 
+  create_table "contacts", force: :cascade do |t|
+    t.string "email"
+    t.string "phone_number"
+    t.string "name"
+    t.string "address_country"
+    t.string "address_city"
+    t.string "address_street"
+  end
+
   create_table "gallery_items", force: :cascade do |t|
     t.string   "title"
     t.string   "image_file_name"
@@ -91,6 +100,14 @@ ActiveRecord::Schema.define(version: 20160407173412) do
   end
 
   add_index "members", ["position"], name: "index_members_on_position", unique: true, using: :btree
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.integer  "imageable_id"

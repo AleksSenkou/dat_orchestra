@@ -9,33 +9,36 @@ GALLERY_ITEMS_COUNT = 10
 namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
-    # puts 'clean_database'
-    # clean_database
-    # puts 'clean_public_data'
-    # clean_public_data
+    puts 'clean_database'
+    clean_database
+    puts 'clean_public_data'
+    clean_public_data
 
-    # puts 'make_base_page'
-    # make_base_page
+    puts 'make_base_page'
+    make_base_page
 
-    # puts 'make_instruments'
-    # make_instruments
+    puts 'make_instruments'
+    make_instruments
 
-    # puts 'make_members'
-    # make_members
-    # puts 'make_pictures_for_members'
-    # make_pictures_for_members
+    puts 'make_contacts'
+    make_contacts
+
+    puts 'make_members'
+    make_members
+    puts 'make_pictures_for_members'
+    make_pictures_for_members
     puts 'add_instruments_to_members'
     add_instruments_to_members
 
-    # puts 'make_compositions'
-    # make_compositions
-    # puts 'make_pictures_for_compositions'
-    # make_pictures_for_compositions
-    # puts 'add_members_to_compositions'
-    # add_members_to_compositions
+    puts 'make_compositions'
+    make_compositions
+    puts 'make_pictures_for_compositions'
+    make_pictures_for_compositions
+    puts 'add_members_to_compositions'
+    add_members_to_compositions
 
-    # puts 'make_gallery_items'
-    # make_gallery_items
+    puts 'make_gallery_items'
+    make_gallery_items
   end
 end
 
@@ -66,6 +69,19 @@ def make_instruments
   end
 end
 
+def make_contacts
+  contact = Contact.create!(
+    email: Faker::Internet.email,
+    name: Faker::Name.first_name,
+    phone_number: Faker::PhoneNumber.phone_number.first(12),
+    address_country: Faker::Address.country,
+    address_city: Faker::Address.city,
+    address_street: Faker::Address.street_address
+  )
+
+  create_picture contact.id, 'Contact', sample_avatar
+end
+
 def make_compositions
   Composition.populate COMPOSITIONS_COUNT do |cm, index|
     cm.title       = Faker::Lorem.word
@@ -93,10 +109,7 @@ end
 
 def make_pictures_for_members
   Member.ids.each do |member_id|
-    gender = [ 'men', 'women' ].sample
-    number = rand(1..60).to_s
-    image = "https://randomuser.me/api/portraits/#{ gender }/#{ number }.jpg"
-    create_picture member_id, 'Member', image
+    create_picture member_id, 'Member', sample_avatar
   end
 end
 
@@ -153,6 +166,12 @@ end
 
 def sample_song
   open_file Dir[Rails.root.join('test', 'music', '*')].sample
+end
+
+def sample_avatar
+  gender = [ 'men', 'women' ].sample
+  number = rand(1..60).to_s
+  "https://randomuser.me/api/portraits/#{ gender }/#{ number }.jpg"
 end
 
 def sample_video_link

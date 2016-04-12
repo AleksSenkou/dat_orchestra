@@ -1,0 +1,9 @@
+= simple_form_for @message, remote: true do |f|
+  ul.message-name-email
+    li= f.input :name, autofocus: true
+    li= f.input :email
+  = f.input :message
+  .submit-block
+    = f.button :submit, value: 'send'
+    = image_tag image_path('ok.png'), class: 'ok-icon'
+    = image_tag image_path('loader.gif'), class: 'loader'

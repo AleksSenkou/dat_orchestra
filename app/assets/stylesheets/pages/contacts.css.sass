@@ -1,0 +1,136 @@
+@import mixins
+
+.contacts-container
+  max-width: 1030px !important
+  margin-left: auto
+  margin-right: auto
+  padding-top: 7px
+  padding-bottom: 7px
+
+.contacts-box
+  background-color: rgba(175, 175, 175, 0.18)
+  display: inline-flex
+  margin: 0
+  padding: 20px
+  height: 295px
+  li
+    display: inline
+
+#message-form
+  width: 700px
+  font-family: oxygen
+
+.message-name-email
+  margin: 0
+  padding: 0
+  display: inline-flex
+  li
+    display: inline
+    width: 330px
+    height: 70px
+
+label
+  font-size: 13px
+  color: #4e4e4d
+  font-weight: 600
+  text-transform: uppercase
+  letter-spacing: 1px
+
+abbr
+  font-family: "brandon-grotesque", Helvetica, Arial, sans-serif
+  font-size: 20px
+  color: #e8554e
+  position: relative
+  top: 5px
+
+.input-block
+  display: table-caption
+  > input, textarea
+    margin-top: 5px
+    padding: 10px 10px
+    width: 270px
+    outline: none
+    border-radius: 4px
+    border: 1px solid rgba(88, 88, 88, 0.5)
+    +transition-border-color(200ms)
+    &:focus
+      border-color: rgb(88, 88, 88)
+  > textarea
+    width: 600px
+    height: 80px
+    resize: none
+
+.message_message
+  margin-top: 15px
+
+.btn
+  color: white
+  margin-top: 30px
+  width: 130px
+  height: 35px
+  border: none
+  outline: none
+  border-radius: 4px
+  background-color: #585858
+  cursor: pointer
+  text-transform: uppercase
+  letter-spacing: 1px
+  font-weight: 600
+  +transition-bgcolor(200ms)
+  &:hover
+    background-color: rgb(64, 64, 64)
+
+.contacts
+  padding-top: 29px
+  width: 290px
+  text-align: center
+  font-family: oxygen
+  font-size: 16px
+  letter-spacing: 1px
+
+.contacts-avatar
+  img
+    width: 100px
+    height: 100px
+    border-radius: 50px
+
+.contacts-name
+  margin-top: 5px
+
+.contacts-email
+  margin: 10px 0 6px 28px
+
+.mail-icon
+  position: relative
+  top: 3px
+  margin-left: 8px
+  height: 15px
+
+.contacts-phone
+  margin-left: 20px
+
+.phone-icon
+  position: relative
+  top: 3px
+  margin-left: 2px
+  height: 20px
+
+.error
+  margin-left: 10px
+  color: rgba(232, 85, 78, 0.74)
+
+.field_with_errors
+  > .input-block
+    > input, textarea
+      border-color: rgba(232, 85, 78, 0.59)
+      &:focus
+        border-color: rgb(232, 85, 78)
+
+.loader,
+.ok-icon
+  position: relative
+  display: none
+  height: 30px
+  width: 30px
+  top: 11px
+  margin-left: 5px
