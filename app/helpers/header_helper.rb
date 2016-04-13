@@ -7,11 +7,9 @@ module HeaderHelper
     if home_page?
       @base_page.subheading
     elsif controller_name == 'gallery_items'
-      'gallery'
-    elsif controller_name == 'contacts'
-      'contacts'
+      t('.gallery')
     else
-      controller_name
+      t(".#{ controller_name }")
     end.capitalize
   end
 end

@@ -1,0 +1,21 @@
+ru:
+  simple_form:
+    "yes": 'Да'
+    "no": 'Нет'
+    required:
+      text: 'обязательно для ввода'
+      mark: '*'
+    error_notification:
+      default_message: "Пожалуйста, исправьте следующие ошибки:"
+    labels:
+      defaults:
+        name: Имя
+        email: Email
+        message: Сообщение
+    hints:
+      defaults:
+        email: ''
+  helpers:
+    submit:
+      message:
+        create: Отправить

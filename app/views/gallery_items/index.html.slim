@@ -4,9 +4,9 @@
   .filter-bar
     .empty
     .filter
-      li data-filter="1" Video
-      li.active data-filter="all" All
-      li data-filter="2" Photo
+      li data-filter="1" #{ t('.video_label') }
+      li.active data-filter="all" #{ t('.all_label') }
+      li data-filter="2" #{ t('.photo_label') }
     .search-box
       = image_tag image_path('search-icon.png'), class: 'search-icon'
       input.filtr-search data-search="" name="filtr-search"

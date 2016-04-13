@@ -1,1 +1,36 @@
 ru:
+  layouts:
+    navigation_links:
+      repertoire: репертуар
+      gallery: галерея
+      members: состав
+      riders: райдеры
+      contacts: контакты
+    header:
+      repertoire: Репертуар
+      gallery: Галерея
+      members: Состав
+      riders: Райдеры
+      contacts: Контакты
+    footer:
+      dance_logo_title: Государственный ансамбль танца Беларуси
+  pages:
+    home:
+      section_title: Выбор зрителя
+  gallery_items:
+    index:
+      video_label: Видео
+      all_label: Все
+      photo_label: Фото
+  activerecord:
+    errors :
+      models:
+        message:
+          attributes:
+            email:
+              blank: не может быть пустым
+              invalid: невалидный формат
+            message:
+              blank: не может быть пустым
+            name:
+              blank: не может быть пустым

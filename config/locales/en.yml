@@ -1,2 +1,24 @@
 en:
-  hello: "Hello world"
+  layouts:
+    navigation_links:
+      repertoire: repertoire
+      gallery: gallery
+      members: members
+      riders: riders
+      contacts: contacts
+    header:
+      repertoire: repertoire
+      gallery: gallery
+      members: members
+      riders: riders
+      contacts: contacts
+    footer:
+      dance_logo_title: The state dance ensemble of Belarus
+  pages:
+    home:
+      section_title: Viewer's choice
+  gallery_items:
+    index:
+      video_label: Video
+      all_label: All
+      photo_label: Photo
