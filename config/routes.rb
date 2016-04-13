@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  get 'set_locale', to: 'pages#set_locale'
+
   resources :repertoire, only: :index
 
   resources :gallery_items, path: 'gallery', only: :index

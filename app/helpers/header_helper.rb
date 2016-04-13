@@ -8,7 +8,7 @@ module HeaderHelper
       @base_page.subheading
     elsif controller_name == 'gallery_items'
       'gallery'
-    elsif action_name == 'contacts'
+    elsif controller_name == 'contacts'
       'contacts'
     else
       controller_name

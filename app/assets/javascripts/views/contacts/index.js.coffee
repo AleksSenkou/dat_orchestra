@@ -6,9 +6,11 @@ class DatOrchestra.Views.Contacts extends Backbone.View
 
   initialize: ->
     @base = new DatOrchestra.ViewsHelpers.Base()
+    @localeSelect = new DatOrchestra.ViewsHelpers.LocaleSelect()
 
   render: ->
     @base.removeHrefs()
+    @localeSelect.render()
     @createMap()
 
   createMap: ->

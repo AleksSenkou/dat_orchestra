@@ -38,6 +38,8 @@ gem 'pg'
 gem 'annotate'
 gem 'faker'
 gem 'populator', git: "https://github.com/ryanb/populator.git"
+gem 'globalize', '~> 5.0.0'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'

@@ -7,12 +7,14 @@ class DatOrchestra.Views.GalleryItems extends Backbone.View
   initialize: ->
     @lightcase = new DatOrchestra.ViewsHelpers.LightCase()
     @base = new DatOrchestra.ViewsHelpers.Base()
+    @localeSelect = new DatOrchestra.ViewsHelpers.LocaleSelect()
     @searchInput = new DatOrchestra.ViewsHelpers.SearchInput()
     @searchInput.on 'close', () => @restartFilterizr()
 
   render: ->
     @lightcase.render(audioPlayer: false)
     @base.removeHrefs()
+    @localeSelect.render()
     @filterizr 'all'
 
   restartFilterizr: ->

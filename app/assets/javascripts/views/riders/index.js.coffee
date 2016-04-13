@@ -3,6 +3,8 @@ class DatOrchestra.Views.Rider extends Backbone.View
 
   initialize: ->
     @base = new DatOrchestra.ViewsHelpers.Base()
+    @localeSelect = new DatOrchestra.ViewsHelpers.LocaleSelect()
 
   render: ->
     @base.removeHrefs()
+    @localeSelect.render()

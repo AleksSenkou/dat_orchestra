@@ -26,9 +26,11 @@ nav
 .footer-links
   position: absolute
   margin-top: 75px
-  width: 45%
+  width: 49.5%
   max-width: 49.8%
   text-align: right
+  > .locale-select > .line
+    top: 11px
 
 .footer-link
   @extend .nav-link
@@ -36,3 +38,15 @@ nav
   font-size: 12px
   line-height: 26px
   letter-spacing: 1px
+
+.locale-select
+  display: inline-flex
+  padding-left: 70px
+  > .nav-link
+    padding: 10px
+
+.line
+  color: rgba(255, 255, 255, 0.5)
+  position: relative
+  cursor: default
+  top: 9px
