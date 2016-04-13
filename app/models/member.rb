@@ -14,12 +14,14 @@
 #
 
 class Member < ActiveRecord::Base
+  translates :first_name, :surname, :description
+
   default_scope { order(position: :asc) }
 
   acts_as_list
 
   validates_presence_of :first_name, :surname, :description
-  validates_length_of :description, maximum: 150
+  validates_length_of :description, maximum: 140
 
   has_one :picture, as: :imageable, dependent: :destroy
   has_and_belongs_to_many :compositions

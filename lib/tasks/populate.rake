@@ -56,14 +56,18 @@ def clean_public_data
 end
 
 def make_base_page
+  I18n.locale = :en
   BasePage.create!(
     logo: get_image('logo.png'),
     dance_logo: get_image('dance-logo.png'),
     favicon: get_image('favicon.png'),
     hero_image: get_image('hero.jpg'),
     heading: 'DAT-arkestr',
-    subheading: 'We will make your concert savemem'
+    subheading: 'We will make your concert unforgettable'
   )
+
+  I18n.locale = :ru
+  BasePage.first.update_attribute :subheading, 'Мы сделаем ваш концерт незабываемым'
 end
 
 def make_instruments
