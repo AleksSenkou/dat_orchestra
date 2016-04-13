@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new message_params
 
-    sleep(0.08)
+    sleep(0.04)
 
     if @message.save
       @message = Message.new
