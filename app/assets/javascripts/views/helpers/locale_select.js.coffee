@@ -5,7 +5,7 @@ class DatOrchestra.ViewsHelpers.LocaleSelect extends Backbone.View
     'click .locale-select > a:not(.current)' : 'changeLocale'
 
   render: ->
-    $('.locale-select > a.nav-link:not(.current)').removeAttr('href')
+    $('.locale-select > a:not(.current)').removeAttr('href')
 
   changeLocale: (e) ->
     $.ajax
@@ -13,5 +13,5 @@ class DatOrchestra.ViewsHelpers.LocaleSelect extends Backbone.View
       type: 'GET'
       data:
         locale: $(e.target).data('locale')
-      complete: () ->
+      complete: ->
         location.reload()

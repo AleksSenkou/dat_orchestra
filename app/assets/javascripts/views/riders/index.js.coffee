@@ -1,4 +1,4 @@
-class DatOrchestra.Views.Rider extends Backbone.View
+class DatOrchestra.Views.Riders extends Backbone.View
   el: 'body'
 
   initialize: ->
