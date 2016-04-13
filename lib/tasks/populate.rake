@@ -87,25 +87,38 @@ def make_riders
 end
 
 def make_contacts
+  I18n.locale = :en
   contact = Contact.create!(
     email: Faker::Internet.email,
-    name: Faker::Name.first_name,
+    name: 'Andrew',
     phone_number: Faker::PhoneNumber.phone_number.first(12),
     lat: 53.9145418,
     lng: 27.5845092
   )
 
+  I18n.locale = :ru
+  contact.update_attribute :name, 'Андрей'
+
   create_picture contact.id, 'Contact', sample_avatar
 end
 
 def make_compositions
+  I18n.locale = :en
   Composition.populate COMPOSITIONS_COUNT do |cm, index|
     cm.title       = Faker::Lorem.word
     cm.description = Faker::Lorem.sentence(3, true, 4)
     cm.position    = index + 1
   end
 
-  Composition.all.each { |cm| cm.song = sample_song; cm.save! }
+  I18n.locale = :ru
+  Composition.all.each do |cm|
+    title = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
+    description = Faker::Lorem.sentence(3, true, 4)
+    cm.update_attributes(title: title, description: description)
+
+    cm.song = sample_song
+    cm.save!
+ end
 end
 
 def make_pictures_for_compositions
@@ -115,11 +128,22 @@ def make_pictures_for_compositions
 end
 
 def make_members
+  I18n.locale = :en
   Member.populate MEMBERS_COUNT do |member, index|
     member.first_name  = Faker::Name.first_name
     member.surname     = Faker::Name.last_name
-    member.description = Faker::Lorem.sentence(4, true, 20).first(150)
+    member.description = Faker::Lorem.sentence(4, true, 20).first(140)
     member.position    = index + 1
+  end
+
+  I18n.locale = :ru
+  Member.all.each do |m|
+    description = ''
+    first_name = ['саша', 'паша', 'ваня', 'женя'].sample
+    surname = ['котельников', 'павлов', 'домок', 'пеньков'].sample
+    description = Faker::Lorem.sentence(4, true, 20).first(140)
+
+    m.update_attributes(first_name: first_name, surname: surname, description: description)
   end
 end
 
@@ -152,6 +176,7 @@ def add_members_to_compositions
 end
 
 def make_gallery_items
+  I18n.locale = :en
   GALLERY_ITEMS_COUNT.times do |index|
     title = Faker::Lorem.word
     position = index + 1
@@ -161,6 +186,13 @@ def make_gallery_items
     else
       GalleryItem.create title: title, position: position, video_link: sample_video_link
     end
+  end
+
+  I18n.locale = :ru
+  GalleryItem.all.each do |item|
+    title = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
+
+    item.update_attribute :title, title
   end
 end
 

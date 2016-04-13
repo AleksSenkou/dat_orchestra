@@ -21,6 +21,7 @@ module DatOrchestra
     config.active_record.raise_in_transactional_callbacks = true
 
     I18n.default_locale = :ru
+    config.i18n.fallbacks = true
     # config.quiet_assets = true
   end
 end

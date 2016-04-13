@@ -27,6 +27,8 @@ class BasePage < ActiveRecord::Base
   PATH = ":rails_root/public/images/base/"
   URL = "/images/base/"
 
+  translates :subheading
+
   validates_presence_of :heading, :subheading
 
   has_attached_file :logo,

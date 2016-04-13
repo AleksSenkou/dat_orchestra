@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @compositions = Composition.includes(:picture, members: :picture).first(9)
+    @compositions =
+      Composition.includes(:picture, :translations, members: :picture).first(9)
   end
 
   def set_locale

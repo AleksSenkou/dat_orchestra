@@ -1,7 +1,31 @@
-ActiveRecord::Schema.define(version: 20160412142837) do
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20160413202351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "base_page_translations", force: :cascade do |t|
+    t.integer  "base_page_id", null: false
+    t.string   "locale",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.text     "subheading"
+  end
+
+  add_index "base_page_translations", ["base_page_id"], name: "index_base_page_translations_on_base_page_id", using: :btree
+  add_index "base_page_translations", ["locale"], name: "index_base_page_translations_on_locale", using: :btree
 
   create_table "base_pages", force: :cascade do |t|
     t.string   "logo_file_name"
@@ -24,6 +48,18 @@ ActiveRecord::Schema.define(version: 20160412142837) do
     t.datetime "dance_logo_updated_at"
   end
 
+  create_table "composition_translations", force: :cascade do |t|
+    t.integer  "composition_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "title"
+    t.text     "description"
+  end
+
+  add_index "composition_translations", ["composition_id"], name: "index_composition_translations_on_composition_id", using: :btree
+  add_index "composition_translations", ["locale"], name: "index_composition_translations_on_locale", using: :btree
+
   create_table "compositions", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -44,6 +80,17 @@ ActiveRecord::Schema.define(version: 20160412142837) do
   add_index "compositions_members", ["composition_id"], name: "index_compositions_members_on_composition_id", using: :btree
   add_index "compositions_members", ["member_id"], name: "index_compositions_members_on_member_id", using: :btree
 
+  create_table "contact_translations", force: :cascade do |t|
+    t.integer  "contact_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  add_index "contact_translations", ["contact_id"], name: "index_contact_translations_on_contact_id", using: :btree
+  add_index "contact_translations", ["locale"], name: "index_contact_translations_on_locale", using: :btree
+
   create_table "contacts", force: :cascade do |t|
     t.string "email"
     t.string "phone_number"
@@ -51,6 +98,17 @@ ActiveRecord::Schema.define(version: 20160412142837) do
     t.float  "lat"
     t.float  "lng"
   end
+
+  create_table "gallery_item_translations", force: :cascade do |t|
+    t.integer  "gallery_item_id", null: false
+    t.string   "locale",          null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "title"
+  end
+
+  add_index "gallery_item_translations", ["gallery_item_id"], name: "index_gallery_item_translations_on_gallery_item_id", using: :btree
+  add_index "gallery_item_translations", ["locale"], name: "index_gallery_item_translations_on_locale", using: :btree
 
   create_table "gallery_items", force: :cascade do |t|
     t.string   "title"
@@ -77,6 +135,19 @@ ActiveRecord::Schema.define(version: 20160412142837) do
 
   add_index "member_instruments", ["instrument_id"], name: "index_member_instruments_on_instrument_id", using: :btree
   add_index "member_instruments", ["member_id"], name: "index_member_instruments_on_member_id", using: :btree
+
+  create_table "member_translations", force: :cascade do |t|
+    t.integer  "member_id",   null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "first_name"
+    t.string   "surname"
+    t.text     "description"
+  end
+
+  add_index "member_translations", ["locale"], name: "index_member_translations_on_locale", using: :btree
+  add_index "member_translations", ["member_id"], name: "index_member_translations_on_member_id", using: :btree
 
   create_table "members", force: :cascade do |t|
     t.string  "first_name"

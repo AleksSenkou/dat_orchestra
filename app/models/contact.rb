@@ -11,6 +11,8 @@
 #
 
 class Contact < ActiveRecord::Base
+  translates :name
+
   validates_presence_of :name, :email, :phone_number, :lat, :lng
 
   has_one :picture, as: :imageable, dependent: :destroy
