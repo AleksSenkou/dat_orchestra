@@ -100,8 +100,8 @@ def make_compositions
   COMPOSITIONS_COUNT.times do |index|
     cm = Composition.new
 
-    cm.title_en       = Faker::Lorem.word,
-    cm.description_en = Faker::Lorem.sentence(3, true, 4),
+    cm.title_en       = Faker::Lorem.word
+    cm.description_en = Faker::Lorem.sentence(3, true, 4)
 
     cm.title_ru       = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
     cm.description_ru = Faker::Lorem.sentence(3, true, 4)
