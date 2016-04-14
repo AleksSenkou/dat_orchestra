@@ -42,6 +42,7 @@ gem 'annotate'
 gem 'faker'
 gem 'populator', git: "https://github.com/ryanb/populator.git"
 gem 'globalize', '~> 5.0.0'
+gem 'globalize-accessors'
 gem 'geocoder'
 
 group :development, :test do

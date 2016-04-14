@@ -15,6 +15,7 @@
 
 class Member < ActiveRecord::Base
   translates :first_name, :surname, :description
+  globalize_accessors
 
   default_scope { order(position: :asc) }
 

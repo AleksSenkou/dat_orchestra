@@ -14,6 +14,7 @@
 
 class GalleryItem < ActiveRecord::Base
   translates :title
+  globalize_accessors
 
   default_scope { order(position: :asc) }
 

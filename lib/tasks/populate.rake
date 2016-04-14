@@ -56,18 +56,15 @@ def clean_public_data
 end
 
 def make_base_page
-  I18n.locale = :en
   BasePage.create!(
     logo: get_image('logo.png'),
     dance_logo: get_image('dance-logo.png'),
     favicon: get_image('favicon.png'),
     hero_image: get_image('hero.jpg'),
     heading: 'DAT-arkestr',
-    subheading: 'We will make your concert unforgettable'
+    subheading_en: 'We will make your concert unforgettable',
+    subheading_ru: 'Мы сделаем ваш концерт незабываемым'
   )
-
-  I18n.locale = :ru
-  BasePage.first.update_attribute :subheading, 'Мы сделаем ваш концерт незабываемым'
 end
 
 def make_instruments
@@ -87,38 +84,34 @@ def make_riders
 end
 
 def make_contacts
-  I18n.locale = :en
   contact = Contact.create!(
     email: Faker::Internet.email,
-    name: 'Andrew',
+    name_en: 'Andrew',
+    name_ru: 'Андрей',
     phone_number: Faker::PhoneNumber.phone_number.first(12),
     lat: 53.9145418,
     lng: 27.5845092
   )
 
-  I18n.locale = :ru
-  contact.update_attribute :name, 'Андрей'
-
   create_picture contact.id, 'Contact', sample_avatar
 end
 
 def make_compositions
-  I18n.locale = :en
-  Composition.populate COMPOSITIONS_COUNT do |cm, index|
-    cm.title       = Faker::Lorem.word
-    cm.description = Faker::Lorem.sentence(3, true, 4)
-    cm.position    = index + 1
-  end
+  COMPOSITIONS_COUNT.times do |index|
+    cm = Composition.new
 
-  I18n.locale = :ru
-  Composition.all.each do |cm|
-    title = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
-    description = Faker::Lorem.sentence(3, true, 4)
-    cm.update_attributes(title: title, description: description)
+    cm.title_en       = Faker::Lorem.word,
+    cm.description_en = Faker::Lorem.sentence(3, true, 4),
 
-    cm.song = sample_song
+    cm.title_ru       = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
+    cm.description_ru = Faker::Lorem.sentence(3, true, 4)
+
+    cm.position       = index + 1
+
+    cm.song           = sample_song
+
     cm.save!
- end
+  end
 end
 
 def make_pictures_for_compositions
@@ -128,22 +121,18 @@ def make_pictures_for_compositions
 end
 
 def make_members
-  I18n.locale = :en
-  Member.populate MEMBERS_COUNT do |member, index|
-    member.first_name  = Faker::Name.first_name
-    member.surname     = Faker::Name.last_name
-    member.description = Faker::Lorem.sentence(4, true, 20).first(140)
-    member.position    = index + 1
-  end
+  MEMBERS_COUNT.times do |index|
+    Member.create!(
+      first_name_en:  Faker::Name.first_name,
+      surname_en:     Faker::Name.last_name,
+      description_en: Faker::Lorem.sentence(4, true, 20).first(140),
 
-  I18n.locale = :ru
-  Member.all.each do |m|
-    description = ''
-    first_name = ['саша', 'паша', 'ваня', 'женя'].sample
-    surname = ['котельников', 'павлов', 'домок', 'пеньков'].sample
-    description = Faker::Lorem.sentence(4, true, 20).first(140)
+      first_name_ru:  ['саша', 'паша', 'ваня', 'женя'].sample,
+      surname_ru:     ['котельников', 'павлов', 'домок', 'пеньков'].sample,
+      description_ru: Faker::Lorem.sentence(4, true, 20).first(140),
 
-    m.update_attributes(first_name: first_name, surname: surname, description: description)
+      position: index + 1
+    )
   end
 end
 
@@ -176,23 +165,16 @@ def add_members_to_compositions
 end
 
 def make_gallery_items
-  I18n.locale = :en
   GALLERY_ITEMS_COUNT.times do |index|
-    title = Faker::Lorem.word
+    title_en = Faker::Lorem.word
+    title_ru = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
     position = index + 1
 
     if rand(0..1) == 0
-      GalleryItem.create title: title, position: position, image: sample_image
+      GalleryItem.create title_en: title_en, title_ru: title_ru, position: position, image: sample_image
     else
-      GalleryItem.create title: title, position: position, video_link: sample_video_link
+      GalleryItem.create title_en: title_en, title_ru: title_ru, position: position, video_link: sample_video_link
     end
-  end
-
-  I18n.locale = :ru
-  GalleryItem.all.each do |item|
-    title = ['полька', 'рок', 'альтернативный рок', 'джаз', 'импровизация'].sample
-
-    item.update_attribute :title, title
   end
 end
 

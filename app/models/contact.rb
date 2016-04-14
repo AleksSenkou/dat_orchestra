@@ -12,6 +12,7 @@
 
 class Contact < ActiveRecord::Base
   translates :name
+  globalize_accessors
 
   validates_presence_of :name, :email, :phone_number, :lat, :lng
 

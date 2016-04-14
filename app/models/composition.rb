@@ -18,6 +18,7 @@
 
 class Composition < ActiveRecord::Base
   translates :title, :description
+  globalize_accessors
 
   default_scope { order(position: :asc) }
 

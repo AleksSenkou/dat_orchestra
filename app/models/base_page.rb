@@ -28,6 +28,7 @@ class BasePage < ActiveRecord::Base
   URL = "/images/base/"
 
   translates :subheading
+  globalize_accessors
 
   validates_presence_of :heading, :subheading
 
