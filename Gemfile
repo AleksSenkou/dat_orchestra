@@ -32,6 +32,9 @@ gem 'html2slim', '~> 0.2.0'
 gem 'paperclip', '~> 4.2'
 gem 'acts_as_list'
 gem 'youtube_id'
+gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'devise'
+gem 'cancancan'
 
 ### DB ###
 gem 'pg'
