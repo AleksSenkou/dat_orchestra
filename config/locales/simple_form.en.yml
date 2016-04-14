@@ -7,6 +7,11 @@ en:
       mark: '*'
     error_notification:
       default_message: "Please review the problems below:"
+    labels:
+      defaults:
+        name: Name
+        email: Email
+        message: Message
   helpers:
     submit:
       message:
