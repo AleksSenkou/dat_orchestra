@@ -14,7 +14,6 @@ class DatOrchestra.Views.GalleryItems extends Backbone.View
   render: ->
     @lightcase.render(audioPlayer: false)
     @base.removeHrefs()
-    @localeSelect.render()
     @filterizr 'all'
 
   restartFilterizr: ->

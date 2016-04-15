@@ -7,4 +7,3 @@ class DatOrchestra.Views.Riders extends Backbone.View
 
   render: ->
     @base.removeHrefs()
-    @localeSelect.render()

@@ -9,4 +9,3 @@ class DatOrchestra.Views.Repertoire extends Backbone.View
   render: ->
     @lightcase.render(audioPlayer: true)
     @base.removeHrefs()
-    @localeSelect.render()

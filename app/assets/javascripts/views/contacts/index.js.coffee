@@ -10,7 +10,6 @@ class DatOrchestra.Views.Contacts extends Backbone.View
 
   render: ->
     @base.removeHrefs()
-    @localeSelect.render()
     @createMap()
 
   createMap: ->

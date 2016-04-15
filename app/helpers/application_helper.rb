@@ -1,8 +1,14 @@
 module ApplicationHelper
-  def nav_link(text, path, link_class, lng = nil)
-    link_class += (current_page?(path) or locale.to_s == lng) ? ' current' : ''
+  def nav_link(text, path, link_class)
+    link_class += current_page?(path) ? ' current' : ''
 
-    link_to text, path, class: link_class, data: { no_turbolink: true, locale: lng }
+    link_to text, path, class: link_class, data: { no_turbolink: true }
+  end
+
+  def locale_link(text, link_class, lng)
+    link_class += locale.to_s == lng ? ' current' : ''
+
+    content_tag :span, text, class: link_class, data: { locale: lng }
   end
 
   def home_page?
