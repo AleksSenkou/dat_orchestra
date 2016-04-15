@@ -22,3 +22,7 @@ en:
       video_label: Video
       all_label: All
       photo_label: Photo
+  will_paginate:
+    previous_label: "&#8592; Previous"
+    next_label: "Next &#8594;"
+    page_gap: "&hellip;"
