@@ -1,0 +1,8 @@
+ru:
+  devise:
+    failure:
+      admin_user:
+        unauthenticated: Введите логин и пороль
+    sessions:
+      admin_user:
+        signed_in: Успешный вход в систему

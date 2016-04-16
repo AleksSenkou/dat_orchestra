@@ -22,19 +22,3 @@ ru:
       video_label: Видео
       all_label: Все
       photo_label: Фото
-  activerecord:
-    errors :
-      models:
-        message:
-          attributes:
-            email:
-              blank: не может быть пустым
-              invalid: невалидный формат
-            message:
-              blank: не может быть пустым
-            name:
-              blank: не может быть пустым
-  will_paginate:
-    previous_label: "&#8592; Назад"
-    next_label: "Далее &#8594;"
-    page_gap: "&hellip;"
