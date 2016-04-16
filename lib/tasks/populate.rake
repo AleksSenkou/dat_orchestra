@@ -14,6 +14,9 @@ namespace :db do
     puts 'clean_public_data'
     clean_public_data
 
+    puts 'make_admin'
+    make_admin
+
     puts 'make_base_page'
     make_base_page
 
@@ -46,13 +49,30 @@ namespace :db do
 end
 
 def clean_database
-  [ Composition, Picture, Member, BasePage, GalleryItem, Instrument, Contact, Rider ].each(&:delete_all)
+  [ Composition,
+    Picture,
+    Member,
+    BasePage,
+    GalleryItem,
+    Instrument,
+    Contact,
+    Rider,
+    AdminUser
+  ].each(&:delete_all)
 end
 
 def clean_public_data
   [ 'images', 'music', 'gallery', 'instruments', 'riders' ].each do |folder|
     FileUtils.rm_rf 'public/' + folder
   end
+end
+
+def make_admin
+  AdminUser.create!(
+    email: 'dat@arkestr.net',
+    password: 'password',
+    password_confirmation: 'password'
+  )
 end
 
 def make_base_page
