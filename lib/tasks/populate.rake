@@ -49,16 +49,7 @@ namespace :db do
 end
 
 def clean_database
-  [ Composition,
-    Picture,
-    Member,
-    BasePage,
-    GalleryItem,
-    Instrument,
-    Contact,
-    Rider,
-    AdminUser
-  ].each(&:delete_all)
+  Rake::Task['db:reset'].invoke
 end
 
 def clean_public_data
