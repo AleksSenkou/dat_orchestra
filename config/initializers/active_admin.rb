@@ -16,25 +16,17 @@ ActiveAdmin.setup do |config|
 
   config.localize_format = :long
 
+  config.namespace :admin do |admin|
+    admin.build_menu :utility_navigation do |menu|
+      admin.add_current_user_to_menu  menu
+      admin.add_logout_button_to_menu menu
+    end
+  end
+
   # config.breadcrumb = false
 
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
-
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :utility_navigation do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #       admin.add_logout_button_to_menu menu
-  #     end
-  #   end
-  #
-  # If you wanted to add a static menu item to the default menu provided:
-  #
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :default do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #     end
-  #   end
 
   # == Pagination
   # config.default_per_page = 30
