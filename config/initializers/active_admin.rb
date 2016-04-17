@@ -35,3 +35,7 @@ ActiveAdmin.setup do |config|
   # == Filters
   # config.filters = true
 end
+
+module ActiveAdmin::ViewHelpers
+  include ActiveAdminHelper
+end

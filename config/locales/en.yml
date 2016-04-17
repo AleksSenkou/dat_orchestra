@@ -22,3 +22,10 @@ en:
       video_label: Video
       all_label: All
       photo_label: Photo
+  activerecord:
+    errors:
+      models:
+        rider:
+          attributes:
+            document:
+              spoofed_media_type: Wrong document format

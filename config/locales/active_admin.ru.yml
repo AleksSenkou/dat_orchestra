@@ -10,6 +10,9 @@ ru:
       position: Позиция
       song_file_name: Музыка
       image: Фото
+      preview: Предварительный вид
+      document_file_name: Название документа
+      document: Документ
       members: Участники
       email: Email
       password: Пороль
@@ -18,6 +21,11 @@ ru:
       last_sign_in_at: Последнее вхождение
       created_at: Дата создания
       updated_at: Дата обновления
+    hint:
+      document:
+        pdf: в формате pdf
+      rider:
+        title: "Например: Звуковой Райдер"
     necessary_information: Введите необходимую информацию
     dashboard: "Панель управления"
     dashboard_welcome:

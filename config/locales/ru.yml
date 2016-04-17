@@ -22,3 +22,11 @@ ru:
       video_label: Видео
       all_label: Все
       photo_label: Фото
+  activerecord:
+    errors:
+      models:
+        rider:
+          attributes:
+            document:
+              spoofed_media_type: Неверный формат документа
+

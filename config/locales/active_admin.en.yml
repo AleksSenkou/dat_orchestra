@@ -8,8 +8,11 @@ en:
       title: title
       description: description
       position: position
-      song_file_name: song_file_name
+      song_file_name: song file name
       image: image
+      preview: preview
+      document_file_name: document file name
+      document: document
       members: members
       email: Email
       password: password
@@ -18,6 +21,11 @@ en:
       last_sign_in_at: last sign in at
       created_at: created at
       updated_at: updated at
+    hint:
+      document:
+        pdf: pdf format
+      rider:
+        title: "Sound rider, for example"
     necessary_information: Input necessary information
     dashboard: Dashboard
     dashboard_welcome:

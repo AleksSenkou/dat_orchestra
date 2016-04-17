@@ -11,10 +11,14 @@
 #
 
 class Rider < ActiveRecord::Base
+  validates_presence_of :title
+
   has_attached_file :document,
     styles: { thumb: [ "300x300>", :png ] },
     path: ":rails_root/public/riders/:id/:style_:filename",
     url: "/riders/:id/:style_:filename"
 
-  validates_attachment :document, content_type: { content_type: "application/pdf" }
+  validates_attachment :document,
+    content_type: { content_type: "application/pdf" },
+    presence: true
 end
