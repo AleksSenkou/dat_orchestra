@@ -6,4 +6,10 @@ module ActiveAdminHelper
     object.document.exists? ? result << image_tag(object.document.url(:thumb)) : result
   end
 
+  def default_image_hint(object, class_name)
+    if object.image.exists?
+      image_tag object.image.url(:little), class: class_name
+    end
+  end
+
 end

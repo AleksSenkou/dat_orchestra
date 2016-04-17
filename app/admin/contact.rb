@@ -38,8 +38,9 @@ ActiveAdmin.register Contact do
       f.input :phone_number, label: I18n.t('active_admin.labels.phone_number')
       f.input :address, label: I18n.t('active_admin.labels.address')
       f.inputs '', for: [:picture, f.object.picture] do |pf|
-        pf.input :image, as: :file, label: I18n.t('active_admin.labels.avatar'),
-          hint: pf.object.image.exists? ? image_tag(pf.object.image.url(:little), class: 'avatar') : ''
+        pf.input :image, as: :file,
+          label: I18n.t('active_admin.labels.avatar'),
+          hint: default_image_hint(pf.object, 'avatar')
       end
     end
     f.actions do

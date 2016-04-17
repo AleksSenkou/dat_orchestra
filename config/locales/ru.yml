@@ -1,4 +1,10 @@
 ru:
+  views:
+    pagination:
+      first: В начало
+      last: В конец
+      previous: Назад
+      next: Вперед
   layouts:
     navigation_links:
       repertoire: репертуар
@@ -38,3 +44,6 @@ ru:
         one: Админ
         other: Админы
       admin: Главная
+      instrument:
+        one: Инструмент
+        other: Инструменты

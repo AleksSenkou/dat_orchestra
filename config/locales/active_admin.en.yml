@@ -31,6 +31,8 @@ en:
         pdf: pdf format
       rider:
         title: "Sound rider, for example"
+      instrument:
+        name: name
     necessary_information: Input necessary information
     dashboard: Dashboard
     dashboard_welcome:

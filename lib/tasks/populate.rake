@@ -80,8 +80,10 @@ end
 
 def make_instruments
   Dir[Rails.root.join('test', 'images', 'instruments', '*')].each do |image_path|
-    Instrument.create image: open_file(image_path)
+    Instrument.create image: open_file(image_path), name:
   end
+
+  Instrument.all.map { |i| i.update_attribute :name, i.image_file_name[0..-5] }
 end
 
 def make_riders

@@ -19,4 +19,5 @@ class Instrument < ActiveRecord::Base
     url: "/instruments/:id/:style_:filename"
 
   do_not_validate_attachment_file_type :image
+  validates_attachment :image, presence: true
 end

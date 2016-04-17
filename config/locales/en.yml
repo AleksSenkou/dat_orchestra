@@ -1,4 +1,10 @@
 en:
+  views:
+    pagination:
+      first: first
+      last: last
+      previous: previous
+      next: next
   layouts:
     navigation_links:
       repertoire: repertoire
@@ -38,3 +44,6 @@ en:
         one: Admin
         other: Admins
       admin: Admin
+      instrument:
+        one: Instrument
+        other: Instruments

@@ -31,6 +31,8 @@ ru:
         pdf: в формате pdf
       rider:
         title: "Например: Звуковой Райдер"
+      instrument:
+        name: "'Рабочее' название(нигде кроме админки не используется)"
     necessary_information: Введите необходимую информацию
     dashboard: "Главная"
     dashboard_welcome:
