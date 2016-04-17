@@ -1,7 +1,6 @@
 @import "active_admin/mixins"
 @import "active_admin/base"
-@import "pages/riders"
-@import "pages/contacts"
+@import 'mixins'
 
 #footer,
 #login a
@@ -9,6 +8,16 @@
 
 .member-name
   display: inline-block
+
+.rider-preview
+  img
+    cursor: pointer
+    border: 1px solid rgba(88, 88, 88, 0.5)
+    +transition-border-color(200ms)
+    +transition-bgcolor(200ms)
+    &:hover
+      border-color: rgb(88, 88, 88)
+      background-color: rgba(88, 88, 88, 0.1)
 
 .avatar
   width: 100px
