@@ -32,7 +32,7 @@ ru:
       rider:
         title: "Например: Звуковой Райдер"
     necessary_information: Введите необходимую информацию
-    dashboard: "Панель управления"
+    dashboard: "Главная"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
       call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboard.rb'"

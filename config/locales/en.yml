@@ -31,3 +31,8 @@ en:
               spoofed_media_type: Wrong document format
     models:
       contact: Contacts
+      rider: Riders
+      admin_user:
+        one: Admin
+        other: Admins
+      admin: Admin

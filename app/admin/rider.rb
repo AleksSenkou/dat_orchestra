@@ -1,5 +1,4 @@
 ActiveAdmin.register Rider do
-
   permit_params :title, :document
 
   index do

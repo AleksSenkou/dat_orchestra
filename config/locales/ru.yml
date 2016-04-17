@@ -30,4 +30,9 @@ ru:
             document:
               spoofed_media_type: Неверный формат документа
     models:
-      contact: "Контакты"
+      contact: Контакты
+      rider: Райдеры
+      admin_user:
+        one: Админ
+        other: Админы
+      admin: Главная
