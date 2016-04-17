@@ -6,11 +6,16 @@ en:
       admin_user: Admin User
     labels:
       title: title
+      name_ru: name on russian
+      name_en: name on english
+      phone_number: phone number
+      address: address
       description: description
       position: position
       song_file_name: song file name
       image: image
       preview: preview
+      avatar: avatar
       document_file_name: document file name
       document: document
       members: members
@@ -35,11 +40,11 @@ en:
     edit: "Edit"
     delete: "Delete"
     delete_confirmation: "Are you sure you want to delete this?"
-    new_model: "New %{model}"
-    create_model: "Create %{model}"
-    edit_model: "Edit %{model}"
-    update_model: "Update %{model}"
-    delete_model: "Delete %{model}"
+    new_model: "New"
+    create_model: "Create"
+    edit_model: "Edit"
+    update_model: "Update"
+    delete_model: "Delete"
     details: "%{model} Details"
     cancel: "Cancel"
     empty: "Empty"

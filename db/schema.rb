@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415144042) do
+ActiveRecord::Schema.define(version: 20160417122314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,8 +113,7 @@ ActiveRecord::Schema.define(version: 20160415144042) do
     t.string "email"
     t.string "phone_number"
     t.string "name"
-    t.float  "lat"
-    t.float  "lng"
+    t.string "address"
   end
 
   create_table "gallery_item_translations", force: :cascade do |t|

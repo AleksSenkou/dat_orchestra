@@ -108,9 +108,8 @@ def make_contacts
     email: Faker::Internet.email,
     name_en: 'Andrew',
     name_ru: 'Андрей',
-    phone_number: Faker::PhoneNumber.phone_number.first(12),
-    lat: 53.9145418,
-    lng: 27.5845092
+    phone_number: Faker::PhoneNumber.phone_number,
+    address: 'Минск, проспект независимости, 50'
   )
 
   create_picture contact.id, 'Contact', sample_avatar

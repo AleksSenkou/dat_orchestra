@@ -29,3 +29,5 @@ en:
           attributes:
             document:
               spoofed_media_type: Wrong document format
+    models:
+      contact: Contacts

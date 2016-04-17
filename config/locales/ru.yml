@@ -29,4 +29,5 @@ ru:
           attributes:
             document:
               spoofed_media_type: Неверный формат документа
-
+    models:
+      contact: "Контакты"

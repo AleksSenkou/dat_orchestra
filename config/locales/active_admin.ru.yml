@@ -6,11 +6,16 @@ ru:
       admin_user: Админы
     labels:
       title: Название
+      name_ru: Имя на русском
+      name_en: Имя на английском
+      phone_number: Номер телефона
+      address: Адрес оркестра
       description: Описание
       position: Позиция
       song_file_name: Музыка
       image: Фото
       preview: Предварительный вид
+      avatar: Аватар
       document_file_name: Название документа
       document: Документ
       members: Участники
@@ -35,12 +40,12 @@ ru:
     edit: "Изменить"
     delete: "Удалить"
     delete_confirmation: "Вы уверены, что хотите удалить это?"
-    new_model: "Создать %{model}"
-    create_model: "Создать %{model}"
-    edit_model: "Изменить %{model}"
-    update_model: "Изменить %{model}"
-    delete_model: "Удалить %{model}"
-    details: "%{model} подробнее"
+    new_model: "Создать"
+    create_model: "Создать"
+    edit_model: "Изменить"
+    update_model: "Изменить"
+    delete_model: "Удалить"
+    details: "%{model}"
     cancel: "Отмена"
     empty: "Пусто"
     previous: "Пред."
