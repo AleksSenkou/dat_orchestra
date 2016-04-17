@@ -23,5 +23,6 @@ class Picture < ActiveRecord::Base
     path: ":rails_root/public/images/:id/:style_:filename",
     url: "/images/:id/:style_:filename"
 
+  validates_attachment :image, presence: true
   do_not_validate_attachment_file_type :image
 end

@@ -17,6 +17,7 @@ class Contact < ActiveRecord::Base
 
   has_one :picture, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :picture, allow_destroy: true
+  validates :picture, presence: true
 
   def avatar
     picture.image
