@@ -1,5 +1,24 @@
 ru:
   active_admin:
+    admin: Админ
+    pages:
+      admin: Главная
+      admin_user: Админы
+    labels:
+      title: Название
+      description: Описание
+      position: Позиция
+      song_file_name: Музыка
+      image: Фото
+      members: Участники
+      email: Email
+      password: Пороль
+      password_confirmation: Повторите пороль
+      sign_in_count: Вхождений в систему
+      last_sign_in_at: Последнее вхождение
+      created_at: Дата создания
+      updated_at: Дата обновления
+    necessary_information: Введите необходимую информацию
     dashboard: "Панель управления"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
@@ -9,7 +28,9 @@ ru:
     delete: "Удалить"
     delete_confirmation: "Вы уверены, что хотите удалить это?"
     new_model: "Создать %{model}"
+    create_model: "Создать %{model}"
     edit_model: "Изменить %{model}"
+    update_model: "Изменить %{model}"
     delete_model: "Удалить %{model}"
     details: "%{model} подробнее"
     cancel: "Отмена"
