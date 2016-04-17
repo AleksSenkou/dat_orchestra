@@ -14,7 +14,7 @@ class DatOrchestra.Views.Contacts extends Backbone.View
 
   createMap: ->
     handler = Gmaps.build('Google')
-    handler.buildMap { internal: { id: 'map' } }, () =>
+    handler.buildMap { provider: { scrollwheel: false }, internal: { id: 'map' } }, () =>
       markers = handler.addMarkers [ "lat": gon.lat, "lng": gon.lng ]
       handler.bounds.extendWith(markers)
       handler.fitMapToBounds()
