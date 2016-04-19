@@ -5,9 +5,14 @@ en:
       admin: Admin
       admin_user: Admin User
     labels:
+      musicians: musicians
       title: title
       name_ru: name on russian
       name_en: name on english
+      name: name
+      surname: surname
+      instruments: instruments
+      compositions: compositions
       phone_number: phone number
       address: address
       description: description
@@ -67,6 +72,7 @@ en:
         ends_with: "Ends with"
         greater_than: "Greater than"
         less_than: "Less than"
+        eq: eq
     search_status:
       headline: "Search status:"
       current_scope: "Scope:"

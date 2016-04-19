@@ -11,7 +11,8 @@
 #
 
 class Instrument < ActiveRecord::Base
-  has_many :member_intruments, dependent: :destroy
+  has_many :member_instruments, dependent: :destroy
+  has_many :members, through: :member_instruments
 
   has_attached_file :image,
     styles: { little: "100x100>" },

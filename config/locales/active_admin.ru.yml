@@ -5,9 +5,14 @@ ru:
       admin: Главная
       admin_user: Админы
     labels:
+      musicians: Музыканты
       title: Название
       name_ru: Имя на русском
       name_en: Имя на английском
+      name: Имя
+      surname: Фамилия
+      instruments: Инструменты
+      compositions: Репертуар
       phone_number: Номер телефона
       address: Адрес оркестра
       description: Описание
@@ -67,6 +72,7 @@ ru:
         ends_with: "Заканчивается"
         greater_than: "больше"
         less_than: "меньше"
+        eq: Равно
     search_status:
       headline: "Статус поиска:"
       current_scope: "Область:"
