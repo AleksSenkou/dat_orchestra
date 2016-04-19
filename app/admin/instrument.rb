@@ -34,9 +34,15 @@ ActiveAdmin.register Instrument do
         image_tag i.image.url(:little), class: 'instrument-image'
       end
       row(I18n.t('active_admin.labels.musicians')) do |i|
-        i.members.each do |m|
-          div class: 'instruments-member-name' do
-            link_to "#{m.first_name} #{m.surname}", admin_member_path(m.id)
+        if i.members.present?
+          i.members.each do |m|
+            div class: 'instruments-member-name' do
+              link_to "#{m.first_name} #{m.surname}", admin_member_path(m.id)
+            end
+          end
+        else
+          span class: 'empty' do
+            I18n.t('active_admin.empty')
           end
         end
       end

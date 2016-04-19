@@ -16,7 +16,7 @@ class Contact < ActiveRecord::Base
   validates_presence_of :name_ru, :name_en, :email, :phone_number, :address
 
   has_one :picture, as: :imageable, dependent: :destroy
-  accepts_nested_attributes_for :picture, allow_destroy: true
+  accepts_nested_attributes_for :picture, allow_destroy: true, reject_if: :all_blank
   validates :picture, presence: true
 
   def avatar
