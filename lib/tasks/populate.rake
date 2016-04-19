@@ -80,7 +80,7 @@ end
 
 def make_instruments
   Dir[Rails.root.join('test', 'images', 'instruments', '*')].each do |image_path|
-    Instrument.create image: open_file(image_path), name:
+    Instrument.create image: open_file(image_path)
   end
 
   Instrument.all.map { |i| i.update_attribute :name, i.image_file_name[0..-5] }
@@ -97,15 +97,15 @@ def make_riders
 end
 
 def make_contacts
-  contact = Contact.create!(
+  Contact.new(
     email: Faker::Internet.email,
     name_en: 'Andrew',
     name_ru: 'Андрей',
     phone_number: Faker::PhoneNumber.phone_number,
     address: 'Минск, проспект независимости, 50'
-  )
+  ).save!(validate: false)
 
-  create_picture contact.id, 'Contact', sample_avatar
+  create_picture Contact.first.id, 'Contact', sample_avatar
 end
 
 def make_compositions
@@ -134,7 +134,7 @@ end
 
 def make_members
   MEMBERS_COUNT.times do |index|
-    Member.create!(
+    Member.new(
       first_name_en:  Faker::Name.first_name,
       surname_en:     Faker::Name.last_name,
       description_en: Faker::Lorem.sentence(4, true, 20).first(140),
@@ -144,7 +144,7 @@ def make_members
       description_ru: Faker::Lorem.sentence(4, true, 20).first(140),
 
       position: index + 1
-    )
+    ).save!(validate: false)
   end
 end
 
@@ -156,22 +156,20 @@ end
 
 def add_instruments_to_members
   member_ids = Member.ids
-  instrument_ids = Instrument.ids
 
   member_ids.each do |m_id|
-    rand(1..6).times do
-      MemberInstrument.create member_id: m_id, instrument_id: instrument_ids.sample
+    Instrument.ids.sample(rand(1..6)).each do |instrument_id|
+      MemberInstrument.create member_id: m_id, instrument_id: instrument_id
     end
   end
 end
 
 def add_members_to_compositions
   composition_ids = Composition.ids
-  member_ids = Member.ids
 
   composition_ids.each do |cm_id|
-    rand(1..MEMBERS_COUNT / 2).times do
-      CompositionsMembers.create composition_id: cm_id, member_id: member_ids.sample
+    Member.ids.sample(rand(1..MEMBERS_COUNT / 2)).each do |member_id|
+      CompositionsMembers.create composition_id: cm_id, member_id: member_id
     end
   end
 end
