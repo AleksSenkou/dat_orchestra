@@ -23,7 +23,7 @@ ActiveAdmin.register Instrument do
 
   filter :name, label: I18n.t('active_admin.labels.title')
   filter :members, as: :select,
-    collection: proc { Member.all.map { |m| "#{m.id}) #{m.first_name} #{m.surname}" } },
+    collection: proc { Member.for_select },
     label: I18n.t('active_admin.labels.musicians')
 
   show do

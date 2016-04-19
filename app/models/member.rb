@@ -30,6 +30,10 @@ class Member < ActiveRecord::Base
   has_many :member_instruments, dependent: :destroy
   has_many :instruments, through: :member_instruments
 
+  def self.for_select
+    includes(:translations).all.map { |m| "#{m.id}) #{m.first_name} #{m.surname}" }
+  end
+
   def avatar
     picture.image
   end
