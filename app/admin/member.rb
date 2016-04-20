@@ -22,7 +22,7 @@ ActiveAdmin.register Member do
     column I18n.t('active_admin.labels.compositions') do |member|
       member.compositions.each do |cm|
         div class: 'member-composition' do
-          link_to cm.title, admin_composition_path(cm.id)
+          link_to cm.title, admin_composition_path(cm)
         end
       end
     end
@@ -31,7 +31,7 @@ ActiveAdmin.register Member do
         div class: 'member-instruments' do
           instruments.each do |i|
             div class: 'member-instrument' do
-              link_to image_tag(i.image.url(:little)), admin_instrument_path(i.id)
+              link_to image_tag(i.image.url(:little)), admin_instrument_path(i)
             end
           end
         end
@@ -58,15 +58,18 @@ ActiveAdmin.register Member do
         image_tag m.avatar.url(:little), class:'avatar'
       end
 
-      row(I18n.t('active_admin.labels.name')) { |m| m.first_name }
-      row(I18n.t('active_admin.labels.surname')) { |m| m.surname }
-      row(I18n.t('active_admin.labels.description')) { |m| m.description }
+      row(I18n.t('active_admin.labels.name_ru')) { |m| m.first_name_ru }
+      row(I18n.t('active_admin.labels.name_en')) { |m| m.first_name_en }
+      row(I18n.t('active_admin.labels.surname_ru')) { |m| m.surname_ru }
+      row(I18n.t('active_admin.labels.surname_en')) { |m| m.surname_en }
+      row(I18n.t('active_admin.labels.description_ru')) { |m| m.description_ru }
+      row(I18n.t('active_admin.labels.description_en')) { |m| m.description_en }
 
       row(I18n.t('active_admin.labels.compositions')) do |member|
         if member.compositions.present?
           member.compositions.includes(:translations).each do |cm|
             div class: 'show-member-composition' do
-              link_to cm.title, admin_composition_path(cm.id)
+              link_to cm.title, admin_composition_path(cm)
             end
           end
         else
@@ -81,7 +84,7 @@ ActiveAdmin.register Member do
           div class: 'member-instruments' do
             instruments.each do |i|
               div class: 'member-instrument' do
-                link_to image_tag(i.image.url(:little)), admin_instrument_path(i.id)
+                link_to image_tag(i.image.url(:little)), admin_instrument_path(i)
               end
             end
           end
@@ -110,21 +113,41 @@ ActiveAdmin.register Member do
       end
     end
 
+    f.actions
+
     f.inputs I18n.t('active_admin.labels.compositions') do
       if f.object.compositions.present?
         f.object.compositions.includes(:translations).each do |cm|
-          div class: 'show-member-composition' do
-            link_to cm.title, admin_composition_path(cm.id)
+          div class: 'edit-member-composition' do
+            link_to(cm.title, admin_composition_path(cm)) +
+            image_tag('delete.png', title: 'убрать', data: { member_id: f.object.id, composition_id: cm.id })
           end
         end
-      else
-        span class: 'empty' do
-          I18n.t('active_admin.empty')
+      end
+
+      div class: 'add-composition-member-label' do
+        span(I18n.t('active_admin.members.add_composition'))
+      end
+
+      div class: 'add-composition-member' do
+        select_tag("add-composition", options_from_collection_for_select(Composition.includes(:translations).all - f.object.compositions, "id", "title"), prompt: "Выбрать композицию", data: { member_id: f.object.id })
+      end
+    end
+
+    f.inputs I18n.t('active_admin.labels.instruments') do
+      div class: 'edit-member-instruments' do
+        Instrument.all.each_slice(10) do |instruments|
+          div class: 'member-instruments' do
+            instruments.each do |i|
+              div class: 'edit-member-instrument' do
+                image_tag i.image.url(:little), class: "#{'selected' if f.object.instruments.include?(i)}", data: { member_id: f.object.id, instrument_id: i.id }
+              end
+            end
+          end
         end
       end
     end
 
-    f.actions
   end
 
 end

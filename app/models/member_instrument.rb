@@ -15,4 +15,6 @@
 class MemberInstrument < ActiveRecord::Base
   belongs_to :member
   belongs_to :instrument
+
+  validates_uniqueness_of :instrument_id, scope: :member_id
 end

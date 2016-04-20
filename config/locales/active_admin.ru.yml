@@ -4,6 +4,8 @@ ru:
     pages:
       admin: Главная
       admin_user: Админы
+    members:
+      add_composition: "Добавить композицию к участнику:"
     labels:
       musicians: Музыканты
       title: Название

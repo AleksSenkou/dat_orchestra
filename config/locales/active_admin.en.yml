@@ -4,6 +4,8 @@ en:
     pages:
       admin: Admin
       admin_user: Admin User
+    members:
+      add_composition: "Add composition:"
     labels:
       musicians: musicians
       title: title

@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   resources :messages, only: :create
 
+  resources :member_instruments, only: [:create, :destroy]
+  resources :compositions_members, only: [:create, :destroy]
+
   resources :riders, only: :index do
     member do
       get :download

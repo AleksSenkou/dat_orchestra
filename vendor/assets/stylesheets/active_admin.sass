@@ -40,23 +40,57 @@ fieldset
     height: 40px
     width: 40px
 
+.edit-member-instrument
+  margin: 0px 2px
+  img
+    height: 40px
+    width: 40px
+
+.edit-member-instruments
+  margin: 0px 10px
+  display: table-caption
+  img
+    cursor: pointer
+    padding: 20px
+    &:hover:not(.selected)
+      background-color: rgba(5, 0, 84, 0.1)
+    &.selected
+      background-color: rgba(71, 251, 0, 0.26)
+
+.m-composition
+  text-transform: capitalize
+  font-size: 15px
+  margin: 8px 10px
+  a
+    text-decoration: none
+    &:hover
+      color: rgba(0, 0, 0, 0.8)
+  img
+    height: 15px
+    cursor: pointer
+    position: relative
+    top: 2px
+    padding-left: 8px
+
 .member-composition
+  @extend .m-composition
+  font-size: 12px
   margin: 2px 0px
   text-align: center
   border: 1px solid rgba(0, 0, 0, 0.45)
   a
     padding: 0px 4px
-    text-decoration: none
     width: 100%
-    &:hover
-      color: rgba(0, 0, 0, 0.8)
 
-.show-member-composition
-  margin: 2px 10px
-  a
-    text-decoration: none
-    &:hover
-      color: rgba(0, 0, 0, 0.8)
+.edit-member-composition
+  @extend .m-composition
+
+.add-composition-member-label
+  font-size: 15px
+  padding: 10px 5px
+
+.add-composition-member
+  padding: 0px 5px 10px 5px
 
 textarea
   height: 80px
