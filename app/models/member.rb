@@ -43,10 +43,4 @@ class Member < ActiveRecord::Base
   def avatar
     picture.image
   end
-
-  private
-
-  def image_doesnt_exists
-    binding.pry_remote
-  end
 end

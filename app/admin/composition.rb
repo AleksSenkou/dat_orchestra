@@ -1,13 +1,16 @@
 ActiveAdmin.register Composition do
-  includes :picture, :translations, members: :picture
-
-  permit_params :title, :description, :position, :song,
-    picture_params: [:image]
-
   config.sort_order = 'position_asc'
+
+  includes :picture, :translations, members: :translations
+
+  permit_params :title_ru, :title_en,
+    :description_ru, :description_en,
+    :position, :song,
+    picture_params: [:image]
 
   index do
     selectable_column
+
     column I18n.t('active_admin.labels.position'), :position
     column(I18n.t('active_admin.labels.image')) { |i| image_tag(i.image.url(:little)) }
     column I18n.t('active_admin.labels.title'),          :title
@@ -17,7 +20,7 @@ ActiveAdmin.register Composition do
     column I18n.t('active_admin.labels.members') do |cm|
       cm.authors.each do |a|
         div class: 'member-name' do
-          "#{a.first_name} #{a.surname}"
+          link_to "#{a.first_name} #{a.surname}", admin_member_path(a)
         end
       end
     end
@@ -28,6 +31,6 @@ ActiveAdmin.register Composition do
   filter :title, label: I18n.t('active_admin.labels.title')
   filter :description, label: I18n.t('active_admin.labels.description')
   filter :position, label: I18n.t('active_admin.labels.position')
-  filter :members, collection: proc { Member.all.map { |m| "#{m.first_name} #{m.surname}" } }
+  filter :members, collection: proc { Member.for_select }
 
 end

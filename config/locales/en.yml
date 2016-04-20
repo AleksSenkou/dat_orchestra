@@ -50,3 +50,6 @@ en:
       member:
         one: Member
         other: Members
+      composition:
+        one: Composition
+        other: Repertoire

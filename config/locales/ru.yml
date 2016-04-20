@@ -50,3 +50,6 @@ ru:
       member:
         one: Участник
         other: Состав
+      composition:
+        one: Композиция
+        other: Репертуар
