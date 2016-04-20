@@ -136,11 +136,12 @@ ActiveAdmin.register Member do
 
     f.inputs I18n.t('active_admin.labels.instruments') do
       div class: 'edit-member-instruments' do
+        member_instruments_ids = f.object.instruments.map(&:id)
         Instrument.all.each_slice(10) do |instruments|
           div class: 'member-instruments' do
             instruments.each do |i|
               div class: 'edit-member-instrument' do
-                image_tag i.image.url(:little), class: "#{'selected' if f.object.instruments.include?(i)}", data: { member_id: f.object.id, instrument_id: i.id }
+                image_tag i.image.url(:little), class: "#{'selected' if member_instruments_ids.include?(i.id)}", data: { member_id: f.object.id, instrument_id: i.id }
               end
             end
           end

@@ -11,10 +11,6 @@
 #  song_file_size    :integer
 #  song_updated_at   :datetime
 #
-# Indexes
-#
-#  index_compositions_on_position  (position) UNIQUE
-#
 
 class Composition < ActiveRecord::Base
   translates :title, :description

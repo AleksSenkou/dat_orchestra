@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417122314) do
+ActiveRecord::Schema.define(version: 20160420205928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,8 +87,6 @@ ActiveRecord::Schema.define(version: 20160417122314) do
     t.integer  "song_file_size"
     t.datetime "song_updated_at"
   end
-
-  add_index "compositions", ["position"], name: "index_compositions_on_position", unique: true, using: :btree
 
   create_table "compositions_members", id: false, force: :cascade do |t|
     t.integer "composition_id"
@@ -172,8 +170,6 @@ ActiveRecord::Schema.define(version: 20160417122314) do
     t.integer "position"
     t.string  "surname"
   end
-
-  add_index "members", ["position"], name: "index_members_on_position", unique: true, using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.string   "name"

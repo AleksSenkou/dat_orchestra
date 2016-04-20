@@ -8,10 +8,6 @@
 #  position    :integer
 #  surname     :string
 #
-# Indexes
-#
-#  index_members_on_position  (position) UNIQUE
-#
 
 class Member < ActiveRecord::Base
   translates :first_name, :surname, :description
