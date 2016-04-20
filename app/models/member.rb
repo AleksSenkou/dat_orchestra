@@ -21,10 +21,16 @@ class Member < ActiveRecord::Base
 
   acts_as_list
 
-  validates_presence_of :first_name, :surname, :description
-  validates_length_of :description, maximum: 140
+  validates_presence_of :first_name_ru, :first_name_en,
+    :surname_ru, :surname_en,
+    :description_ru, :description_en
+
+  validates_length_of :description_ru, :description_en, maximum: 140
 
   has_one :picture, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :picture, allow_destroy: true, reject_if: :all_blank
+  validates :picture, presence: true
+
   has_and_belongs_to_many :compositions
 
   has_many :member_instruments, dependent: :destroy
@@ -36,5 +42,11 @@ class Member < ActiveRecord::Base
 
   def avatar
     picture.image
+  end
+
+  private
+
+  def image_doesnt_exists
+    binding.pry_remote
   end
 end

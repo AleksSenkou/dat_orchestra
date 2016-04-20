@@ -47,3 +47,6 @@ en:
       instrument:
         one: Instrument
         other: Instruments
+      member:
+        one: Member
+        other: Members

@@ -9,6 +9,10 @@ ru:
       title: Название
       name_ru: Имя на русском
       name_en: Имя на английском
+      surname_ru: Фамилия на русском
+      surname_en: Фамилия на английском
+      description_ru: Описание на русском
+      description_en: Описание на английском
       name: Имя
       surname: Фамилия
       instruments: Инструменты

@@ -47,3 +47,6 @@ ru:
       instrument:
         one: Инструмент
         other: Инструменты
+      member:
+        one: Участник
+        other: Состав

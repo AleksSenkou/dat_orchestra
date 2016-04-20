@@ -10,6 +10,7 @@ class DatOrchestra.Routers.Pages extends Backbone.Router
     'contacts/': 'contactsIndex'
     'riders': 'ridersPage'
     'riders/': 'ridersPage'
+    'admin' : 'editMember'
     '' : 'homePage'
 
   homePage: ->
@@ -29,3 +30,4 @@ class DatOrchestra.Routers.Pages extends Backbone.Router
 
   ridersPage: ->
     new DatOrchestra.Views.Riders().render()
+

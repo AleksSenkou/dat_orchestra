@@ -9,6 +9,10 @@ en:
       title: title
       name_ru: name on russian
       name_en: name on english
+      surname_ru: surname on russian
+      surname_en: surname on english
+      description_ru: description on russian
+      description_en: description on english
       name: name
       surname: surname
       instruments: instruments
