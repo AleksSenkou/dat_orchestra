@@ -9,6 +9,15 @@ ru:
     compositions:
       add_member: "Добавить участника к композиции:"
     labels:
+      video: Видео
+      video_link: Ссылка на видео
+      video_link_from_youtube: Ссылка на видео с youtube
+      type: Тип ресурса
+      resource: Ресурс
+      resource_file: Файл ресурса
+      photo: Фото
+      image_file_name: Файл фото
+      all: Все
       musicians: Музыканты
       title: Название
       title_ru: Название на русском
@@ -83,6 +92,7 @@ ru:
         greater_than: "больше"
         less_than: "меньше"
         eq: Равно
+        in: В
     search_status:
       headline: "Статус поиска:"
       current_scope: "Область:"

@@ -9,6 +9,9 @@ $(document).ready () ->
   else if location.pathname.includes "/admin/compositions/"
     page = new EditCompositionPage()
     page.render()
+  else if location.pathname.includes "/admin/gallery_items"
+    if $('#resource-tabs') and $('#resource-tabs').attr('is_video') == 'true'
+      $('div.tabs').tabs { active: 1 }
 
 class EditCompositionPage
   render: ->

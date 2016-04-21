@@ -33,7 +33,6 @@ ActiveAdmin.register Composition do
   filter :position, label: I18n.t('active_admin.labels.position')
   filter :members, collection: proc { Member.for_select }
 
-
   show do
     attributes_table do
       row(I18n.t('active_admin.labels.position')) { |cm| cm.position }

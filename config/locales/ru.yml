@@ -53,3 +53,6 @@ ru:
       composition:
         one: Композиция
         other: Репертуар
+      gallery_item:
+        one: Материал
+        other: Галерея

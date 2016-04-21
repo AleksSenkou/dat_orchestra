@@ -53,3 +53,6 @@ en:
       composition:
         one: Composition
         other: Repertoire
+      gallery_item:
+        one: Material
+        other: Gallery

@@ -10,6 +10,15 @@ en:
       add_member: "Add member:"
     labels:
       musicians: musicians
+      type: type
+      resource: resource
+      resource_file: resource file
+      video: video
+      video_link: video_link
+      video_link_from_youtube: video_link
+      photo: photo
+      image_file_name: image_file_name
+      all: all
       title: title
       title_ru: title on russian
       title_en: title on english
@@ -83,6 +92,7 @@ en:
         greater_than: "Greater than"
         less_than: "Less than"
         eq: eq
+        in: in
     search_status:
       headline: "Search status:"
       current_scope: "Scope:"
