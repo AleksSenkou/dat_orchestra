@@ -97,7 +97,7 @@ ActiveAdmin.register Member do
   form do |f|
     f.inputs I18n.t('active_admin.necessary_information') do
       f.input :position, label: I18n.t('active_admin.labels.position'),
-        input_html: { value: f.object.position || Member.last.position + 1 }
+        input_html: { value: f.object.position || f.object.position_was || Member.last.position + 1 }
       f.input :first_name_ru, label: I18n.t('active_admin.labels.name_ru')
       f.input :first_name_en, label: I18n.t('active_admin.labels.name_en')
       f.input :surname_ru, label: I18n.t('active_admin.labels.surname_ru')

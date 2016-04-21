@@ -21,7 +21,8 @@ class Composition < ActiveRecord::Base
   acts_as_list
 
   validates_presence_of :title_ru, :title_en,
-   :description_ru, :description_en
+   :description_ru, :description_en,
+   :position
 
   has_attached_file :song,
     path: ":rails_root/public/music/:id/:filename",

@@ -6,9 +6,13 @@ ru:
       admin_user: Админы
     members:
       add_composition: "Добавить композицию к участнику:"
+    compositions:
+      add_member: "Добавить участника к композиции:"
     labels:
       musicians: Музыканты
       title: Название
+      title_ru: Название на русском
+      title_en: Название на английском
       name_ru: Имя на русском
       name_en: Имя на английском
       surname_ru: Фамилия на русском

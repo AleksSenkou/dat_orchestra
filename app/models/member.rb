@@ -19,7 +19,8 @@ class Member < ActiveRecord::Base
 
   validates_presence_of :first_name_ru, :first_name_en,
     :surname_ru, :surname_en,
-    :description_ru, :description_en
+    :description_ru, :description_en,
+    :position
 
   validates_length_of :description_ru, :description_en, maximum: 140
 
@@ -33,10 +34,14 @@ class Member < ActiveRecord::Base
   has_many :instruments, through: :member_instruments
 
   def self.for_select
-    includes(:translations).all.map { |m| "#{m.id}) #{m.first_name} #{m.surname}" }
+    includes(:translations).all.map { |m| "#{m.id}) #{m.full_name}" }
   end
 
   def avatar
     picture.image
+  end
+
+  def full_name
+    "#{first_name} #{surname}"
   end
 end

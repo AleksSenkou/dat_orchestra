@@ -13,7 +13,7 @@ ActiveAdmin.register Instrument do
     column(I18n.t('active_admin.labels.musicians')) do |i|
       i.members.each do |m|
         div class: 'instruments-member-name' do
-          link_to "#{m.first_name} #{m.surname}", admin_member_path(m.id)
+          link_to m.full_name, admin_member_path(m.id)
         end
       end
     end
@@ -37,7 +37,7 @@ ActiveAdmin.register Instrument do
         if i.members.present?
           i.members.each do |m|
             div class: 'instruments-member-name' do
-              link_to "#{m.first_name} #{m.surname}", admin_member_path(m.id)
+              link_to m.full_name, admin_member_path(m.id)
             end
           end
         else

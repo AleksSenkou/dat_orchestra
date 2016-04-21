@@ -6,9 +6,13 @@ en:
       admin_user: Admin User
     members:
       add_composition: "Add composition:"
+    compositions:
+      add_member: "Add member:"
     labels:
       musicians: musicians
       title: title
+      title_ru: title on russian
+      title_en: title on english
       name_ru: name on russian
       name_en: name on english
       surname_ru: surname on russian

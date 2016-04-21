@@ -6,6 +6,34 @@ $(document).ready () ->
   if location.pathname.includes "/admin/members/"
     page = new EditMemberPage()
     page.render()
+  else if location.pathname.includes "/admin/compositions/"
+    page = new EditCompositionPage()
+    page.render()
+
+class EditCompositionPage
+  render: ->
+    @addMemberEvent()
+    @removeMemberEvent()
+
+  addMemberEvent: ->
+    $('#add-member').change (e) ->
+      $.ajax
+        url: "/compositions_members"
+        type: 'POST'
+        data:
+          member_id: $(e.target).val()
+          composition_id: $(e.target).data("composition-id")
+        complete: -> location.reload()
+
+  removeMemberEvent: ->
+    $('.edit-composition-member > img').click (e) ->
+      $.ajax
+        url: "/compositions_members/1"
+        type: 'DELETE'
+        data:
+          member_id: $(e.target).data("member-id")
+          composition_id: $(e.target).data("composition-id")
+        complete: -> location.reload()
 
 class EditMemberPage
   render: ->
