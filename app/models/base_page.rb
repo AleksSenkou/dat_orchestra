@@ -30,7 +30,7 @@ class BasePage < ActiveRecord::Base
   translates :subheading
   globalize_accessors
 
-  validates_presence_of :heading, :subheading
+  validates_presence_of :heading, :subheading_ru, :subheading_en
 
   has_attached_file :logo,
     styles: { medium: "30x30>", big: "100x200>" },
@@ -52,4 +52,5 @@ class BasePage < ActiveRecord::Base
     url: URL + "hero_image_:style_:filename"
 
   do_not_validate_attachment_file_type :logo, :dance_logo, :favicon, :hero_image
+  validates_attachment_presence :logo, :dance_logo, :favicon, :hero_image
 end

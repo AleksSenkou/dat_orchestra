@@ -9,6 +9,13 @@ ru:
     compositions:
       add_member: "Добавить участника к композиции:"
     labels:
+      heading: Заголовок
+      subheading_ru: "Девиз(слоган, обращение) на русском"
+      subheading_en: "Девиз(слоган, обращение) на английском"
+      logo: Логотип
+      dance_logo: Логотип ансамбля танца
+      favicon: Фавикон(картинка в браузерной вкладке)
+      hero_image: Главная заставка
       video: Видео
       video_link: Ссылка на видео
       video_link_from_youtube: Ссылка на видео с youtube

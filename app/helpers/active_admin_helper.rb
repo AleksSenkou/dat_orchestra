@@ -12,4 +12,10 @@ module ActiveAdminHelper
     end
   end
 
+  def bp_image(image, style, hint_text)
+    result = content_tag :span, hint_text, class: 'edit-base-page-image'
+
+    image.exists? ? result << image_tag(image.url(style.to_sym)) : result
+  end
+
 end

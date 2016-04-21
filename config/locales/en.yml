@@ -56,3 +56,6 @@ en:
       gallery_item:
         one: Material
         other: Gallery
+      base_page:
+        one: Base page
+        other: Base

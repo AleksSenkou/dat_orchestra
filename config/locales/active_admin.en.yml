@@ -9,6 +9,13 @@ en:
     compositions:
       add_member: "Add member:"
     labels:
+      heading: heading
+      subheading_ru: subheading_ru
+      subheading_en: subheading_en
+      logo: logo
+      dance_logo: dance_logo
+      favicon: favicon
+      hero_image: hero_image
       musicians: musicians
       type: type
       resource: resource

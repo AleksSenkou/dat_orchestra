@@ -56,3 +56,6 @@ ru:
       gallery_item:
         one: Материал
         other: Галерея
+      base_page:
+        one: Главная страница
+        other: Главная
