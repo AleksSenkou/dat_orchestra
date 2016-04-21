@@ -5,46 +5,50 @@ require 'fileutils'
 COMPOSITIONS_COUNT = 10
 MEMBERS_COUNT = 12
 GALLERY_ITEMS_COUNT = 10
+MESSAGES_COUNT = 8
 
 namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
-    puts 'clean_database'
-    clean_database
-    puts 'clean_public_data'
-    clean_public_data
+    # puts 'clean_database'
+    # clean_database
+    # puts 'clean_public_data'
+    # clean_public_data
 
-    puts 'make_admin'
-    make_admin
+    # puts 'make_admin'
+    # make_admin
 
-    puts 'make_base_page'
-    make_base_page
+    # puts 'make_base_page'
+    # make_base_page
 
-    puts 'make_instruments'
-    make_instruments
+    # puts 'make_instruments'
+    # make_instruments
 
-    puts 'make_contacts'
-    make_contacts
+    # puts 'make_contacts'
+    # make_contacts
 
-    puts 'make_members'
-    make_members
-    puts 'make_pictures_for_members'
-    make_pictures_for_members
-    puts 'add_instruments_to_members'
-    add_instruments_to_members
+    # puts 'make_members'
+    # make_members
+    # puts 'make_pictures_for_members'
+    # make_pictures_for_members
+    # puts 'add_instruments_to_members'
+    # add_instruments_to_members
 
-    puts 'make_compositions'
-    make_compositions
-    puts 'make_pictures_for_compositions'
-    make_pictures_for_compositions
-    puts 'add_members_to_compositions'
-    add_members_to_compositions
+    # puts 'make_compositions'
+    # make_compositions
+    # puts 'make_pictures_for_compositions'
+    # make_pictures_for_compositions
+    # puts 'add_members_to_compositions'
+    # add_members_to_compositions
 
-    puts 'make_gallery_items'
-    make_gallery_items
+    # puts 'make_gallery_items'
+    # make_gallery_items
 
-    puts 'make_riders'
-    make_riders
+    # puts 'make_riders'
+    # make_riders
+
+    puts 'make_messages'
+    make_messages
   end
 end
 
@@ -93,6 +97,15 @@ def make_riders
   ].each do |rider_info|
     doc_path = Rails.root.join('test', 'documents', rider_info[0])
     Rider.create title: rider_info[1], document: open_file(doc_path)
+  end
+end
+
+def make_messages
+  Message.populate MESSAGES_COUNT do |msg|
+    msg.name = Faker::Name.name
+    msg.email = Faker::Internet.email
+    msg.message = Faker::Lorem.sentence(3, true, 4)
+    msg.viewed = [ true, false ].sample
   end
 end
 

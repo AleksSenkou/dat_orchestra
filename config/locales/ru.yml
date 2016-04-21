@@ -43,7 +43,7 @@ ru:
       admin_user:
         one: Админ
         other: Админы
-      admin: Главная
+      admin: Панель управления
       instrument:
         one: Инструмент
         other: Инструменты
@@ -59,3 +59,6 @@ ru:
       base_page:
         one: Главная страница
         other: Главная
+      message:
+        one: Сообщение
+        other: Сообщения

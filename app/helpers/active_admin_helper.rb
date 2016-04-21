@@ -18,4 +18,12 @@ module ActiveAdminHelper
     image.exists? ? result << image_tag(image.url(style.to_sym)) : result
   end
 
+  def admin_messages_link
+    label = I18n.t("activerecord.models.message.other")
+    label << " (#{ Message.not_viewed.count })" if Message.not_viewed.count > 0
+
+    result = content_tag :span, label
+    Message.not_viewed.any? ? result << image_tag('unread_message.png') : result
+  end
+
 end

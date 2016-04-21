@@ -9,6 +9,9 @@ en:
     compositions:
       add_member: "Add member:"
     labels:
+      viewed: viewed
+      send_time: send_time
+      message: message
       heading: heading
       subheading_ru: subheading_ru
       subheading_en: subheading_en

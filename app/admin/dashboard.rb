@@ -1,5 +1,4 @@
 ActiveAdmin.register_page "Dashboard" do
-
   menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
 
   content title: proc{ I18n.t("active_admin.dashboard") } do
@@ -49,6 +48,12 @@ ActiveAdmin.register_page "Dashboard" do
       li do
         link_to(admin_admin_users_path) do
           I18n.t("activerecord.models.admin_user.other") + " (#{AdminUser.count})"
+        end
+      end
+
+      li class: 'admin-messages-link' do
+        link_to(admin_messages_path) do
+          admin_messages_link
         end
       end
     end
