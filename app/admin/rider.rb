@@ -1,4 +1,6 @@
 ActiveAdmin.register Rider do
+  menu priority: 5
+
   permit_params :title, :document
 
   index do

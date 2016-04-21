@@ -1,4 +1,6 @@
 ActiveAdmin.register Instrument do
+  menu priority: 7
+
   permit_params :name, :image
 
   includes members: :translations

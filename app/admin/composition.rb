@@ -1,4 +1,6 @@
 ActiveAdmin.register Composition do
+  menu priority: 3
+
   config.sort_order = 'position_asc'
 
   includes :picture, :translations, members: :translations

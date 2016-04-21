@@ -1,5 +1,5 @@
 ActiveAdmin.register Contact do
-  menu url: "/admin/contacts/#{ Contact.first.id }"
+  menu priority: 8, url: "/admin/contacts/#{ Contact.first.id }"
 
   breadcrumb do
     root = [ link_to(I18n.t("active_admin.dashboard"), admin_root_path) ]
@@ -12,7 +12,7 @@ ActiveAdmin.register Contact do
 
   actions :show, :update, :edit
 
-  includes :picture
+  includes :picture, :translations
 
   permit_params :name_ru, :name_en, :email, :phone_number, :address,
     picture_attributes: [:image]

@@ -1,4 +1,6 @@
 ActiveAdmin.register GalleryItem do
+  menu priority: 4
+
   config.sort_order = 'position_asc'
 
   includes :translations

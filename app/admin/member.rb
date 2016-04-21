@@ -1,4 +1,6 @@
 ActiveAdmin.register Member do
+  menu priority: 6
+
   config.sort_order = 'position_asc'
 
   includes :picture, :instruments, :translations, compositions: :translations

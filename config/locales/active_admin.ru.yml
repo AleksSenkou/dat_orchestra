@@ -65,7 +65,7 @@ ru:
       instrument:
         name: "'Рабочее' название(нигде кроме админки не используется)"
     necessary_information: Введите необходимую информацию
-    dashboard: "Главная"
+    dashboard: "Панель управления"
     dashboard_welcome:
       welcome: "Добро пожаловать в Active Admin. Это стандартная страница управления сайтом."
       call_to_action: "Чтобы добавить сюда что-нибудь загляните в 'app/admin/dashboard.rb'"
