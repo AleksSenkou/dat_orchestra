@@ -1,10 +1,10 @@
 ActiveAdmin.register Contact do
-  menu priority: 8, url: "/admin/contacts/#{ Contact.first.id }"
+  menu priority: 8, url: "/admin/contacts/#{ Contact.try(:first).try(:id) }"
 
   breadcrumb do
     root = [ link_to(I18n.t("active_admin.dashboard"), admin_root_path) ]
     if current_page?(edit_admin_contact_path)
-      root << link_to(I18n.t("activerecord.models.contact"), admin_contact_path(Contact.first.id))
+      root << link_to(I18n.t("activerecord.models.contact"), admin_contact_path(Contact.try(:first).try(:id)))
     else
       root
     end

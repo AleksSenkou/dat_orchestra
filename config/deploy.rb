@@ -20,6 +20,13 @@ set :passenger_restart_with_touch, true
 
 namespace :deploy do
 
+
+  task :puts_message do
+    on roles(:app), in: :sequence, wait: 0 do
+      puts "HERE" * 50
+    end
+  end
+
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
@@ -29,5 +36,15 @@ namespace :deploy do
     end
   end
 
-  # after :finishing, 'deploy:cleanup'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  before 'deploy:assets:precompile', 'deploy:migrate'
+  before 'deploy:migrate', :puts_message
+
+  before :finishing, :restart
+  after :finishing, 'deploy:cleanup'
 end

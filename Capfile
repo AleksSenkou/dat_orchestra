@@ -8,6 +8,7 @@ require 'capistrano/rbenv'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+require 'capistrano/rails/db'
 
 set :rbenv_type, :user # | :system, depends on your rbenv setup
 set :rbenv_ruby, '2.2.4'
