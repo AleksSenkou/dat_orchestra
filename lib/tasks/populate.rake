@@ -15,24 +15,24 @@ namespace :db do
     # puts 'clean_public_data'
     # clean_public_data
 
-    puts 'make_admin'
-    make_admin
+    # puts 'make_admin'
+    # make_admin
 
     # puts 'make_base_page'
     # make_base_page
 
-    puts 'make_instruments'
-    make_instruments
+    # puts 'make_instruments'
+    # make_instruments
 
-    puts 'make_contacts'
-    make_contacts
+    # puts 'make_contacts'
+    # make_contacts
 
-    puts 'make_members'
-    make_members
-    puts 'make_pictures_for_members'
-    make_pictures_for_members
-    puts 'add_instruments_to_members'
-    add_instruments_to_members
+    # puts 'make_members'
+    # make_members
+    # puts 'make_pictures_for_members'
+    # make_pictures_for_members
+    # puts 'add_instruments_to_members'
+    # add_instruments_to_members
 
     puts 'make_compositions'
     make_compositions
@@ -135,7 +135,7 @@ def make_compositions
 
     cm.song           = sample_song
 
-    cm.save!
+    cm.save!(validate: false)
   end
 end
 
