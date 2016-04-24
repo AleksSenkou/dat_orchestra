@@ -46,5 +46,4 @@ namespace :deploy do
   before 'deploy:migrate', :puts_message
 
   before :finishing, :restart
-  after :finishing, 'deploy:cleanup'
 end
