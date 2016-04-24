@@ -39,7 +39,9 @@ ActiveAdmin.register BasePage do
 
   form do |f|
     f.inputs I18n.t('active_admin.necessary_information') do
-      f.input :heading, label: I18n.t('active_admin.labels.heading')
+      f.input :heading,
+        label: I18n.t('active_admin.labels.heading'),
+        hint: 'Заглавные буквы будут выделены жирным шрифтом'
       f.input :subheading_ru, label: I18n.t('active_admin.labels.subheading_ru')
       f.input :subheading_en, label: I18n.t('active_admin.labels.subheading_en')
       f.input :hero_image, as: :file,
