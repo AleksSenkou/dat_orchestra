@@ -8,7 +8,7 @@ ActiveAdmin.register Composition do
   permit_params :title_ru, :title_en,
     :description_ru, :description_en,
     :position, :song,
-    picture_params: [:image]
+    picture_attributes: [:image]
 
   index do
     selectable_column
@@ -79,7 +79,7 @@ ActiveAdmin.register Composition do
       f.inputs '', for: [:picture, f.object.picture || Picture.new ] do |pf|
         pf.input :image, as: :file,
           label: I18n.t('active_admin.labels.avatar'),
-          hint: default_image_hint(pf.object, 'avatar')
+          hint: default_image_hint(pf.object, '')
       end
     end
 
