@@ -9,7 +9,6 @@ set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 set :keep_releases, 25
 
-
 # Default value for :linked_files is []
 set :linked_files, %w{config/database.yml config/secrets.yml}
 

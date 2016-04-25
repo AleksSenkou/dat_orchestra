@@ -21,6 +21,7 @@
 #  dance_logo_content_type :string
 #  dance_logo_file_size    :integer
 #  dance_logo_updated_at   :datetime
+#  bg_color                :string
 #
 
 class BasePage < ActiveRecord::Base

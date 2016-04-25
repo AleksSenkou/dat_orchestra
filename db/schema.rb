@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421140024) do
+ActiveRecord::Schema.define(version: 20160425081359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160421140024) do
     t.string   "dance_logo_content_type"
     t.integer  "dance_logo_file_size"
     t.datetime "dance_logo_updated_at"
+    t.string   "bg_color"
   end
 
   create_table "composition_translations", force: :cascade do |t|

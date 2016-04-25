@@ -9,6 +9,7 @@ ru:
     compositions:
       add_member: "Добавить участника к композиции:"
     labels:
+      bg_color: Цвет фона
       viewed: Просмотрено
       send_time: Время отправления
       message: Сообщение
