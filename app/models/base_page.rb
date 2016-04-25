@@ -31,17 +31,18 @@ class BasePage < ActiveRecord::Base
   translates :subheading
   globalize_accessors
 
-  validates_presence_of :heading, :subheading_ru, :subheading_en,
+  validates_presence_of :heading, :subheading_ru, :subheading_en, :bg_color,
     :logo_file_name, :dance_logo_file_name, :favicon_file_name, :hero_image_file_name
 
   has_attached_file :logo,
-    styles: { medium: "30x30>", big: "100x200>" },
+    styles: { medium: "x50", big: "x100" },
     path: PATH + "logo_:style_:filename",
     url: URL + "logo_:style_:filename"
 
   has_attached_file :dance_logo,
-    path: PATH + "dance_logo_:filename",
-    url: URL + "dance_logo_:filename"
+    styles: { medium: "x60", big: "x100" },
+    path: PATH + "dance_logo_:style_:filename",
+    url: URL + "dance_logo_:style_:filename"
 
   has_attached_file :favicon,
     styles: { medium: "40x40>" },

@@ -9,6 +9,8 @@ div.hero-section class="#{ 'default-header' unless home_page? }"
 
 .navbar
   .nav-container
+    = link_to 'http://beladance.org/', target: :_blank, class: 'dance-logo' do
+      = image_tag dance_logo_url, title: t('.dance_logo_title')
     = link_to image_tag(logo_url), root_path, class: 'logo', data: { no_turbolink: true }
     nav
       = render 'layouts/navigation_links', link_class: 'nav-link'

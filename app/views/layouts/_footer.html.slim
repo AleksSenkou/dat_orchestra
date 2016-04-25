@@ -1,9 +1,9 @@
 .main-section.dark
   ul.footer-section
     li.logos
-      = link_to 'http://beladance.org/', target: "_blank" do
-        = image_tag dance_logo_url, title: t('.dance_logo_title')
-      = link_to image_tag(logo_big_url), root_path
+      = link_to 'http://beladance.org/', target: :_blank do
+        = image_tag dance_logo_big_url, title: t('.dance_logo_title')
+      = link_to image_tag(logo_big_url), root_path, data: { no_turbolink: true }
     li.footer-links
       = render 'layouts/navigation_links', link_class: 'footer-link'
   .copyright &#9400 #{current_year}

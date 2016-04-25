@@ -20,7 +20,11 @@ module ApplicationHelper
   end
 
   def dance_logo_url
-    @base_page.dance_logo.url
+    @base_page.dance_logo.url(:medium)
+  end
+
+  def dance_logo_big_url
+    @base_page.dance_logo.url(:big)
   end
 
   def logo_url

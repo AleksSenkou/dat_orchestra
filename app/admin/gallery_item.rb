@@ -40,7 +40,7 @@ ActiveAdmin.register GalleryItem do
         if item.is_image?
           image_tag item.image.url(:large)
         else
-          link_to image_tag(item.video_thumbnail), item.video_link, target: "_blank"
+          link_to image_tag(item.video_thumbnail), item.video_link, target: :_blank
         end
       end
       row(I18n.t('active_admin.labels.resource_file')) { |item| item.resource_file }
