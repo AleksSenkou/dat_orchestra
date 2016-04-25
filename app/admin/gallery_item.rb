@@ -51,8 +51,12 @@ ActiveAdmin.register GalleryItem do
     f.inputs I18n.t('active_admin.necessary_information') do
       f.input :position, label: I18n.t('active_admin.labels.position'),
         input_html: { value: f.object.position || f.object.position_was || GalleryItem.last.position + 1 }
-      f.input :title_ru, label: I18n.t('active_admin.labels.title_ru')
-      f.input :title_en, label: I18n.t('active_admin.labels.title_en')
+      f.input :title_ru,
+        label: I18n.t('active_admin.labels.title_ru'),
+        hint: 'Необязательное поле'
+      f.input :title_en,
+        label: I18n.t('active_admin.labels.title_en'),
+        hint: 'Необязательное поле'
 
       if f.object.is_image?
         f.input :image, as: :file,

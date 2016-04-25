@@ -20,7 +20,7 @@ class GalleryItem < ActiveRecord::Base
 
   acts_as_list
 
-  validates_presence_of :title_ru, :title_en, :position
+  validates_presence_of :position
 
   has_attached_file :image,
     styles: { medium: "x300>", large: "1000x550>" },
