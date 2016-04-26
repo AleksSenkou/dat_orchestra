@@ -19,11 +19,12 @@ set :passenger_restart_with_touch, true
 
 namespace :deploy do
 
-  task :puts_message do
-    on roles(:app), in: :sequence, wait: 0 do
-      puts "HERE" * 50
-    end
-  end
+  Rake::Task["deploy:assets:precompile"].clear
+
+  before 'deploy:assets:precompile', :populate
+  before :populate, 'deploy:migrate'
+  before :finishing, :restart
+
 
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
@@ -31,8 +32,19 @@ namespace :deploy do
     end
   end
 
-  before 'deploy:assets:precompile', 'deploy:migrate'
-  before 'deploy:migrate', :puts_message
+  namespace :assets do
+    desc "Precompile assets locally and then rsync to web servers"
+    task :precompile do
+      on roles(:web) do
+        rsync_host = host.to_s
 
-  before :finishing, :restart
+        run_locally do
+          execute "rake assets:precompile"
+          execute "rsync -av --delete ./public/assets/ #{fetch(:user)}@#{rsync_host}:#{shared_path}/public/assets/"
+          execute "rm -rf public/assets"
+        end
+      end
+    end
+  end
+
 end

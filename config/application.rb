@@ -20,6 +20,8 @@ module DatOrchestra
 
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.assets.initialize_on_precompile = false
+
     I18n.default_locale = :en
     config.i18n.fallbacks = true
     # config.quiet_assets = true
