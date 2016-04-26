@@ -15,6 +15,10 @@ module ApplicationHelper
     current_page? root_path
   end
 
+  def contacts_page?
+    current_page? contacts_path
+  end
+
   def favicon_url
     @base_page.favicon.url(:medium)
   end
