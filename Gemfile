@@ -44,6 +44,7 @@ gem 'populator', git: "https://github.com/ryanb/populator.git"
 gem 'globalize', '~> 5.0.0'
 gem 'globalize-accessors'
 gem 'geocoder'
+gem 'http_accept_language'
 
 group :development, :test do
   gem 'byebug'

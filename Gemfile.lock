@@ -209,6 +209,7 @@ GEM
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
+    http_accept_language (2.0.5)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     inherited_resources (1.6.0)
@@ -458,6 +459,7 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   html2slim (~> 0.2.0)
+  http_accept_language
   jbuilder (~> 2.0)
   jquery-mousewheel-rails
   jquery-rails

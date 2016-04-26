@@ -6,7 +6,7 @@ module ApplicationHelper
   end
 
   def locale_link(text, link_class, lng)
-    link_class += locale.to_s == lng ? ' current' : ''
+    link_class += locale.to_s.include?(lng) ? ' current' : ''
 
     content_tag :span, text, class: link_class, data: { locale: lng }
   end
