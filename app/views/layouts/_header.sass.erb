@@ -1,0 +1,11 @@
+=backimage-linear-gradient($position, $start-color, $end-color, $url:'')
+  background-image: -webkit-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:    -moz-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:     -ms-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:      -o-linear-gradient($position, $start-color, $end-color), image-url($url)
+  background-image:    linear-gradient($position - 90, $start-color, $end-color), image-url($url)
+
+.hero-section
+  +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:original) %>")
+  &.default-header
+    +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")

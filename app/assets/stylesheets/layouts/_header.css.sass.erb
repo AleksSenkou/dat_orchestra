@@ -4,11 +4,9 @@
   position: relative
   width: 99vw
   height: 100vh
-  +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:original) %>")
   background-size: auto, cover
   &.default-header
     height: 400px
-    +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:medium) %>")
     > .hero-content
       padding-top: 15%
       > .heading
