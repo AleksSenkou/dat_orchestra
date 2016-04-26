@@ -10,29 +10,29 @@ MESSAGES_COUNT = 8
 namespace :db do
   desc 'Fill database with sample data'
   task populate: :environment do
-    # puts 'clean_database'
-    # clean_database
-    # puts 'clean_public_data'
-    # clean_public_data
+    puts 'clean_database'
+    clean_database
+    puts 'clean_public_data'
+    clean_public_data
 
-    # puts 'make_admin'
-    # make_admin
+    puts 'make_admin'
+    make_admin
 
-    # puts 'make_base_page'
-    # make_base_page
+    puts 'make_base_page'
+    make_base_page
 
-    # puts 'make_instruments'
-    # make_instruments
+    puts 'make_instruments'
+    make_instruments
 
-    # puts 'make_contacts'
-    # make_contacts
+    puts 'make_contacts'
+    make_contacts
 
-    # puts 'make_members'
-    # make_members
-    # puts 'make_pictures_for_members'
-    # make_pictures_for_members
-    # puts 'add_instruments_to_members'
-    # add_instruments_to_members
+    puts 'make_members'
+    make_members
+    puts 'make_pictures_for_members'
+    make_pictures_for_members
+    puts 'add_instruments_to_members'
+    add_instruments_to_members
 
     puts 'make_compositions'
     make_compositions
@@ -62,23 +62,24 @@ def clean_public_data
   end
 end
 
-def make_admin
-  AdminUser.create!(
-    email: 'dat@arkestr.net',
-    password: 'password',
-    password_confirmation: 'password'
-  )
-end
-
 def make_base_page
   BasePage.create!(
     logo: get_image('logo.png'),
     dance_logo: get_image('dance-logo.png'),
     favicon: get_image('favicon.png'),
-    hero_image: get_image('hero.jpg'),
+    hero_image: get_image('hero_cuted.jpg'),
+    bg_color: '#f7f7f7',
     heading: 'DAT-arkestr',
-    subheading_en: 'We will make your concert unforgettable',
-    subheading_ru: 'Мы сделаем ваш концерт незабываемым'
+    subheading_en: 'We will make our concert unforgettable',
+    subheading_ru: 'Мы сделаем наш концерт незабываемым'
+  )
+end
+
+def make_admin
+  AdminUser.create!(
+    email: 'dat@arkestr.net',
+    password: 'password',
+    password_confirmation: 'password'
   )
 end
 
