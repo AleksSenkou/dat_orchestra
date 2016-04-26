@@ -50,7 +50,7 @@ class BasePage < ActiveRecord::Base
     url: URL + "favicon_:style_:filename"
 
   has_attached_file :hero_image,
-    styles: { medium: "1600x500#", big: "1600x1200>" },
+    styles: { medium: "1600x700#", big: "1600x1200>" },
     path: PATH + "hero_image_:style_:filename",
     url: URL + "hero_image_:style_:filename"
 

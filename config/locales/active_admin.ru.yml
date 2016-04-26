@@ -1,5 +1,9 @@
 ru:
   active_admin:
+    crop:
+      open_crop_modal: Обрезать фотографию
+      save_cropped_image: Сохранить
+      cancel: Отменить
     admin: Админ
     pages:
       admin: Панель управления

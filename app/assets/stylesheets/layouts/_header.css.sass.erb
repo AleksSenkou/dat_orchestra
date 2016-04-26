@@ -4,8 +4,7 @@
   position: relative
   width: 99vw
   height: 100vh
-  +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:big) %>")
-  background-position: 0px 0px, 70% 70%
+  +backimage-linear-gradient(315deg, rgba(30, 33, 33, 0.82), rgba(32, 32, 32, 0.14), "<%= BasePage.first.hero_image.url(:original) %>")
   background-size: auto, cover
   &.default-header
     height: 400px
@@ -36,7 +35,7 @@
   font-family: oxygen
   margin-bottom: 30px
   cursor: default
-  color: hsla(0, 0%, 100%, 0.63)
+  color: hsla(0, 0, 100%, 0.63)
   font-size: 22px
   font-weight: 300
 

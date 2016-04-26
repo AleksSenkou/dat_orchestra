@@ -55,13 +55,13 @@ ActiveAdmin.register BasePage do
         hint: f.object.hero_image.exists? ? image_tag(f.object.hero_image.url(:big), class: 'edit-admin-hero-image') : ''
       f.input :logo, as: :file,
         label: I18n.t('active_admin.labels.logo'),
-        hint: bp_image(f.object.logo, 'big', 'Нужна прозрачная фотография')
+        hint: bp_image(f.object.logo, 'big', 'Нужен прозрачный фон')
       f.input :favicon, as: :file,
         label: I18n.t('active_admin.labels.favicon'),
-        hint: bp_image(f.object.favicon, 'medium', 'Нужна прозрачная фотография')
+        hint: bp_image(f.object.favicon, 'medium', 'Нужен прозрачный фон')
       f.input :dance_logo, as: :file,
         label: I18n.t('active_admin.labels.dance_logo'),
-        hint: bp_image(f.object.dance_logo, 'original', 'Нужен черный, или прозрачный фон')
+        hint: bp_image(f.object.dance_logo, 'original', 'Нужен прозрачный фон')
     end
 
     f.actions do
