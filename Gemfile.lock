@@ -444,6 +444,7 @@ DEPENDENCIES
   capistrano-rbenv (~> 2.0, >= 2.0.4)
   capybara
   coffee-rails (~> 4.1.0)
+  coffee-script-source
   colorize
   database_cleaner
   devise

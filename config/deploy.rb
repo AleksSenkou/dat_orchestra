@@ -19,7 +19,6 @@ set :passenger_restart_with_touch, true
 
 namespace :deploy do
 
-
   task :puts_message do
     on roles(:app), in: :sequence, wait: 0 do
       puts "HERE" * 50
