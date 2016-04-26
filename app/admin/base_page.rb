@@ -28,7 +28,7 @@ ActiveAdmin.register BasePage do
         end
       end
       row(I18n.t('active_admin.labels.hero_image')) do |bp|
-        image_tag bp.hero_image.url(:big), class: 'admin-hero-image'
+        image_tag bp.hero_image.url(:original), class: 'admin-hero-image'
       end
       row(I18n.t('active_admin.labels.logo')) do |bp|
         image_tag bp.logo.url(:big)
@@ -52,7 +52,7 @@ ActiveAdmin.register BasePage do
       f.input :bg_color, label: I18n.t('active_admin.labels.bg_color')
       f.input :hero_image, as: :file,
         label: I18n.t('active_admin.labels.hero_image'),
-        hint: f.object.hero_image.exists? ? image_tag(f.object.hero_image.url(:big), class: 'edit-admin-hero-image') : ''
+        hint: f.object.hero_image.exists? ? image_tag(f.object.hero_image.url(:original), class: 'edit-admin-hero-image') : ''
       f.input :logo, as: :file,
         label: I18n.t('active_admin.labels.logo'),
         hint: bp_image(f.object.logo, 'big', 'Нужен прозрачный фон')
