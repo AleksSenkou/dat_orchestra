@@ -1,7 +1,11 @@
 lock '3.4.0'
 
+require 'pry'
+
 set :application, 'dat_orchestra'
 set :repo_url, 'git@bitbucket.org:Aleks_Senkou/dat_orchestra.git'
+
+set :ssh_options, { forward_agent: true}
 
 set :deploy_to, '/home/deploy/dat_orchestra'
 set :rbenv_path, '/home/deploy/.rbenv'
@@ -21,10 +25,7 @@ namespace :deploy do
 
   Rake::Task["deploy:assets:precompile"].clear
 
-  before 'deploy:assets:precompile', :populate
-  before :populate, 'deploy:migrate'
   before :finishing, :restart
-
 
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
