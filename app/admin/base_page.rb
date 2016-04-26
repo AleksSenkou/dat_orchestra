@@ -1,10 +1,10 @@
 ActiveAdmin.register BasePage do
-  menu priority: 2, url: "/admin/base_pages/#{ BasePage.first.id }"
+  menu priority: 2, url: "/admin/base_pages/#{ BasePage.first.try(:id) }"
 
   breadcrumb do
     root = [ link_to(I18n.t("active_admin.dashboard"), admin_root_path) ]
     if current_page?(edit_admin_base_page_path)
-      root << link_to(I18n.t("activerecord.models.base_page.other"), admin_base_page_path(BasePage.first.id))
+      root << link_to(I18n.t("activerecord.models.base_page.other"), admin_base_page_path(BasePage.first.try(:id)))
     else
       root
     end

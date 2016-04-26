@@ -20,8 +20,8 @@ class Picture < ActiveRecord::Base
 
   has_attached_file :image,
     styles: { little: "100x100>", medium: "500x500>", big: "1000x550>" },
-    path: ":rails_root/public/images/:id/:style_:filename",
-    url: "/images/:id/:style_:filename"
+    path: ":rails_root/public/documents/images/:id/:style_:filename",
+    url: "/documents/images/:id/:style_:filename"
 
   validates_attachment :image, presence: true
   do_not_validate_attachment_file_type :image

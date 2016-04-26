@@ -25,8 +25,8 @@ class Composition < ActiveRecord::Base
    :position
 
   has_attached_file :song,
-    path: ":rails_root/public/music/:id/:filename",
-    url: "/music/:id/:filename"
+    path: ":rails_root/public/documents/music/:id/:filename",
+    url: "/documents/music/:id/:filename"
 
   do_not_validate_attachment_file_type :song
   validates_attachment :song, presence: true

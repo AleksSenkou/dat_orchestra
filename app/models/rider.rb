@@ -15,8 +15,8 @@ class Rider < ActiveRecord::Base
 
   has_attached_file :document,
     styles: { thumb: [ "300x300>", :png ] },
-    path: ":rails_root/public/riders/:id/:style_:filename",
-    url: "/riders/:id/:style_:filename"
+    path: ":rails_root/public/documents/riders/:id/:style_:filename",
+    url: "/documents/riders/:id/:style_:filename"
 
   validates_attachment :document,
     content_type: { content_type: "application/pdf" },

@@ -53,12 +53,17 @@ namespace :db do
 end
 
 def clean_database
-  Rake::Task['db:reset'].invoke
+  # Rake::Task['db:reset'].invoke
+  [ BasePage, AdminUser, Instrument, Member, Rider, Message,
+    Contact, GalleryItem, Composition
+  ].each do |records|
+    records.all.map(&:destroy)
+  end
 end
 
 def clean_public_data
   [ 'images', 'music', 'gallery', 'instruments', 'riders' ].each do |folder|
-    FileUtils.rm_rf 'public/' + folder
+    FileUtils.rm_rf 'public/documents/' + folder
   end
 end
 
@@ -78,8 +83,8 @@ end
 def make_admin
   AdminUser.create!(
     email: 'dat@arkestr.net',
-    password: 'password',
-    password_confirmation: 'password'
+    password: 'andrandr',
+    password_confirmation: 'andrandr'
   )
 end
 

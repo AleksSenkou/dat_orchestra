@@ -25,8 +25,8 @@
 #
 
 class BasePage < ActiveRecord::Base
-  PATH = ":rails_root/public/images/base/"
-  URL = "/images/base/"
+  PATH = ":rails_root/public/documents/images/base/"
+  URL = "/documents/images/base/"
 
   translates :subheading
   globalize_accessors

@@ -24,8 +24,8 @@ class GalleryItem < ActiveRecord::Base
 
   has_attached_file :image,
     styles: { medium: "x300>", large: "1000x550>" },
-    path: ":rails_root/public/gallery/:id/:style_:filename",
-    url: "/gallery/:id/:style_:filename"
+    path: ":rails_root/public/documents/gallery/:id/:style_:filename",
+    url: "/documents/gallery/:id/:style_:filename"
 
   do_not_validate_attachment_file_type :image
 

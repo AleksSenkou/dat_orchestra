@@ -4,18 +4,16 @@ task create_base_page: :environment do
 end
 
 def make_base_page
-  I18n.locale = :en
   BasePage.create!(
     logo: get_image('logo.png'),
     dance_logo: get_image('dance-logo.png'),
     favicon: get_image('favicon.png'),
-    hero_image: get_image('hero.jpg'),
+    hero_image: get_image('hero_cuted.jpg'),
+    bg_color: '#f7f7f7',
     heading: 'DAT-arkestr',
-    subheading: 'We will make your concert unforgettable'
+    subheading_en: 'We will make our concert unforgettable',
+    subheading_ru: 'Мы сделаем наш концерт незабываемым'
   )
-
-  I18n.locale = :ru
-  BasePage.first.update_attribute :subheading, 'Мы сделаем ваш концерт незабываемым'
 end
 
 def get_image(image_name)
