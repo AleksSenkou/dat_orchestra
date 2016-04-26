@@ -3,7 +3,7 @@ ruby '2.2.4'
 gem 'rails', '4.2.4'
 
 ### JS ###
-gem 'therubyracer'
+# gem 'therubyracer'
 gem 'coffee-script-source'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
