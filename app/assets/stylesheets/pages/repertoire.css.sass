@@ -12,16 +12,16 @@ $play-border-width: 3px
   padding-bottom: 7px
 
 .featured-container
-  text-align: center
+  max-width: 1150px
+  margin-left: auto
+  margin-right: auto
 
 .composition
-  text-align: start
   display: inline
   position: relative
   +transition-opacity(200ms)
-  &:nth-child(3n)
-    > .featured-text
-      margin-right: 0px
+  &:nth-child(2n)
+    margin: 0 5px
   &:hover
     > .featured-text, .featured-image
       opacity: 0.8
@@ -81,7 +81,6 @@ $play-border-width: 3px
   right: 0px
   bottom: 0px
   cursor: default
-  margin-right: 1%
   margin-bottom: 0.5%
   padding: 0% 1.5% 1% 1.5%
   border-bottom-left-radius: 3px
