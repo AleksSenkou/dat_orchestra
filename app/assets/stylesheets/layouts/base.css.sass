@@ -1,12 +1,18 @@
 html
   overflow-x: hidden
+  height: 100%
 
 body
+  height: 100%
   font-family: Lora, sans-serif
   font-size: 14px
   line-height: 20px
   margin: 0 !important
   padding: 0 !important
+
+#container
+  min-height: 100%
+  position: relative
 
 a
   text-decoration: none
@@ -18,7 +24,7 @@ audio
 
 .main-section
   padding-top: 10px
-  padding-bottom: 15px
+  padding-bottom: 165px
   &.contacts-index
     padding-bottom: 0px
 
@@ -31,7 +37,6 @@ audio
   list-style-type: lower-alpha
   &.small
     margin-bottom: 0
-
 
 .pagination
   display: table
