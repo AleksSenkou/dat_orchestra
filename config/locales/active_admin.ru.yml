@@ -13,6 +13,8 @@ ru:
     compositions:
       add_member: "Добавить участника к композиции:"
     labels:
+      about_us_ru: О нас на русском
+      about_us_en: О нас на английском
       bg_color: Цвет фона
       viewed: Просмотрено
       send_time: Время отправления

@@ -13,6 +13,8 @@ en:
     compositions:
       add_member: "Add member:"
     labels:
+      about_us_ru: about_us_ru
+      about_us_en: about_us_en
       bg_color: bg_color
       viewed: viewed
       send_time: send_time

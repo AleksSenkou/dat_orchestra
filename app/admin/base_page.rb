@@ -14,7 +14,9 @@ ActiveAdmin.register BasePage do
 
   includes :translations
 
-  permit_params :heading, :subheading_ru, :subheading_en, :bg_color,
+  permit_params  :subheading_ru, :subheading_en,
+    :about_us_ru, :about_us_en,
+    :heading, :bg_color,
     :logo, :dance_logo, :favicon, :hero_image
 
   show title: I18n.t("activerecord.models.base_page.one") do
@@ -22,6 +24,8 @@ ActiveAdmin.register BasePage do
       row(I18n.t('active_admin.labels.heading')) { |c| c.heading }
       row(I18n.t('active_admin.labels.subheading_ru')) { |c| c.subheading_ru }
       row(I18n.t('active_admin.labels.subheading_en')) { |c| c.subheading_en }
+      row(I18n.t('active_admin.labels.about_us_ru')) { |c| c.about_us_ru }
+      row(I18n.t('active_admin.labels.about_us_en')) { |c| c.about_us_en }
       row(I18n.t('active_admin.labels.bg_color')) do |c|
         div class: 'show-bg-color', style: "background-color: #{c.bg_color}" do
           span c.bg_color
@@ -49,6 +53,8 @@ ActiveAdmin.register BasePage do
         hint: 'Заглавные буквы будут выделены жирным шрифтом'
       f.input :subheading_ru, label: I18n.t('active_admin.labels.subheading_ru')
       f.input :subheading_en, label: I18n.t('active_admin.labels.subheading_en')
+      f.input :about_us_ru, label: I18n.t('active_admin.labels.about_us_ru')
+      f.input :about_us_en, label: I18n.t('active_admin.labels.about_us_en')
       f.input :bg_color, label: I18n.t('active_admin.labels.bg_color')
       f.input :hero_image, as: :file,
         label: I18n.t('active_admin.labels.hero_image'),

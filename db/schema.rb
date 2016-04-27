@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425081359) do
+ActiveRecord::Schema.define(version: 20160427100256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160425081359) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.text     "subheading"
+    t.text     "about_us"
   end
 
   add_index "base_page_translations", ["base_page_id"], name: "index_base_page_translations_on_base_page_id", using: :btree
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160425081359) do
     t.integer  "dance_logo_file_size"
     t.datetime "dance_logo_updated_at"
     t.string   "bg_color"
+    t.text     "about_us"
   end
 
   create_table "composition_translations", force: :cascade do |t|

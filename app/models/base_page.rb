@@ -22,13 +22,14 @@
 #  dance_logo_file_size    :integer
 #  dance_logo_updated_at   :datetime
 #  bg_color                :string
+#  about_us                :text
 #
 
 class BasePage < ActiveRecord::Base
   PATH = ":rails_root/public/documents/images/base/"
   URL = "/documents/images/base/"
 
-  translates :subheading
+  translates :subheading, :about_us
   globalize_accessors
 
   validates_presence_of :heading, :subheading_ru, :subheading_en, :bg_color,

@@ -76,7 +76,9 @@ def make_base_page
     bg_color: '#f7f7f7',
     heading: 'DAT-arkestr',
     subheading_en: 'We will make our concert unforgettable',
-    subheading_ru: 'Мы сделаем наш концерт незабываемым'
+    subheading_ru: 'Мы сделаем наш концерт незабываемым',
+    about_us_en: Faker::Lorem.sentence(40, true, 8),
+    about_us_ru: Faker::Lorem.sentence(40, true, 8)
   )
 end
 
