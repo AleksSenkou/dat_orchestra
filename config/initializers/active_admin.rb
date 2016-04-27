@@ -1,7 +1,7 @@
 ActiveAdmin.setup do |config|
   config.skip_before_filter :load_base_page
 
-  config.site_title = "Dat-arkestr"
+  config.site_title = "DAT-arkestr"
   config.site_title_link = "/"
 
   config.authentication_method = :authenticate_admin_user!
