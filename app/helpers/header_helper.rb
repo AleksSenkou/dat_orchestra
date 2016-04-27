@@ -27,6 +27,8 @@ module HeaderHelper
   def subheading
     if home_page?
       @base_page.subheading
+    elsif current_page? about_us_path
+      t('.about_us')
     elsif controller_name == 'gallery_items'
       t('.gallery')
     else

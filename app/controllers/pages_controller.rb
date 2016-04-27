@@ -4,6 +4,9 @@ class PagesController < ApplicationController
       Composition.includes(:picture, :translations, members: :picture).first(9)
   end
 
+  def about_us
+  end
+
   def set_locale
     if I18n.available_locales.map(&:to_s).include? params[:locale]
       cookies[:locale] = {

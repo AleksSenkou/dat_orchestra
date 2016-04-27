@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'set_locale', to: 'pages#set_locale'
+  get 'about_us', to: 'pages#about_us'
 
   resources :repertoire, only: :index
 

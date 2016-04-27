@@ -12,12 +12,14 @@ ru:
       members: состав
       riders: райдеры
       contacts: контакты
+      about_us: о нас
     header:
       repertoire: Репертуар
       gallery: Галерея
       members: Состав
       riders: Райдеры
       contacts: Контакты
+      about_us: О нас
       dance_logo_title: Государственный ансамбль танца Беларуси
     footer:
       dance_logo_title: Государственный ансамбль танца Беларуси
