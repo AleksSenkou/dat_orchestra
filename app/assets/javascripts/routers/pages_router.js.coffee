@@ -13,7 +13,9 @@ class DatOrchestra.Routers.Pages extends Backbone.Router
     'about_us': 'aboutUsPage'
     'about_us/': 'aboutUsPage'
     'admin' : 'editMember'
+    'admin/' : 'editMember'
     '' : 'homePage'
+    '/' : 'homePage'
 
   homePage: ->
     new DatOrchestra.Views.Home().render()
