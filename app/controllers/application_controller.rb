@@ -21,7 +21,9 @@ class ApplicationController < ActionController::Base
       expires: 1.year.from_now,
       domain: request.domain
     }
-  end.to_b
+
+    cookies[:viewer].to_b
+  end
 
   def select_locale
     available = %w(ru en en-US)
