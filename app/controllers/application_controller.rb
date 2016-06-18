@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   def portfolio_viewer
     cookies[:viewer] ||= {
-      value: request.referer.include?('upwork'),
+      value: request.referer.to_s.include?('upwork'),
       expires: 1.year.from_now,
       domain: request.domain
     }
