@@ -36,6 +36,7 @@ gem 'youtube_id'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'devise'
 gem 'cancancan'
+gem 'wannabe_bool'
 
 ### DB ###
 gem 'pg'
