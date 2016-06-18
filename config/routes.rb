@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'set_locale', to: 'pages#set_locale'
   get 'about_us', to: 'pages#about_us'
+  get 'viewer', to: 'pages#viewer'
 
   resources :repertoire, only: :index
 

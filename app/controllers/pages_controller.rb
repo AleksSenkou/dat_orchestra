@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :set_bg_color, only: :viewer
+
   def home
     @compositions =
       Composition.includes(:picture, :translations, members: :picture).first(9)
@@ -17,5 +19,15 @@ class PagesController < ApplicationController
     end
 
     render nothing: true
+  end
+
+  def viewer
+    cookies[:viewer] ||= {
+      value: true,
+      expires: 1.year.from_now,
+      domain: request.domain
+    }
+
+    redirect_to root_path
   end
 end

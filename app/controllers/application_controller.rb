@@ -12,17 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_bg_color
-    @bg_color = portfolio_viewer ? DEFAULT_BG_COLOR : @base_page.bg_color
-  end
-
-  def portfolio_viewer
-    cookies[:viewer] ||= {
-      value: request.referer.to_s.include?('upwork'),
-      expires: 1.year.from_now,
-      domain: request.domain
-    }
-
-    cookies[:viewer].to_b
+    @bg_color = portfolio_viewer? ? DEFAULT_BG_COLOR : @base_page.bg_color
   end
 
   def select_locale
@@ -36,5 +26,9 @@ class ApplicationController < ActionController::Base
     else
       I18n.default_locale
     end
+  end
+
+  def portfolio_viewer?
+    cookies[:viewer].to_b
   end
 end
