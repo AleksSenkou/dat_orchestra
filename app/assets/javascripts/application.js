@@ -10,6 +10,7 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require dat_orchestra
+//= require markerclustererplus/src/markerclusterer_packed.js
 //= require_tree .
 
 /*require bootstrap-sprockets*/
