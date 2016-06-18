@@ -42,4 +42,8 @@ module ApplicationHelper
   def current_year
     Date.today.year
   end
+
+  def portfolio_viewer?
+    cookies[:viewer].to_b
+  end
 end
