@@ -5,13 +5,7 @@ Rails.application.config.assets.version = '1.0'
 
 # Add additional assets to the asset load path
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
-Rails.application.config.assets.paths += %W(
-  #{Rails.root}/vendor/assets/google-maps-utility-library-v3
-)
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
-Rails.application.config.assets.precompile += %w(
-  markerclustererplus/images/*.png
-)
