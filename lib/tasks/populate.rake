@@ -186,9 +186,7 @@ def add_instruments_to_members
 end
 
 def add_members_to_compositions
-  composition_ids = Composition.ids
-
-  composition_ids.each do |cm_id|
+  Composition.ids.each do |cm_id|
     Member.ids.sample(rand(1..MEMBERS_COUNT / 2)).each do |member_id|
       CompositionsMembers.create composition_id: cm_id, member_id: member_id
     end
