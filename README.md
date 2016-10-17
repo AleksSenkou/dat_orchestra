@@ -1,9 +1,6 @@
 Dat Orchestra
 ================
 
-Ruby on Rails
--------------
-
 This application requires:
 
 - Ruby 2.2.4
